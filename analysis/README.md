@@ -25,6 +25,11 @@ cd analysis && python run_analysis.py    # lần đầu tải dữ liệu (~1 ph
 Đầu ra ghi vào [`results/`](results/): `REPORT.md`, `signals_latest.csv`, `model_metrics.csv`,
 `backtest_trades_*.csv`, `summary.json`, và 3 biểu đồ PNG (equity, so sánh mô hình, feature importance).
 
+```bash
+python plot_signals.py   # vẽ biểu đồ NẾN có điểm MUA + ranh giới chốt lời/cắt lỗ + time-stop
+```
+Biểu đồ nến ghi vào [`results/charts/`](results/charts/): `overview_top6.png`, `<TICKER>_setup.png` (setup từng mã), `<TICKER>_history.png` (các điểm vào backtest, ▲ xanh=thắng/đỏ=thua).
+
 ## Cấu trúc code (`vn_swing/`)
 
 | Module | Vai trò |

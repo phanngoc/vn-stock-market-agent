@@ -51,7 +51,18 @@
 - **Khung 3 tháng:** với time-stop ~5 tuần, một mã có thể cho **2–3 nhịp sóng** trong 3 tháng tới (từ 2026-08-25 đến ~2026-11-25). Danh sách nên **cập nhật lại hàng tuần** khi có dữ liệu mới.
 - Bảng máy đọc: [`signals_latest.csv`](signals_latest.csv). Backtest chi tiết: [`backtest_trades_LSTM.csv`](backtest_trades_LSTM.csv), so sánh: [`model_metrics.csv`](model_metrics.csv).
 
-## 4. Hạn chế & cảnh báo (đọc kỹ)
+## 4. Biểu đồ nến (dễ nhìn giao dịch)
+
+Tạo/cập nhật bằng `python plot_signals.py` (matplotlib thuần). Mỗi chart gồm: nến OHLC, MA20/MA50, **▲ điểm MUA**, ranh giới **chốt lời +8% (xanh nét đứt)** / **cắt lỗ −5% (đỏ nét đứt)**, và vạch **time-stop 25 phiên** — nhìn phát thấy ngay vào ở đâu, chốt/cắt ở đâu.
+
+![Tổng quan top 6](charts/overview_top6.png)
+
+*Tổng quan top 6 tín hiệu.* Chart từng mã: [`VRE`](charts/VRE_setup.png), [`VIC`](charts/VIC_setup.png), [`KDH`](charts/KDH_setup.png), [`PDR`](charts/PDR_setup.png), [`VCI`](charts/VCI_setup.png), [`DXG`](charts/DXG_setup.png).
+
+**Quy tắc chạy thật trong quá khứ** — VRE: mỗi ▲ là một điểm mô hình từng ra tín hiệu (**xanh = thắng**, chạm +8% trước; **đỏ = thua**), theo đúng luật TP/SL/time-stop:
+![VRE history](charts/VRE_history.png)
+
+## 5. Hạn chế & cảnh báo (đọc kỹ)
 
 - **Sức dự báo có giới hạn:** giá cổ phiếu gần ngẫu nhiên ngắn hạn; AUC thường chỉ nhỉnh hơn 0.5. Lợi thế (nếu có) đến từ *lọc xác suất* + quản trị rủi ro (R:R, time-stop), không phải 'tiên tri'.
 - **Chưa mô phỏng đầy đủ thực tế:** chưa tính biên độ trần/sàn ±7% (HOSE), thanh khoản/khe hở giá, trượt giá lớn khi bán tháo, T+2 (không bán ngay trong ngày), thuế cổ tức, hay giới hạn margin/call.

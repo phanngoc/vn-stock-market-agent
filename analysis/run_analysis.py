@@ -277,10 +277,28 @@ def _write_report(metrics, per_model, best_name, bh, signals, train, test):
               f"Trong backtest, thời gian giữ trung bình ≈ {per_model[best_name]['bt']['summary'].get('avg_hold_days','?')} phiên.")
     md.append(f"- **Khung 3 tháng:** với time-stop ~{HORIZON//5} tuần, một mã có thể cho **2–3 nhịp sóng** trong 3 tháng tới "
               f"(từ {end_date} đến ~{_add_months(end_date,3)}). Danh sách nên **cập nhật lại hàng tuần** khi có dữ liệu mới.")
+    n_down = int((~top["trend_up"]).sum())
+    if n_down >= len(top) / 2:
+        md.append(f"- **Bối cảnh (quan trọng):** {n_down}/{len(top)} mã trong top đang **dưới MA50** (xu hướng giảm) → "
+                  f"phần lớn là kèo **hồi kỹ thuật / bắt đáy** (mean-reversion), rủi ro cao hơn kèo momentum. "
+                  f"Ai ngại 'bắt dao rơi' nên ưu tiên mã *trên MA50* hoặc chờ nến xác nhận đảo chiều.")
     md.append(f"- Bảng máy đọc: [`signals_latest.csv`](signals_latest.csv). Backtest chi tiết: "
               f"[`backtest_trades_{best_name}.csv`](backtest_trades_{best_name}.csv), so sánh: [`model_metrics.csv`](model_metrics.csv).\n")
 
-    md.append("## 4. Hạn chế & cảnh báo (đọc kỹ)\n")
+    top6 = list(signals.head(6)["symbol"])
+    top1 = top6[0]
+    md.append("## 4. Biểu đồ nến (dễ nhìn giao dịch)\n")
+    md.append("Tạo/cập nhật bằng `python plot_signals.py` (matplotlib thuần). Mỗi chart gồm: nến OHLC, MA20/MA50, "
+              "**▲ điểm MUA**, ranh giới **chốt lời +8% (xanh nét đứt)** / **cắt lỗ −5% (đỏ nét đứt)**, và vạch "
+              "**time-stop 25 phiên** — nhìn phát thấy ngay vào ở đâu, chốt/cắt ở đâu.\n")
+    md.append("![Tổng quan top 6](charts/overview_top6.png)\n")
+    md.append("*Tổng quan top 6 tín hiệu.* Chart từng mã: "
+              + ", ".join(f"[`{s}`](charts/{s}_setup.png)" for s in top6) + ".")
+    md.append(f"\n**Quy tắc chạy thật trong quá khứ** — {top1}: mỗi ▲ là một điểm mô hình từng ra tín hiệu "
+              f"(**xanh = thắng**, chạm +{int(TP*100)}% trước; **đỏ = thua**), theo đúng luật TP/SL/time-stop:")
+    md.append(f"![{top1} history](charts/{top1}_history.png)\n")
+
+    md.append("## 5. Hạn chế & cảnh báo (đọc kỹ)\n")
     md.append("- **Sức dự báo có giới hạn:** giá cổ phiếu gần ngẫu nhiên ngắn hạn; AUC thường chỉ nhỉnh hơn 0.5. "
               "Lợi thế (nếu có) đến từ *lọc xác suất* + quản trị rủi ro (R:R, time-stop), không phải 'tiên tri'.")
     md.append("- **Chưa mô phỏng đầy đủ thực tế:** chưa tính biên độ trần/sàn ±7% (HOSE), thanh khoản/khe hở giá, "
