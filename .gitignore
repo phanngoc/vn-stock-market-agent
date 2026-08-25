@@ -10,6 +10,9 @@ venv/
 openviking.log
 ov.conf
 
+# Analysis raw data cache (fetched via vnstock; regenerated on run)
+analysis/data_cache/
+
 # OS / editor
 .DS_Store
 .idea/

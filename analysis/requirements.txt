@@ -1,0 +1,8 @@
+# Swing-analysis pipeline dependencies (versions tested on Python 3.12)
+vnstock>=3.2.6
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.4
+xgboost>=2.0
+torch>=2.2
+matplotlib>=3.8
