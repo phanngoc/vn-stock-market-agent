@@ -1,0 +1,12 @@
+rank,ticker,company,sector,market_cap_vnd_bn_approx,note
+1,VIC,Vingroup,Real Estate/Conglomerate,1259000,reclaimed #1 after ~5 years
+2,VCB,Vietcombank,Banking,518500,
+3,VHM,Vinhomes,Real Estate,423000,
+4,BID,BIDV,Banking,280900,
+5,HPG,Hoa Phat Group,Steel,150000,estimate
+6,VPB,VPBank,Banking,100000,estimate
+7,TCB,Techcombank,Banking,90000,estimate
+8,FPT,FPT Corporation,Technology,80000,estimate
+9,VNM,Vinamilk,Food & Beverage,75000,estimate
+10,GAS,PV GAS,Oil & Gas,60000,estimate
+# Source: research 2026-08-25 (theinvestor.vn, vietnamnews.vn). Market cap moves with price; verify before use. Not investment advice.

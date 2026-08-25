@@ -1,0 +1,11 @@
+sector,market_cap_share_pct_approx,example_tickers
+Real Estate,27,VIC;VHM;NVL;KDH;NLG;DXG;PDR
+Banking/Financials,26,VCB;BID;CTG;TCB;VPB;ACB;MBB
+Food & Beverage,7,VNM;SAB;MSN;DBC
+Retail/Consumer,5.5,MWG;FRT;PNJ
+Steel & Materials,4.5,HPG;HSG;NKG
+Oil & Gas,3.5,GAS;PLX;BSR
+Technology,2.5,FPT;CMG
+Securities Brokers,1.5,SSI;VCI;VND;HCM
+Others (Utilities/Pharma/Insurance),20,REE;POW;NT2;BVH;DHG
+# Approximate 2026 shares; sum is indicative, weights shift with price. Source: research 2026-08-25 (vietnam.vn). Not investment advice.
