@@ -32,7 +32,7 @@ analysis/runs/log_run_<YYYY-MM-DD_HH-MM-SS>/
 └── charts/                   # overview_top6.png, <TICKER>_setup.png, <TICKER>_history.png
 ```
 - `analysis/runs/latest` = symlink tới run mới nhất.
-- `analysis/results/` = **bản mirror của run mới nhất** (giữ link ổn định trong README/REPORT).
+- `analysis/daily/<ngày>/` = **kết quả archive theo NGÀY** (do `archive_daily.py` copy toàn bộ run; đây là thứ được commit). `analysis/daily/LATEST_DIGEST.md` = con trỏ bản tin mới nhất.
 - `analysis/runs/` bị gitignore (log cục bộ); chỉ commit run làm ví dụ khi cần.
 
 ## Vẽ lại biểu đồ nến cho một run

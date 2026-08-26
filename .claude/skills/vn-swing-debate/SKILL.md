@@ -52,4 +52,4 @@ Cần một run của **vn-swing-analysis** (có `signals_latest.csv`). Nếu ch
 - Tôn trọng edge yếu của mô hình (AUC ~0.53–0.55): quyết định phải dựa nhiều vào **quản trị rủi ro**, không phải "chắc thắng".
 
 ## Kết quả
-`runs/<run>/debate/WHITEBOARD.md` (toàn bộ tranh luận) + `DECISION.md` (quyết định của Giám đốc Chiến lược). Được mirror sang `results/debate/` khi chạy lại analysis, hoặc commit run làm ví dụ.
+`runs/<run>/debate/WHITEBOARD.md` (toàn bộ tranh luận) + `DECISION.md` (quyết định của Giám đốc Chiến lược). Được archive theo ngày vào `analysis/daily/<ngày>/debate/` (bởi `archive_daily.py`) — đây là bản được commit.

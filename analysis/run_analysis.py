@@ -4,8 +4,9 @@ Pipeline: real data (vnstock/VCI) -> technical features -> triple-barrier labels
 -> train LogReg / RandomForest / GradientBoosting / XGBoost / LSTM -> out-of-sample
 backtest -> current swing signals (entry / take-profit / stop / time-stop).
 
-Writes everything under analysis/results/. All numbers in the report are produced
-here from real, out-of-sample computation — nothing is hand-typed.
+Writes the run under analysis/runs/log_run_<ts>/ (gitignored working area); results are
+then archived per-day into analysis/daily/<date>/ by archive_daily.py. All numbers in the
+report are produced here from real, out-of-sample computation — nothing is hand-typed.
 
 NOT INVESTMENT ADVICE. Educational / research use only.
 """
@@ -13,7 +14,6 @@ from __future__ import annotations
 
 import json
 import os
-import shutil
 import warnings
 from datetime import datetime
 
@@ -33,10 +33,10 @@ from vn_swing.models import build_models  # noqa: E402
 import plot_signals  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-RES = os.path.join(HERE, "results")       # latest-snapshot mirror (keeps stable README links)
-RUNS = os.path.join(HERE, "runs")         # per-run archive: runs/log_run_<ts>/
-os.makedirs(RES, exist_ok=True)
+RUNS = os.path.join(HERE, "runs")         # per-run working area: runs/log_run_<ts>/ (gitignored)
 os.makedirs(RUNS, exist_ok=True)
+# NB: kết quả được lưu theo NGÀY vào analysis/daily/<ngày>/ bởi archive_daily.py
+# (chạy sau khi có debate + digest). Không còn mirror results/.
 
 
 def _make_run_dir():
@@ -47,10 +47,8 @@ def _make_run_dir():
 
 
 def _publish_latest(run_dir, ts):
-    """Mirror the run into results/ (latest snapshot) and update runs/latest symlink."""
-    if os.path.isdir(RES):
-        shutil.rmtree(RES)
-    shutil.copytree(run_dir, RES)
+    """Update the runs/latest symlink to this run (scaffold/compile/digest read it).
+    Per-day archiving into analysis/daily/<ngày>/ is done by archive_daily.py later."""
     link = os.path.join(RUNS, "latest")
     try:
         if os.path.islink(link) or os.path.exists(link):
@@ -162,7 +160,8 @@ def main():
 
     _publish_latest(RUN_DIR, RUN_TS)
     print("\nRun dir :", RUN_DIR)
-    print("Latest  :", RES, "(mirror)")
+    print("Latest  :", os.path.join(RUNS, "latest"), "(symlink)")
+    print("Lưu kết quả theo ngày: chạy `python archive_daily.py runs/latest` (tự động trong run_daily_ci.sh).")
 
 
 def _buy_hold_benchmark(test: pd.DataFrame) -> dict:

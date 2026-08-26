@@ -24,21 +24,22 @@ Workflow chạy nền và điều phối 5 giai đoạn (~6 agent, medium): **Pi
 2. **Evidence** — Agent A (kỹ thuật, đọc signals+charts) và Agent B (news, WebSearch tin mới + link) chạy **song song**, mỗi agent ghi `debate/notes/<X>.md`.
 3. **Debate** — Agent C (bò) đọc note A+B dựng luận điểm mua; Agent D (gấu) đọc A+B+C và **phản biện trực tiếp C** (tuần tự).
 4. **Decision** — Agent E (CIO) đọc toàn bộ, ghi `DECISION.md` (đầy đủ) + `notes/E_cio.md` (tóm tắt) + `decision.json` (máy đọc).
-5. **Digest** — `python debate/compile.py <run>` gộp note A→E vào `WHITEBOARD.md`; `python daily_digest.py <run>` render **`DAILY_DIGEST.md`** từ `decision.json` (fallback: top tín hiệu quant nếu thiếu).
+5. **Digest** — `python debate/compile.py <run>` gộp note A→E vào `WHITEBOARD.md`; `python daily_digest.py <run>` render **`DAILY_DIGEST.md`** từ `decision.json` (fallback: top tín hiệu quant nếu thiếu); `python archive_daily.py <run>` copy TOÀN BỘ run vào `analysis/daily/<ngày>/`.
 
-## Kết quả (một run dir)
+## Kết quả (lưu theo NGÀY — đây là thứ được commit)
 ```
-analysis/runs/log_run_<ts>/
+analysis/daily/<YYYY-MM-DD>/
 ├── DAILY_DIGEST.md      ← ⭐ FILE ĐỂ ĐỌC MỖI SÁNG (MUA/THEO DÕI/TRÁNH)
 ├── REPORT.md            ← báo cáo ML đầy đủ
-├── signals_latest.csv   ← tín hiệu máy đọc
-├── charts/              ← biểu đồ nến
+├── signals_latest.csv · model_metrics.csv · summary.json · backtest_trades_*.csv
+├── charts/              ← biểu đồ nến (overview + từng mã)
 └── debate/
     ├── WHITEBOARD.md     ← toàn bộ tranh luận (A→E, có tên agent)
     ├── DECISION.md       ← quyết định CIO đầy đủ
-    └── decision.json     ← quyết định máy đọc
+    ├── decision.json     ← quyết định máy đọc
+    └── notes/            ← note riêng từng agent
 ```
-`analysis/results/DAILY_DIGEST.md` = bản mirror ở đường dẫn ổn định.
+`analysis/daily/LATEST_DIGEST.md` = con trỏ tới bản tin mới nhất. Vùng làm việc `analysis/runs/` bị gitignore.
 
 ## Chạy thủ công (không dùng Workflow) — dự phòng
 Nếu không gọi Workflow: (1) chạy skill `vn-swing-analysis`; (2) chạy skill `vn-swing-debate` (A‖B → C → D → E) — nhưng cho C/D/E **đọc thẳng `debate/notes/*.md`** thay vì WHITEBOARD (whiteboard chỉ gộp ở cuối); (3) `cd analysis && python debate/compile.py runs/latest && python daily_digest.py runs/latest`.

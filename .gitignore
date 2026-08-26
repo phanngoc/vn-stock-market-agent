@@ -13,9 +13,15 @@ ov.conf
 # Analysis raw data cache (fetched via vnstock; regenerated on run)
 analysis/data_cache/
 
-# Per-run logs (kept locally for tracking); one example run is force-committed
+# Per-run working area (gitignored); kết quả được archive theo ngày vào analysis/daily/
 analysis/runs/
 analysis/runs/latest
+
+# Symlink tiện lợi cục bộ tới folder ngày mới nhất (không commit)
+analysis/daily/latest
+
+# Mirror cũ đã bỏ (kết quả nay ở analysis/daily/<ngày>/)
+analysis/results/
 
 # OS / editor
 .DS_Store

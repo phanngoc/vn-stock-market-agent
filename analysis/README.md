@@ -2,7 +2,7 @@
 
 > ⚠️ **KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ.** Công cụ nghiên cứu/giáo dục. Hiệu suất quá khứ không đảm bảo tương lai.
 
-Pipeline machine-learning tìm cơ hội **swing (lướt sóng)** trên TTCK Việt Nam, dùng **dữ liệu giá thật** lấy qua [`vnstock`](https://github.com/thinh-vu/vnstock) (nguồn VCI/Vietcap). Kết quả đầy đủ: [`results/REPORT.md`](results/REPORT.md).
+Pipeline machine-learning tìm cơ hội **swing (lướt sóng)** trên TTCK Việt Nam, dùng **dữ liệu giá thật** lấy qua [`vnstock`](https://github.com/thinh-vu/vnstock) (nguồn VCI/Vietcap). Kết quả lưu **theo ngày** ở [`daily/<ngày>/`](daily/); bản tin mới nhất: [`daily/LATEST_DIGEST.md`](daily/LATEST_DIGEST.md).
 
 ## Kết quả chính (out-of-sample 2025-01 → 2026-08, đọc kèm hạn chế)
 
@@ -22,23 +22,26 @@ pip install -r requirements.txt          # vnstock, torch, sklearn, xgboost, pan
 cd analysis && python run_analysis.py    # lần đầu tải dữ liệu (~1 phút) rồi train + backtest + tín hiệu
 ```
 
-Đầu ra ghi vào [`results/`](results/): `REPORT.md`, `signals_latest.csv`, `model_metrics.csv`,
-`backtest_trades_*.csv`, `summary.json`, và 3 biểu đồ PNG (equity, so sánh mô hình, feature importance).
+Đầu ra ghi vào `runs/log_run_<ts>/` (vùng làm việc, gitignored) rồi được archive theo ngày vào
+[`daily/<ngày>/`](daily/) bằng `archive_daily.py`: `REPORT.md`, `signals_latest.csv`, `model_metrics.csv`,
+`backtest_trades_*.csv`, `summary.json`, `DAILY_DIGEST.md`, `debate/`, và 3 biểu đồ PNG (equity, so sánh mô hình, feature importance).
 
 ```bash
 python plot_signals.py   # vẽ biểu đồ NẾN có điểm MUA + ranh giới chốt lời/cắt lỗ + time-stop
 ```
-Biểu đồ nến ghi vào [`results/charts/`](results/charts/): `overview_top6.png`, `<TICKER>_setup.png` (setup từng mã), `<TICKER>_history.png` (các điểm vào backtest, ▲ xanh=thắng/đỏ=thua).
+Biểu đồ nến ghi vào `charts/` của mỗi run (và `daily/<ngày>/charts/`): `overview_top6.png`, `<TICKER>_setup.png` (setup từng mã), `<TICKER>_history.png` (các điểm vào backtest, ▲ xanh=thắng/đỏ=thua).
 
 ## Log theo mỗi lần chạy (tracking)
 
-Mỗi lần `python run_analysis.py` tạo **một folder riêng** để tracking:
+Mỗi lần `python run_analysis.py` tạo **một folder làm việc riêng**; sau khi có debate + digest,
+`archive_daily.py` copy **toàn bộ** run vào folder theo NGÀY để commit:
 ```
-analysis/runs/log_run_<YYYY-MM-DD_HH-MM-SS>/   # REPORT.md, signals_latest.csv, *.csv, charts/, debate/
-analysis/runs/latest -> log_run_...            # symlink tới run mới nhất
-analysis/results/                              # mirror của run mới nhất (giữ link ổn định)
+analysis/runs/log_run_<YYYY-MM-DD_HH-MM-SS>/   # vùng làm việc (gitignored): REPORT.md, signals, *.csv, charts/, debate/
+analysis/runs/latest -> log_run_...            # symlink tới run mới nhất (gitignored)
+analysis/daily/<YYYY-MM-DD>/                    # KẾT QUẢ THEO NGÀY (commit): full run + DAILY_DIGEST.md
+analysis/daily/LATEST_DIGEST.md                # con trỏ tới bản tin mới nhất
 ```
-`analysis/runs/` bị gitignore (log cục bộ); một run được commit làm ví dụ. Đã đóng gói thành **Claude skill** `.claude/skills/vn-swing-analysis` để agent sau tự biết cách chạy.
+`analysis/runs/` bị gitignore (vùng làm việc cục bộ); **kết quả commit là `analysis/daily/<ngày>/`**. Đã đóng gói thành các **Claude skill** (`vn-swing-analysis`, `vn-swing-debate`, `vn-swing-daily`) để agent sau tự biết cách chạy.
 
 ## Hội đồng đầu tư đa tác nhân (debate)
 

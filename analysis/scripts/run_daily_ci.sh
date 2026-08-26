@@ -58,18 +58,8 @@ python debate/compile.py "$RUN_DIR" || echo "WARN: compile lỗi"
 echo "== [6/6] render DAILY_DIGEST.md =="
 python daily_digest.py "$RUN_DIR" || { echo "ERROR: daily_digest lỗi"; exit 1; }
 
-# ---- 6. Mirror artifact tranh luận + lưu bản lịch sử theo ngày (để commit) ----
-mkdir -p "$AN/results"
-cp -r "$RUN_DIR/debate" "$AN/results/debate" 2>/dev/null || true
-ARCH="$AN/daily/$AS_OF"
-mkdir -p "$ARCH"
-cp "$RUN_DIR/DAILY_DIGEST.md" "$ARCH/DAILY_DIGEST.md" 2>/dev/null || true
-cp "$RUN_DIR/debate/DECISION.md" "$ARCH/DECISION.md" 2>/dev/null || true
-cp "$RUN_DIR/debate/WHITEBOARD.md" "$ARCH/WHITEBOARD.md" 2>/dev/null || true   # toàn bộ tranh luận A→E
-cp "$RUN_DIR/debate/decision.json" "$ARCH/decision.json" 2>/dev/null || true
-cp "$RUN_DIR/signals_latest.csv" "$ARCH/signals_latest.csv" 2>/dev/null || true
-cp -r "$RUN_DIR/debate/notes" "$ARCH/notes" 2>/dev/null || true                # note riêng từng agent
-# con trỏ ổn định tới bản mới nhất
-cp "$RUN_DIR/DAILY_DIGEST.md" "$AN/daily/LATEST_DIGEST.md" 2>/dev/null || true
+# ---- 6. Lưu TOÀN BỘ run vào analysis/daily/<ngày>/ (REPORT+charts+metrics+debate+digest) ----
+echo "== [6/6] archive theo ngày =="
+python archive_daily.py "$RUN_DIR" || echo "WARN: archive_daily lỗi"
 
-echo "DONE. Digest: $RUN_DIR/DAILY_DIGEST.md  | archive: $ARCH"
+echo "DONE. Digest: $RUN_DIR/DAILY_DIGEST.md  | archive: $AN/daily/$AS_OF"

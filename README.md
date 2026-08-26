@@ -28,7 +28,7 @@ Hai lớp nội dung bổ trợ nhau — một dành cho *nhà phân tích*, m�
 | [`blueprint/06-openviking-agent-blueprint.md`](blueprint/06-openviking-agent-blueprint.md) | Cây `viking://`, vòng đời phiên phân tích, ánh xạ khung 6 bước |
 | [`scripts/vn_stock_context.py`](scripts/vn_stock_context.py) | Script tham chiếu chạy được với OpenViking SDK |
 | [`data/top_stocks.csv`](data/top_stocks.csv), [`data/sector_weights.csv`](data/sector_weights.csv) | Bảng máy đọc được |
-| [`analysis/`](analysis/) + [`analysis/results/REPORT.md`](analysis/results/REPORT.md) | **Pipeline ML tìm cơ hội swing** (dữ liệu thật qua vnstock): LSTM + cây + hồi quy, backtest OOS, tín hiệu vào/chốt |
+| [`analysis/`](analysis/) + bản tin mới nhất [`analysis/daily/LATEST_DIGEST.md`](analysis/daily/LATEST_DIGEST.md) | **Pipeline ML tìm cơ hội swing** (dữ liệu thật qua vnstock): LSTM + cây + hồi quy, backtest OOS, tín hiệu vào/chốt + hội đồng 5 tác nhân tranh luận, chạy hằng ngày |
 
 ## Phân tích ML tìm cơ hội swing (dữ liệu thật)
 
@@ -37,8 +37,9 @@ Thư mục [`analysis/`](analysis/) chứa một pipeline machine-learning **ch�
 - **Nhiều thuật toán:** Logistic Regression, Random Forest, Gradient Boosting, XGBoost, **LSTM (PyTorch)**.
 - **"Sóng" = triple-barrier:** vào tại giá đóng cửa; chốt lời **+8%** / cắt lỗ **−5%** / time-stop **25 phiên (~5 tuần)** → trả lời "vào mã nào, chốt/cắt ở đâu, giữ bao lâu".
 - **Kết quả trung thực (out-of-sample 2025-01→2026-08):** AUC ~0.53–0.55 (edge yếu nhưng thực); lọc top-20% tín hiệu nâng win-rate ~0.38→~0.41 (breakeven 0.385). Trong kỳ thị trường tăng, **buy&hold ~+35%** — mô hình cho *lọc + kỷ luật rủi ro*, **không** phải "đánh bại thị trường".
-- **Tín hiệu hiện tại + báo cáo:** [`analysis/results/REPORT.md`](analysis/results/REPORT.md), bảng máy đọc [`analysis/results/signals_latest.csv`](analysis/results/signals_latest.csv), so sánh mô hình [`analysis/results/model_metrics.csv`](analysis/results/model_metrics.csv).
-- Chạy lại: `pip install -r analysis/requirements.txt && cd analysis && python run_analysis.py`.
+- **Kết quả lưu theo NGÀY** trong [`analysis/daily/<ngày>/`](analysis/daily/): `DAILY_DIGEST.md` (bản tin), `REPORT.md`, `signals_latest.csv`, `model_metrics.csv`, `charts/`, và `debate/` (WHITEBOARD + DECISION + decision.json). Bản mới nhất: [`analysis/daily/LATEST_DIGEST.md`](analysis/daily/LATEST_DIGEST.md).
+- **Chạy 1 phát** (pipeline + hội đồng tranh luận + bản tin): skill `vn-swing-daily`, hoặc thủ công `pip install -r analysis/requirements.txt && cd analysis && python run_analysis.py`.
+- **Tự động hằng ngày:** GitHub Actions [`.github/workflows/daily-swing.yml`](.github/workflows/daily-swing.yml) (08:30 giờ VN, T2–T6) tự chạy và commit `analysis/daily/<ngày>/`.
 
 > ⚠️ Thuần kỹ thuật, **không** phải khuyến nghị đầu tư; đọc kỹ mục *Hạn chế* trong REPORT (chưa mô phỏng trần/sàn ±7%, T+2, trượt giá, margin…).
 

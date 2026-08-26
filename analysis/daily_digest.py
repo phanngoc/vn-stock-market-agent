@@ -16,7 +16,6 @@ from __future__ import annotations
 import glob
 import json
 import os
-import shutil
 import sys
 from datetime import datetime
 
@@ -24,7 +23,6 @@ import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RUNS = os.path.join(HERE, "runs")
-RES = os.path.join(HERE, "results")
 
 DEC_ORDER = {"MUA": 0, "THEO DÕI": 1, "THEO DOI": 1, "TRÁNH": 2, "TRANH": 2}
 DEC_ICON = {"MUA": "✅ MUA", "THEO DÕI": "👀 THEO DÕI", "TRÁNH": "⛔ TRÁNH"}
@@ -154,12 +152,7 @@ def render(run_dir: str) -> str:
     text = "\n".join(m)
     out = os.path.join(run_dir, "DAILY_DIGEST.md")
     open(out, "w", encoding="utf-8").write(text)
-    # mirror into results/ so the stable path always has today's brief
-    try:
-        if os.path.isdir(RES):
-            shutil.copy(out, os.path.join(RES, "DAILY_DIGEST.md"))
-    except Exception:
-        pass
+    # Lưu theo ngày (analysis/daily/<ngày>/) do archive_daily.py xử lý sau bước này.
     print("wrote", out)
     return out
 

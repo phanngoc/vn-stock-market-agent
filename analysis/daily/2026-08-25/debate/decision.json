@@ -1,0 +1,76 @@
+{
+  "as_of": "2026-08-25",
+  "generated_at": "2026-08-26 10:10",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Edge mô hình ~coin-flip (AUC 0,53-0,55), rổ ứng viên tập trung ngành cực đoan (4 BĐS + 1 Chứng khoán = một cược vĩ mô), VN-Index áp sát kháng cự mạnh 1.800 và khối ngoại chưa ổn định. Ưu tiên bảo toàn vốn: giữ tiền mặt cao, không giải ngân trước xác nhận.",
+  "watch_this_week": [
+    "VRE: đóng cửa vững trên MA50 (~25.700) kèm volume tăng = mốc xác nhận",
+    "VIC: nhịp chỉnh về nền 210-218k; ngày GDKHQ phát hành cổ phiếu trả cổ tức/thưởng (HOSE/VSD - chưa kiểm chứng)",
+    "VN-Index phản ứng tại kháng cự mạnh 1.800 (hiện ~1.768)",
+    "Khối ngoại mua/bán ròng - dòng vốn chưa ổn định",
+    "Mốc 21/9 FTSE hiệu lực đợt 1: cảnh giác kịch bản mua tin đồn bán sự thật",
+    "VRE: ngày GDKHQ cổ tức tiền mặt 10% (chưa kiểm chứng)"
+  ],
+  "picks": [
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "210000-218000",
+      "tp_vnd": 241704,
+      "sl_vnd": 212610,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Setup kỹ thuật đẹp nhất (trên MA50, vol>1) và catalyst FTSE Large Cap mạnh nhất, nhưng mua ở giá hiện tại là đuổi sau nhịp +60%/tháng và TP đụng kháng cự đỉnh cũ; chờ chỉnh về nền tích lũy thay vì đuổi.",
+      "invalidation": "Ngày GDKHQ phát hành cổ phiếu trả cổ tức/thưởng rơi trong khung 25 phiên (rủi ro pha loãng); mất nền MA50 (~213-215k) kèm volume bán lớn; VN-Index bị đẩy lùi mạnh khỏi 1.800."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "25700-26200",
+      "tp_vnd": 27540,
+      "sl_vnd": 24225,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Cơ bản vững nhất nhóm (Q1 lãi kỷ lục, FTSE Small Cap, cổ tức tiền mặt 10%) nhưng đang dưới MA50 với volume yếu (0,71); chỉ vào khi đóng cửa vững trên MA50 kèm volume tăng.",
+      "invalidation": "Bị đẩy ngược xuống dưới MA20 sau khi test MA50 thất bại; volume tiếp tục èo uột (<1) khi tiếp cận kháng cự; GDKHQ cổ tức rơi bất lợi trong khung."
+    },
+    {
+      "symbol": "VCI",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 24192,
+      "sl_vnd": 21280,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Chỉ là beta thuần vào catalyst FTSE với nền cơ bản xấu nhất (tự doanh lỗ, thu nhập toàn diện âm 432 tỷ, mới đạt 29% kế hoạch); margin kỷ lục là rủi ro hệ thống nếu index bị chặn ở 1.800 gây giải chấp. Dưới MA50, 2 cây quyết định bearish.",
+      "invalidation": "Đóng cửa vững trên MA50 kèm volume mạnh VÀ VN-Index vượt dứt khoát 1.800 với dòng ngoại mua ròng bền thì mới xem lại."
+    },
+    {
+      "symbol": "KDH",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 19656,
+      "sl_vnd": 17290,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Bắt dao rơi kinh điển: kỹ thuật tệ nhất (3,5/10, downtrend, MA50 dốc xuống chặn ngay TP), lợi nhuận Q2 ảo từ thoái vốn, bán nhà -85%, dòng tiền KD 6 tháng âm >1.480 tỷ, không có catalyst FTSE.",
+      "invalidation": "Đảo chiều xác nhận: vượt MA50 kèm volume thật VÀ cải thiện chất lượng doanh thu bán hàng (không phải doanh thu tài chính) thì mới xem lại."
+    },
+    {
+      "symbol": "PDR",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 13716,
+      "sl_vnd": 12065,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Volume yếu nhất bảng (0,43), còn xa dưới MA50, TP nằm trên MA50 (phải phá kháng cự mới tới đích); chi 7.666 tỷ thương vụ Lotte gây áp lực dòng tiền, bán BĐS chỉ ~2 tỷ, ngoài rổ FTSE - thiếu catalyst ngắn hạn.",
+      "invalidation": "Phá MA50 kèm volume tăng mạnh VÀ xuất hiện catalyst ngắn hạn/dòng tiền bán hàng cải thiện thì mới xem lại."
+    }
+  ]
+}

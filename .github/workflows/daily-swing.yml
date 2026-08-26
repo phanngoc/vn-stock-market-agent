@@ -64,7 +64,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add analysis/results analysis/daily
+          git add analysis/daily
           if git diff --cached --quiet; then
             echo "Không có thay đổi để commit (có thể pipeline chưa có dữ liệu phiên mới)."
             exit 0
@@ -81,7 +81,5 @@ jobs:
           name: daily-brief
           path: |
             analysis/daily/**
-            analysis/results/DAILY_DIGEST.md
-            analysis/results/debate/**
           if-no-files-found: ignore
           retention-days: 14

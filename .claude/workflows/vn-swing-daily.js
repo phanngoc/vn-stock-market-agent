@@ -32,7 +32,7 @@ phase('Pipeline')
 const run = await agent(
   `Bạn chạy pipeline phân tích swing TTCK Việt Nam rồi dựng whiteboard tranh luận.
 Chạy TUẦN TỰ bằng Bash (python = pyenv 3.12.4 đã có vnstock/torch/sklearn/xgboost):
-1. cd ${AN} && python run_analysis.py   (fetch dữ liệu thật -> features -> 5 mô hình + LSTM -> backtest OOS -> tín hiệu -> charts; tạo run dir mới, mirror sang results/, cập nhật runs/latest). Có thể mất vài phút — chờ xong.
+1. cd ${AN} && python run_analysis.py   (fetch dữ liệu thật -> features -> 5 mô hình + LSTM -> backtest OOS -> tín hiệu -> charts; tạo run dir mới, cập nhật runs/latest). Có thể mất vài phút — chờ xong.
 2. cd ${AN} && python debate/scaffold.py runs/latest   (tạo runs/latest/debate/{WHITEBOARD.md, notes/, DECISION.md}).
 3. Lấy đường dẫn tuyệt đối: python -c "import os;print(os.path.realpath('${AN}/runs/latest'))"
 4. Đọc runs/latest/signals_latest.csv (top-5 mã cột symbol) và summary.json (best_model, cột date lấy as_of).
@@ -102,12 +102,13 @@ await agent(
 // ---------- Phase 5: compile whiteboard + render single daily digest ----------
 phase('Digest')
 const digest = await agent(
-  `Gộp tranh luận và sinh BẢN TIN HẰNG NGÀY (1 file kết quả duy nhất) bằng Bash:
+  `Gộp tranh luận, sinh BẢN TIN và LƯU kết quả theo ngày bằng Bash:
 1. cd ${AN} && python debate/compile.py "${RUN_DIR}"   (gộp notes A→E vào WHITEBOARD.md).
-2. cd ${AN} && python daily_digest.py "${RUN_DIR}"      (đọc decision.json + signals -> ghi DAILY_DIGEST.md, mirror sang results/).
-3. Đọc và trả về TOÀN BỘ nội dung ${RUN_DIR}/DAILY_DIGEST.md (đúng nguyên văn markdown).
+2. cd ${AN} && python daily_digest.py "${RUN_DIR}"      (đọc decision.json + signals -> ghi DAILY_DIGEST.md).
+3. cd ${AN} && python archive_daily.py "${RUN_DIR}"     (copy TOÀN BỘ run vào analysis/daily/<ngày>/ + cập nhật LATEST_DIGEST.md).
+4. Đọc và trả về TOÀN BỘ nội dung ${RUN_DIR}/DAILY_DIGEST.md (đúng nguyên văn markdown).
 Nếu decision.json thiếu/không parse được, vẫn chạy daily_digest (nó tự fallback) và ghi chú rõ.`,
-  { label: 'compile+digest', phase: 'Digest', effort: 'low' },
+  { label: 'compile+digest+archive', phase: 'Digest', effort: 'low' },
 )
 
 return { run_dir: RUN_DIR, as_of: run.as_of, digest_path: `${RUN_DIR}/DAILY_DIGEST.md`, digest }
