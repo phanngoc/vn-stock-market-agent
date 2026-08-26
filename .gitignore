@@ -13,6 +13,10 @@ ov.conf
 # Analysis raw data cache (fetched via vnstock; regenerated on run)
 analysis/data_cache/
 
+# Per-run logs (kept locally for tracking); one example run is force-committed
+analysis/runs/
+analysis/runs/latest
+
 # OS / editor
 .DS_Store
 .idea/

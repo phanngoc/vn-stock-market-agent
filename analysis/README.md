@@ -30,6 +30,29 @@ python plot_signals.py   # vẽ biểu đồ NẾN có điểm MUA + ranh giới
 ```
 Biểu đồ nến ghi vào [`results/charts/`](results/charts/): `overview_top6.png`, `<TICKER>_setup.png` (setup từng mã), `<TICKER>_history.png` (các điểm vào backtest, ▲ xanh=thắng/đỏ=thua).
 
+## Log theo mỗi lần chạy (tracking)
+
+Mỗi lần `python run_analysis.py` tạo **một folder riêng** để tracking:
+```
+analysis/runs/log_run_<YYYY-MM-DD_HH-MM-SS>/   # REPORT.md, signals_latest.csv, *.csv, charts/, debate/
+analysis/runs/latest -> log_run_...            # symlink tới run mới nhất
+analysis/results/                              # mirror của run mới nhất (giữ link ổn định)
+```
+`analysis/runs/` bị gitignore (log cục bộ); một run được commit làm ví dụ. Đã đóng gói thành **Claude skill** `.claude/skills/vn-swing-analysis` để agent sau tự biết cách chạy.
+
+## Hội đồng đầu tư đa tác nhân (debate)
+
+Skill `.claude/skills/vn-swing-debate`: 5 agent tranh luận qua **whiteboard .md** (bảng chung, ghi rõ tên agent) rồi ra quyết định:
+
+- 🅰️ **A — Kỹ thuật** + 🅱️ **B — News** (bằng chứng, song song) → 🐂 **C — Bò** → 🐻 **D — Gấu** (phản biện C) → 🎩 **E — Giám đốc Chiến lược** (quyết định cuối).
+
+```bash
+python debate/scaffold.py                       # tạo runs/latest/debate/{WHITEBOARD.md, notes/, DECISION.md}
+# orchestrator (agent chính) chạy A/B/C/D/E theo .claude/skills/vn-swing-debate/SKILL.md
+python debate/assemble.py <WHITEBOARD.md> "PHIÊN 1" <notes/A_technical.md>   # gộp note lên board
+```
+Kết quả: `debate/WHITEBOARD.md` (toàn bộ tranh luận) + `debate/DECISION.md` (quyết định của Giám đốc Chiến lược). Ví dụ thật xem trong run được commit. **KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ.**
+
 ## Cấu trúc code (`vn_swing/`)
 
 | Module | Vai trò |

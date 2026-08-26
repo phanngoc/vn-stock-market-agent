@@ -13,7 +13,9 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 import warnings
+from datetime import datetime
 
 import numpy as np
 import pandas as pd
@@ -28,10 +30,34 @@ from vn_swing.dataset import build_panel, latest_unlabeled, split_train_test  # 
 from vn_swing.features import FEATURE_COLS  # noqa: E402
 from vn_swing.lstm import train_lstm  # noqa: E402
 from vn_swing.models import build_models  # noqa: E402
+import plot_signals  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-RES = os.path.join(HERE, "results")
+RES = os.path.join(HERE, "results")       # latest-snapshot mirror (keeps stable README links)
+RUNS = os.path.join(HERE, "runs")         # per-run archive: runs/log_run_<ts>/
 os.makedirs(RES, exist_ok=True)
+os.makedirs(RUNS, exist_ok=True)
+
+
+def _make_run_dir():
+    ts = datetime.now().strftime("log_run_%Y-%m-%d_%H-%M-%S")
+    d = os.path.join(RUNS, ts)
+    os.makedirs(os.path.join(d, "charts"), exist_ok=True)
+    return d, ts
+
+
+def _publish_latest(run_dir, ts):
+    """Mirror the run into results/ (latest snapshot) and update runs/latest symlink."""
+    if os.path.isdir(RES):
+        shutil.rmtree(RES)
+    shutil.copytree(run_dir, RES)
+    link = os.path.join(RUNS, "latest")
+    try:
+        if os.path.islink(link) or os.path.exists(link):
+            os.remove(link)
+        os.symlink(ts, link)
+    except OSError:
+        pass
 
 # ---- config ----
 START, END = "2018-01-01", "2026-08-25"
@@ -47,6 +73,8 @@ def fmt_vnd(x_thousand):
 
 
 def main():
+    RUN_DIR, RUN_TS = _make_run_dir()
+    print("== Run dir:", RUN_DIR, "==")
     print("== 1. Build panel (real data via vnstock/VCI) ==")
     panel = build_panel(START, END, tp=TP, sl=SL, horizon=HORIZON)
     train, test = split_train_test(panel, TEST_START)
@@ -98,7 +126,7 @@ def main():
         lstm_latest = None
 
     metrics = pd.DataFrame(rows).sort_values("avg_net_ret", ascending=False)
-    metrics.to_csv(os.path.join(RES, "model_metrics.csv"), index=False)
+    metrics.to_csv(os.path.join(RUN_DIR, "model_metrics.csv"), index=False)
 
     # buy-and-hold benchmark over the test window (equal-weight universe)
     bh = _buy_hold_benchmark(test)
@@ -111,18 +139,27 @@ def main():
     # save best model's backtested trades + equity curve
     best_bt = per_model[best_name]["bt"]
     if len(best_bt.get("trades", [])):
-        best_bt["trades"].to_csv(os.path.join(RES, f"backtest_trades_{best_name}.csv"), index=False)
-    _plot_equity(per_model, best_name, bh, RES)
-    _plot_model_comparison(metrics, RES)
-    _plot_feature_importance(models, RES)
+        best_bt["trades"].to_csv(os.path.join(RUN_DIR, f"backtest_trades_{best_name}.csv"), index=False)
+    _plot_equity(per_model, best_name, bh, RUN_DIR)
+    _plot_model_comparison(metrics, RUN_DIR)
+    _plot_feature_importance(models, RUN_DIR)
 
     print("\n== 4. Current swing signals (retrained on ALL labeled data) ==")
     signals = _current_signals(panel, models, lstm_latest)
-    signals.to_csv(os.path.join(RES, "signals_latest.csv"), index=False)
+    signals.to_csv(os.path.join(RUN_DIR, "signals_latest.csv"), index=False)
     print(signals.head(12).to_string(index=False))
 
-    _write_report(metrics, per_model, best_name, bh, signals, train, test)
-    print("\nWrote results to", RES)
+    _write_report(metrics, per_model, best_name, bh, signals, train, test, RUN_DIR)
+
+    print("\n== 5. Candlestick charts ==")
+    try:
+        plot_signals.generate(RUN_DIR)
+    except Exception as e:  # noqa: BLE001
+        print("  charts skipped:", e)
+
+    _publish_latest(RUN_DIR, RUN_TS)
+    print("\nRun dir :", RUN_DIR)
+    print("Latest  :", RES, "(mirror)")
 
 
 def _buy_hold_benchmark(test: pd.DataFrame) -> dict:
@@ -212,9 +249,7 @@ def _plot_feature_importance(models, res):
             return
 
 
-def _write_report(metrics, per_model, best_name, bh, signals, train, test):
-    from datetime import date
-
+def _write_report(metrics, per_model, best_name, bh, signals, train, test, out_dir):
     top = signals.head(10)
     horizon_cal = int(round(HORIZON * 7 / 5))
     asof = signals["date"].max().date()      # latest available bar -> live signals as-of
@@ -311,11 +346,11 @@ def _write_report(metrics, per_model, best_name, bh, signals, train, test):
     md.append("- **Đây là công cụ nghiên cứu/giáo dục.** Quyết định đầu tư là của bạn; cân nhắc tư vấn chuyên môn được cấp phép.\n")
     md.append(f"*Chạy lại: `cd analysis && python run_analysis.py`. Tạo lúc dữ liệu {end_date}.*")
 
-    with open(os.path.join(RES, "REPORT.md"), "w") as f:
+    with open(os.path.join(out_dir, "REPORT.md"), "w") as f:
         f.write("\n".join(md) + "\n")
 
     # small machine-readable summary
-    with open(os.path.join(RES, "summary.json"), "w") as f:
+    with open(os.path.join(out_dir, "summary.json"), "w") as f:
         json.dump({"best_model": best_name, "base_win_rate": base_wr,
                    "buy_hold_avg": bh["avg_symbol_return"],
                    "metrics": metrics.to_dict(orient="records"),
