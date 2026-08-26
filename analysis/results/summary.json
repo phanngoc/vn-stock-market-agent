@@ -1,134 +1,134 @@
 {
-  "best_model": "LSTM",
+  "best_model": "LogReg",
   "base_win_rate": 0.352,
-  "buy_hold_avg": 0.3532,
+  "buy_hold_avg": 0.302,
   "metrics": [
     {
-      "model": "LSTM",
-      "auc": 0.5327,
-      "test_acc": 0.6049,
-      "signal_precision": 0.3913,
-      "n_trades": 508,
-      "win_rate": 0.4055,
-      "avg_net_ret": 0.004,
-      "median_net_ret": -0.053,
-      "total_pnl_fixed": 2.0311,
-      "sharpe_per_trade": 0.064,
-      "max_dd_fixed": -1.6288,
-      "expectancy_R": 0.08,
-      "avg_hold_days": 8.9
-    },
-    {
       "model": "LogReg",
-      "auc": 0.5549,
+      "auc": 0.5546,
       "test_acc": 0.6107,
-      "signal_precision": 0.4057,
-      "n_trades": 638,
-      "win_rate": 0.4091,
-      "avg_net_ret": 0.002,
+      "signal_precision": 0.407,
+      "n_trades": 640,
+      "win_rate": 0.4141,
+      "avg_net_ret": 0.0027,
       "median_net_ret": -0.053,
-      "total_pnl_fixed": 1.2595,
-      "sharpe_per_trade": 0.031,
-      "max_dd_fixed": -3.1367,
-      "expectancy_R": 0.039,
+      "total_pnl_fixed": 1.7346,
+      "sharpe_per_trade": 0.043,
+      "max_dd_fixed": -2.6499,
+      "expectancy_R": 0.054,
       "avg_hold_days": 6.5
     },
     {
       "model": "XGBoost",
-      "auc": 0.5354,
-      "test_acc": 0.5994,
-      "signal_precision": 0.3775,
-      "n_trades": 653,
-      "win_rate": 0.3936,
-      "avg_net_ret": 0.0003,
+      "auc": 0.5383,
+      "test_acc": 0.6036,
+      "signal_precision": 0.3892,
+      "n_trades": 650,
+      "win_rate": 0.4062,
+      "avg_net_ret": 0.0021,
       "median_net_ret": -0.053,
-      "total_pnl_fixed": 0.1849,
-      "sharpe_per_trade": 0.004,
-      "max_dd_fixed": -2.8941,
-      "expectancy_R": 0.006,
+      "total_pnl_fixed": 1.3494,
+      "sharpe_per_trade": 0.033,
+      "max_dd_fixed": -2.0816,
+      "expectancy_R": 0.042,
       "avg_hold_days": 6.7
     },
     {
-      "model": "GradBoost",
-      "auc": 0.535,
-      "test_acc": 0.5917,
+      "model": "LSTM",
+      "auc": 0.5198,
+      "test_acc": 0.5913,
       "signal_precision": 0.3583,
-      "n_trades": 611,
-      "win_rate": 0.3846,
-      "avg_net_ret": -0.0016,
+      "n_trades": 513,
+      "win_rate": 0.3918,
+      "avg_net_ret": 0.0016,
       "median_net_ret": -0.053,
-      "total_pnl_fixed": -0.9891,
-      "sharpe_per_trade": -0.026,
-      "max_dd_fixed": -3.9104,
-      "expectancy_R": -0.032,
-      "avg_hold_days": 6.4
+      "total_pnl_fixed": 0.7963,
+      "sharpe_per_trade": 0.025,
+      "max_dd_fixed": -3.1411,
+      "expectancy_R": 0.031,
+      "avg_hold_days": 8.4
     },
     {
       "model": "RandomForest",
-      "auc": 0.5374,
-      "test_acc": 0.6019,
-      "signal_precision": 0.3837,
-      "n_trades": 607,
-      "win_rate": 0.3822,
-      "avg_net_ret": -0.0022,
+      "auc": 0.5424,
+      "test_acc": 0.6049,
+      "signal_precision": 0.3923,
+      "n_trades": 612,
+      "win_rate": 0.3971,
+      "avg_net_ret": -0.0005,
       "median_net_ret": -0.053,
-      "total_pnl_fixed": -1.345,
-      "sharpe_per_trade": -0.035,
-      "max_dd_fixed": -4.7627,
-      "expectancy_R": -0.044,
-      "avg_hold_days": 6.0
+      "total_pnl_fixed": -0.2761,
+      "sharpe_per_trade": -0.007,
+      "max_dd_fixed": -3.9008,
+      "expectancy_R": -0.009,
+      "avg_hold_days": 5.9
+    },
+    {
+      "model": "GradBoost",
+      "auc": 0.54,
+      "test_acc": 0.5932,
+      "signal_precision": 0.3631,
+      "n_trades": 645,
+      "win_rate": 0.3829,
+      "avg_net_ret": -0.0015,
+      "median_net_ret": -0.053,
+      "total_pnl_fixed": -0.9963,
+      "sharpe_per_trade": -0.025,
+      "max_dd_fixed": -4.3565,
+      "expectancy_R": -0.031,
+      "avg_hold_days": 6.4
     }
   ],
   "top_signals": [
     {
-      "symbol": "VRE",
-      "score": 0.5949,
-      "price_vnd": 25500
-    },
-    {
-      "symbol": "VIC",
-      "score": 0.587,
-      "price_vnd": 223800
-    },
-    {
       "symbol": "KDH",
-      "score": 0.5586,
+      "score": 0.5924,
       "price_vnd": 18200
     },
     {
+      "symbol": "PNJ",
+      "score": 0.5763,
+      "price_vnd": 42500
+    },
+    {
       "symbol": "PDR",
-      "score": 0.5435,
-      "price_vnd": 12700
+      "score": 0.5682,
+      "price_vnd": 12550
     },
     {
-      "symbol": "VCI",
-      "score": 0.5393,
-      "price_vnd": 22400
+      "symbol": "VIC",
+      "score": 0.5631,
+      "price_vnd": 223000
     },
     {
-      "symbol": "DXG",
-      "score": 0.5347,
-      "price_vnd": 11750
-    },
-    {
-      "symbol": "PLX",
-      "score": 0.5058,
-      "price_vnd": 37500
-    },
-    {
-      "symbol": "GAS",
-      "score": 0.505,
-      "price_vnd": 82800
-    },
-    {
-      "symbol": "GVR",
-      "score": 0.5016,
-      "price_vnd": 31850
+      "symbol": "VRE",
+      "score": 0.545,
+      "price_vnd": 25250
     },
     {
       "symbol": "DGC",
-      "score": 0.4989,
-      "price_vnd": 44250
+      "score": 0.5391,
+      "price_vnd": 44300
+    },
+    {
+      "symbol": "VCI",
+      "score": 0.5173,
+      "price_vnd": 22300
+    },
+    {
+      "symbol": "GVR",
+      "score": 0.511,
+      "price_vnd": 33350
+    },
+    {
+      "symbol": "PLX",
+      "score": 0.5081,
+      "price_vnd": 37700
+    },
+    {
+      "symbol": "GAS",
+      "score": 0.504,
+      "price_vnd": 84500
     }
   ]
 }
