@@ -65,8 +65,10 @@ ARCH="$AN/daily/$AS_OF"
 mkdir -p "$ARCH"
 cp "$RUN_DIR/DAILY_DIGEST.md" "$ARCH/DAILY_DIGEST.md" 2>/dev/null || true
 cp "$RUN_DIR/debate/DECISION.md" "$ARCH/DECISION.md" 2>/dev/null || true
+cp "$RUN_DIR/debate/WHITEBOARD.md" "$ARCH/WHITEBOARD.md" 2>/dev/null || true   # toàn bộ tranh luận A→E
 cp "$RUN_DIR/debate/decision.json" "$ARCH/decision.json" 2>/dev/null || true
 cp "$RUN_DIR/signals_latest.csv" "$ARCH/signals_latest.csv" 2>/dev/null || true
+cp -r "$RUN_DIR/debate/notes" "$ARCH/notes" 2>/dev/null || true                # note riêng từng agent
 # con trỏ ổn định tới bản mới nhất
 cp "$RUN_DIR/DAILY_DIGEST.md" "$AN/daily/LATEST_DIGEST.md" 2>/dev/null || true
 
