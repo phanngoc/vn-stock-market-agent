@@ -44,8 +44,10 @@ analysis/runs/log_run_<ts>/
 Nếu không gọi Workflow: (1) chạy skill `vn-swing-analysis`; (2) chạy skill `vn-swing-debate` (A‖B → C → D → E) — nhưng cho C/D/E **đọc thẳng `debate/notes/*.md`** thay vì WHITEBOARD (whiteboard chỉ gộp ở cuối); (3) `cd analysis && python debate/compile.py runs/latest && python daily_digest.py runs/latest`.
 
 ## Chạy hằng ngày / tự động
-- Thủ công mỗi sáng: gọi lại Workflow như trên (dữ liệu cập nhật phiên mới nhất).
-- Muốn tự động theo lịch: dùng skill `schedule`/`loop` để gọi workflow này vào 08:30 các ngày giao dịch (T2–T6). Chỉ chạy khi có phiên mới; luôn kèm disclaimer.
+- **Thủ công (tương tác)**: gọi lại Workflow như trên — có giao diện `/workflows` theo dõi.
+- **Tự động (không tương tác)**: chạy `analysis/scripts/run_daily_ci.sh` — orchestrator path-relative dùng chung cho cả cron và CI. Nó KHÔNG dùng Workflow tool: pipeline (python) → 5 agent qua `claude -p --dangerously-skip-permissions` → compile → `daily_digest.py`. Degrade gracefully (LLM lỗi vẫn ra bản quant-only). Ghi kèm bản lịch sử vào `analysis/daily/<ngày>/` + `analysis/daily/LATEST_DIGEST.md`.
+  - **GitHub Actions**: `.github/workflows/daily-swing.yml` (01:30 UTC = 08:30 VN, T2–T6, hoặc chạy tay). Cần secret **`ANTHROPIC_API_KEY`**; tuỳ chọn repo var `CLAUDE_MODEL`. Tự commit `analysis/results` + `analysis/daily` về repo.
+  - **Cron cục bộ (macOS)**: `analysis/scripts/cron_daily_swing.sh` (gọi `run_daily_ci.sh`, log ở `analysis/runs/cron_logs/`). Cài: thêm dòng crontab `30 8 * * 1-5 .../cron_daily_swing.sh`.
 
 ## Nguyên tắc (áp cho mọi agent)
 KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ · không bịa số/tin (B phải có link) · tôn trọng edge yếu → ưu tiên bảo toàn vốn, bò≈gấu thì "THEO DÕI" · nhiều mã dưới MA50 = rủi ro bắt đáy.
