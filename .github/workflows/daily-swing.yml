@@ -21,6 +21,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 40
     env:
+      # Ưu tiên OAuth token (dùng gói đăng ký Claude, không tốn API credit).
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      # Dự phòng: nếu chỉ có API key thì set secret này thay thế.
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       CLAUDE_MODEL: ${{ vars.CLAUDE_MODEL }}   # tuỳ chọn: đặt biến repo CLAUDE_MODEL để chọn model rẻ hơn
     steps:
