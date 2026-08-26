@@ -60,7 +60,10 @@ def _publish_latest(run_dir, ts):
         pass
 
 # ---- config ----
-START, END = "2018-01-01", "2026-08-25"
+# END = hôm nay (động) để bản tin hằng ngày lấy giá tới phiên gần nhất.
+# Đặt biến môi trường VN_END=YYYY-MM-DD để ghim ngày (tái lập kết quả cũ).
+START = "2018-01-01"
+END = os.environ.get("VN_END") or datetime.now().strftime("%Y-%m-%d")
 TEST_START = "2025-01-01"          # out-of-sample period
 TP, SL, HORIZON = 0.08, 0.05, 25   # +8% / -5% / 25 trading days (~5 weeks)
 COST = 0.003                        # round-trip fees+slippage

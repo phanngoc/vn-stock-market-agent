@@ -16,6 +16,10 @@ CLAUDE_FLAGS="--dangerously-skip-permissions"
 
 cd "$AN"
 
+# Freshness + throttle cho VCI (Guest 20 req/min): làm mới cache tăng dần + giãn nhịp fetch.
+export VN_REFRESH="${VN_REFRESH:-1}"
+export VN_FETCH_DELAY="${VN_FETCH_DELAY:-4}"
+
 # ---- 1. Pipeline + scaffold (BẮT BUỘC thành công; lỗi -> abort, không commit) ----
 set -e
 echo "== [1/6] pipeline: run_analysis.py =="
