@@ -1,0 +1,75 @@
+{
+  "as_of": "2026-08-27",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Mô hình có edge yếu (AUC ~0,53-0,55) và 4/5 mã ứng viên cùng ngành RealEstate; hai kèo bò khá nhất (VIC, VRE) dùng chung catalyst FTSE 21/09/2026 nên không phải hai vị thế độc lập thực sự — ưu tiên bảo toàn vốn, không MUA bừa.",
+  "watch_this_week": [
+    "21/09/2026: FTSE Russell chính thức nâng hạng, VIC/VRE trong rổ 27 mã - theo dõi phản ứng giá quanh mốc này (rủi ro sell-the-news vì tin đã công bố từ 21/08/2026) và tình trạng room ngoại thực tế",
+    "VIC: vol_ratio có cải thiện từ mức 0.23 hiện tại không; diễn biến nợ ngắn hạn đáo hạn 2026 (số liệu chưa kiểm chứng đầy đủ)",
+    "VRE: giá có giữ vững trên MA50 (~25-26k) thêm vài phiên với volume duy trì không; ngày GDKHQ cổ tức tiền mặt 10% (chưa kiểm chứng ngày cụ thể)",
+    "PNJ: diễn biến tiếp theo vụ điều tra PNJ-LAB, khả năng phát sinh thêm dự phòng",
+    "PDR: tiến độ đợt chào bán ~199.56 triệu cổ phiếu chờ UBCKNN phê duyệt",
+    "KDH: có xuất hiện tín hiệu tạo đáy kỹ thuật rõ ràng không (phân kỳ RSI, volume tăng)"
+  ],
+  "picks": [
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "228000-233000",
+      "tp_vnd": 250560,
+      "sl_vnd": 220400,
+      "time_stop_days": 25,
+      "size_pct": "0-2%",
+      "thesis": "Uptrend kỹ thuật đẹp nhất nhóm + catalyst FTSE nâng hạng cụ thể (hiệu lực 21/09/2026), nhưng volume xác nhận yếu (vol_ratio 0.23) và giá đã +60%/tháng trong khi tin đã công bố từ 21/08 tạo rủi ro sell-the-news đáng kể.",
+      "invalidation": "vol_ratio không cải thiện trong 3-5 phiên tới trước 21/09; giá thủng vùng MA50 (~220k) kèm khối lượng; xuất hiện tin xấu cụ thể về thanh khoản/tái cấp vốn nợ ngắn hạn."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "25800-26500",
+      "tp_vnd": 28458,
+      "sl_vnd": 25032,
+      "time_stop_days": 25,
+      "size_pct": "0-3%",
+      "thesis": "Volume xác nhận tốt nhất nhóm (0.655) đi kèm cú cắt lên MA50, cùng catalyst FTSE và không có rủi ro tiêu cực nổi bật trong tin tức, nhưng đây mới là giai đoạn đầu đảo chiều sau downtrend sâu (-42%), chưa có track record, và TP nằm trong vùng kháng cự cũ 28-30k.",
+      "invalidation": "giá đóng cửa thủng lại xuống dưới MA50 kèm volume; vol_ratio tụt về mức thấp như các mã khác; catalyst FTSE hoặc cổ tức Q3/2026 bị trì hoãn."
+    },
+    {
+      "symbol": "PDR",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 13608,
+      "sl_vnd": 11970,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Rủi ro pha loãng cụ thể đã công bố (chào bán 5:1 giá 10.000đ, dưới thị giá 12.600đ) cộng kỹ thuật vẫn dưới MA50 với volume yếu và chất lượng lợi nhuận Q1 thấp (lãi chủ yếu từ chuyển nhượng vốn phi cốt lõi).",
+      "invalidation": "đợt chào bán hoàn tất với mức pha loãng đã phản ánh vào giá và giá bứt phá rõ ràng lên trên MA50 kèm volume xác nhận."
+    },
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 46062,
+      "sl_vnd": 40518,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Tin xấu đã xảy ra và đã ngấm vào KQKD thực (lỗ sau thuế Q2/2026 ~283 tỷ do bê bối PNJ-LAB), kỹ thuật yếu nhất nhóm (dưới MA50 đang giảm, volume thấp nhất, TP trùng kháng cự MA50).",
+      "invalidation": "kết luận điều tra chính thức khép lại rủi ro pháp lý, biên lợi nhuận phục hồi rõ trong 1-2 quý tới, và giá vượt lại lên trên MA50 kèm volume."
+    },
+    {
+      "symbol": "KDH",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 19764,
+      "sl_vnd": 17385,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Downtrend liên tục chưa gãy, giá dưới cả MA20/MA50, RSI trung tính (không phân kỳ tăng), khối lượng èo uột - setup gần nhất với bắt dao rơi trong nhóm dù cơ bản doanh nghiệp tốt (sạch nợ, dự án bán chạy).",
+      "invalidation": "xuất hiện tín hiệu tạo đáy kỹ thuật rõ ràng (phân kỳ tăng RSI, volume tăng đột biến, giá vượt trở lại MA20/MA50)."
+    }
+  ]
+}
