@@ -72,7 +72,18 @@ jobs:
           DATE="$(date -u +%Y-%m-%d)"
           git commit -m "daily-swing: bản tin ${DATE} [skip ci]" \
                      -m "Tự động sinh bởi .github/workflows/daily-swing.yml. KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ."
-          git push
+          # Push có retry + rebase: tránh fail khi remote main đã tiến lên (race với commit khác).
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "Push thành công (lần $attempt)."
+              exit 0
+            fi
+            echo "Push bị từ chối (lần $attempt) — pull --rebase rồi thử lại..."
+            git pull --rebase origin main || { echo "Rebase lỗi"; exit 1; }
+            sleep 3
+          done
+          echo "Push thất bại sau 5 lần thử."
+          exit 1
 
       - name: Upload artifacts (phòng khi push lỗi)
         if: always()
