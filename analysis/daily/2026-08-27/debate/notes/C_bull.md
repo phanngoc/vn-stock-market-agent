@@ -1,58 +1,54 @@
-### 🐂 Agent C — Tổng hợp hướng BÒ · 2026-08-27 03:35
+### 🐂 Agent C — Tổng hợp hướng BÒ · 2026-08-28 02:25
 
-*Lưu ý mở đầu: mô hình dự báo có edge yếu (AUC ~0.53–0.55, score cao nhất trong nhóm chỉ 0.59). Luận điểm bò dưới đây KHÔNG dựa vào score mô hình để thuyết phục, mà đứng trên catalyst tin tức (Agent B) + xác nhận kỹ thuật (Agent A). Nơi nào không đủ hai chân này, tôi không xếp vào "kèo bò".*
+*Phạm vi: chọn từ 5 mã ứng viên top-score (VIC, PNJ, PDR, KDH, VRE) đã được Agent A (kỹ thuật) và Agent B (news/cơ bản) phân tích. Chỉ dùng lại bằng chứng đã có trên whiteboard, không thêm dữ kiện mới. Mô hình nền có edge yếu (AUC ~0.53–0.55) — luận điểm dưới đây không dựa vào score một mình mà bắt buộc phải có xác nhận song song từ kỹ thuật + catalyst tin tức.*
 
 ---
 
-## 1) VIC — Tập đoàn Vingroup
+## 1) VIC — Vingroup
 
-**Luận điểm mua:**
-Theo Agent A, VIC là "uptrend rõ nhất nhóm" — giá nằm trên cả MA20 và MA50, MA50 đang dốc lên rõ, đã đi từ đáy ~125k (tháng 3) lên trên 240k, hiện điều chỉnh nhẹ về 232k (điểm KT 7/10 — cao nhất nhóm 5 mã). Theo Agent B, đây là mã có catalyst cụ thể và gần hạn nhất trong nhóm: VIC nằm trong danh sách 27 mã được FTSE Russell đưa vào rổ FTSE GEIS thị trường mới nổi, hiệu lực chính thức 21/09/2026 — SSI Research ước dòng vốn thụ động 2,2–4,3 tỷ USD toàn thị trường, Vietcap ước riêng ~78.900 tỷ đồng chảy vào TTCK Việt Nam. Đây là nâng hạng thị trường, một sự kiện hiếm và có cơ chế dòng vốn thụ động rõ ràng, không phải tin đồn.
+**Luận điểm mua**
+Theo Agent A, VIC là setup kỹ thuật đẹp nhất nhóm (**7/10**, cao nhất trong 5 mã): giá đã breakout vượt vùng đỉnh cũ ~225–230k bằng một nến gap lớn, có khối lượng xác nhận mạnh nhất nhóm (vol_ratio 1.49). Đây không phải hồi kỹ thuật đơn thuần mà là xác nhận xu hướng bằng dòng tiền thật. Số liệu signals_latest.csv cũng cho VIC điểm mô hình cao nhất trong toàn bộ 38 mã quét được (score 0.6478).
 
-**Catalyst:**
-- FTSE nâng hạng hiệu lực 21/09/2026 (Agent B) — cách entry hiện tại khoảng 3-4 tuần, nằm gọn trong time-stop 25 ngày của mô hình.
-- Kế hoạch kinh doanh 2026: doanh thu mục tiêu 450.000 tỷ (+36% svck) (Agent B).
-- Đã phát hành thành công 250 triệu USD trái phiếu hoán đổi để kéo dài kỳ hạn nợ — công ty đang chủ động quản trị thanh khoản, không bị động (Agent B).
+**Catalyst**
+Theo Agent B, ngày 27/8/2026 VIC tăng 2,6% lên 236.000đ, lập đỉnh lịch sử, vốn hóa vượt 1,8 triệu tỷ đồng. Đây là catalyst cơ bản có thật và rất mạnh: doanh thu thuần hợp nhất 6 tháng đạt 222.300 tỷ đồng (+73% YoY), LNST gấp 4,5 lần cùng kỳ. Việc giá phá đỉnh lịch sử ngay sau kết quả kinh doanh bùng nổ cho thấy đà tăng có nền tảng cơ bản đi kèm, không phải thuần đầu cơ kỹ thuật.
 
-**Kịch bản giá tới TP (250.560đ, +8% từ entry ~232.000đ):**
-Suy luận (không phải dữ kiện whiteboard): nếu dòng tiền đón đầu sự kiện FTSE (hiệu lực 21/09) tiếp tục vào trước ngày cơ cấu — như đã từng đẩy giá +60% trong 1 tháng qua (Agent B) — thì việc phá đỉnh cũ 242k để chạm TP 250.560đ là kịch bản hợp lý về mặt kỹ thuật, vì xu hướng MA50 vẫn đang dốc lên (Agent A) và giá mới chỉ điều chỉnh nhẹ chứ chưa gãy trend.
+*Suy luận (chưa có trên whiteboard, chỉ là logic thời gian):* mốc nâng hạng FTSE Russell dự kiến 21/9/2026 (theo Agent B) rơi vào trong khung time-stop 25 ngày kể từ 27/8 (~21/9). Nếu VIC nằm trong nhóm cổ phiếu hưởng lợi dòng vốn ETF ngoại như B nêu, đây là một catalyst tiềm năng bổ sung nằm gọn trong thời gian nắm giữ của tín hiệu — dù B đã ghi rõ danh sách 30 mã cụ thể "chưa kiểm chứng", nên đây chỉ là optionality, không phải catalyst chắc chắn.
 
-**Rủi ro & vì sao chịu được:**
-- RSI 66,6 cận vùng quá mua, volume xác nhận yếu (vol_ratio 0.23) (Agent A) — rủi ro mua đuổi. Tuy nhiên SL 220.400đ được đặt trùng vùng MA50/hỗ trợ gần (Agent A) — về mặt kỹ thuật đây là vùng phòng thủ hợp lý, không phải SL tùy tiện.
-- Nợ tài chính tăng mạnh, 63% là nợ ngắn hạn đáo hạn 2026 (Agent B, số liệu giữa nguồn chưa đồng nhất — Agent B ghi rõ "chưa kiểm chứng đầy đủ"). Đây là rủi ro cấu trúc dài hạn hơn là rủi ro biến động giá trong khung thời gian time-stop 25 ngày của kèo swing này; công ty "chưa từng chậm trả nợ và có lịch sử trả trước hạn" (Agent B).
-- Rủi ro "tin đã ra giá đã chạy" (sell-the-news) khi FTSE chính thức có hiệu lực — R:R của setup (TP +8% / SL ~5% quanh vùng MA50) là cơ chế quản trị rủi ro cho đúng kịch bản này, không phụ thuộc vào việc dự đoán chính xác phản ứng giá quanh ngày 21/09.
+**Kịch bản giá tới TP (+8%)**
+Giá 236.000 → TP 254.880đ, SL 224.200đ (theo signals_latest.csv), time-stop 25 ngày. R:R ước tính ≈ (254.880−236.000)/(236.000−224.200) ≈ 1,6:1. Với khối lượng xác nhận mạnh nhất nhóm đi cùng breakout, xác suất giá tiếp tục xu hướng trước khi chạm SL cao hơn so với các mã có vol_ratio thấp trong nhóm.
+
+**Rủi ro & vì sao chịu được**
+Rủi ro rõ nhất (theo A): RSI 68,74 cận vùng quá mua, nến vào lệnh đã giãn xa MA20 sau gap lớn → rủi ro mua đuổi, có thể điều chỉnh lấp gap ngắn hạn. Theo B: giá đã lập đỉnh lịch sử nên một phần tin tốt có thể đã phản ánh vào giá, và nhóm Vingroup (VIC/VHM/VRE) có rủi ro chi phối/tương quan cao với biến động chỉ số (một phiên riêng lẻ đã kéo VN-Index giảm gần 39 điểm).
+- Về RSI: 68,74 vẫn **chưa** chạm ngưỡng quá mua kỹ thuật kinh điển (70), và đi kèm vol_ratio cao nhất nhóm — tổ hợp này gần với xác nhận dòng tiền hơn là dấu hiệu kiệt sức.
+- Về "giá đã phản ánh hết tin tốt": catalyst đã xảy ra là KQKD, nhưng khung thời gian nắm giữ (25 ngày) còn overlap với sự kiện nâng hạng FTSE — nếu đúng, đây là biên độ có thể chưa phản ánh hết vào giá hiện tại.
+- SL −5% và time-stop 25 ngày giới hạn rõ mức lỗ tối đa và thời gian chịu rủi ro nếu breakout thất bại.
 
 ---
 
 ## 2) VRE — Vincom Retail
 
-**Luận điểm mua:**
-Theo Agent A, VRE có "tín hiệu volume ủng hộ tốt nhất" nhóm: vol_ratio 0.655 — cao vượt trội so với 4 mã còn lại — đi kèm cú cắt lên trên MA50 sau downtrend Apr–Jul (đỉnh 36k → đáy ~21k). Đây là xác nhận dòng tiền thực đang vào, không chỉ là hồi kỹ thuật suông. Theo Agent B, VRE là mã được xếp hạng tin tức mạnh nhất nhóm 5 mã ("catalyst FTSE cụ thể + KQKD/cổ tức ổn định, không có rủi ro tiêu cực nổi bật trong tin tìm được").
+**Luận điểm mua**
+Theo Agent A, VRE là ứng viên đáng chú ý thứ hai (**6,5/10**): giá vừa cắt lên lại MA20/MA50 sau downtrend từ đỉnh tháng 4 (~36k → đáy ~24k), có khối lượng ủng hộ (vol_ratio 1,37) và RSI 58,0 — còn nhiều dư địa trước vùng quá mua hơn hẳn VIC. Đây là điểm mạnh riêng của VRE so với VIC: rủi ro mua đuổi thấp hơn.
 
-**Catalyst:**
-- Cùng nhóm VIC, VRE nằm trong danh sách 27 mã được FTSE đưa vào rổ mới nổi, hiệu lực 21/09/2026 (Agent B) — nhưng khác VIC, giá VRE *chưa* tăng nóng trước (VRE vẫn đang ở giai đoạn đầu đảo chiều theo Agent A), nên dư địa phản ứng với dòng vốn ngoại có thể còn nguyên.
-- ĐHĐCĐ 2026: kế hoạch lãi sau thuế 5.375 tỷ (+15% svck) (Agent B); Q1/2026 đã đạt ~30% kế hoạch lợi nhuận năm, khách đến TTTM +13-15%, doanh số khách thuê +23-25% svck (Agent B) — tăng trưởng thực đang xác nhận kế hoạch, không chỉ là mục tiêu trên giấy.
-- Cổ tức tiền mặt 10% dự kiến chi trả Q3/2026 (ngày GDKHQ chưa kiểm chứng — Agent B).
-- Mô hình "Vincom Collection" hợp tác Vinhomes theo cơ chế nhận hoa hồng thay vì đầu tư vốn trực tiếp — giảm áp lực vốn (Agent B).
+**Catalyst**
+Theo Agent B, VRE có hai catalyst cơ bản thật, độc lập với tín hiệu kỹ thuật: (1) ĐHĐCĐ 2026 đã chốt kế hoạch lãi 5.375 tỷ đồng, chia cổ tức tiền mặt 10% (1.000đ/cp, tổng ~2.272 tỷ đồng), quý 1/2026 lợi nhuận đã đạt ~30% kế hoạch năm; (2) mô hình bán lẻ mới "Vincom Collection" đang cho số liệu vận hành thực đo được: lượt khách tới TTTM tăng 13–15%, doanh thu khách thuê chung tăng 23–25% so với cùng kỳ. Đây là tăng trưởng hoạt động lõi thật, không phải kỳ vọng suông.
 
-**Kịch bản giá tới TP (28.458đ, +8% từ entry ~26.350đ):**
-Suy luận: với vol_ratio cao nhất nhóm xác nhận cú cắt MA50 (Agent A) cộng thêm cùng catalyst FTSE như VIC (Agent B), việc test lại vùng kháng cự cũ 28-30k (theo ghi chú của Agent A) là kịch bản hợp lý nếu đà mua ròng trước ngày cơ cấu 21/09 tiếp diễn.
+**Kịch bản giá tới TP (+8%)**
+Giá 26.000 → TP 28.080đ, SL 24.700đ, time-stop 25 ngày. Theo Agent A, vùng chốt lời 28.080 gần trùng vùng kháng cự cũ tháng 6/2026 (~28–29k) — nghĩa là mục tiêu TP được xác nhận chéo bằng cả mô hình lẫn quan sát chart, không phải con số áp đặt máy móc. R:R ≈ (28.080−26.000)/(26.000−24.700) ≈ 1,6:1.
 
-**Rủi ro & vì sao chịu được:**
-- Đây "mới là giai đoạn đầu đảo chiều sau downtrend dài, chưa có track record" (Agent A) — nói cách khác, mẫu hình đảo chiều chưa được kiểm chứng qua thời gian. SL 25.032đ khá sát entry (Agent A) — nghĩa là rủi ro giảm giá bị giới hạn chặt, không cho phép "hy vọng" kéo dài nếu volume không duy trì.
-- Không tìm thấy rủi ro tiêu cực nổi bật nào trong tin tức (Agent B) — đây là điểm khác biệt so với PNJ/PDR/KDH, nơi đều có ít nhất một rủi ro cụ thể (bê bối, pha loãng, hoặc thiếu catalyst). Bò VRE không phải vì không có rủi ro, mà vì rủi ro chính (mẫu hình đảo chiều mới, chưa track-record) đã được set giá qua SL sát entry.
-
----
-
-## Phản biện trước (chuẩn bị cho Agent D)
-
-- *"Score mô hình chỉ 0.55-0.58, AUC 0.53-0.55, gần như random"* — đúng, và vì vậy luận điểm bò ở đây **không dựa vào score** để thuyết phục mà dựa vào: (1) catalyst FTSE có cơ chế dòng vốn cụ thể, ngày hiệu lực rõ ràng (21/09/2026), nằm trong time-stop 25 ngày; (2) xác nhận kỹ thuật độc lập (trend + volume) từ Agent A.
-- *"VIC đã tăng 60%/tháng, mua đuổi"* — thừa nhận đúng (Agent B), đây là lý do tôi ưu tiên VRE hơn về mặt "dư địa còn nguyên", dù cả hai đều có catalyst chung.
-- *"VRE chưa có track record đảo chiều"* — thừa nhận đúng (Agent A), nhưng volume xác nhận là bằng chứng thực tế mạnh nhất trong nhóm 5 mã, và SL được đặt sát để giới hạn rủi ro nếu giả thuyết sai.
-- *"Ngành BĐS chiếm 4/5 mã, rủi ro tập trung ngành"* — đúng theo cơ cấu danh sách (Agent B), nhưng đây là rủi ro hệ thống áp dụng cho toàn nhóm ứng viên, không riêng VIC/VRE, và cả hai đều có động lực tăng trưởng lợi nhuận công bố riêng (VIC +36% doanh thu, VRE +15% lợi nhuận — Agent B).
+**Rủi ro & vì sao chịu được**
+Theo A, đây là tín hiệu đảo chiều mới hình thành, chưa được kiểm chứng qua thời gian — độ tin cậy kỹ thuật thấp hơn một xu hướng tăng đã xác lập như VIC. Theo B, tỷ lệ lấp đầy trung tâm thương mại cuối 2025 chỉ đạt 88,1%, và phần lớn tin tức tích cực (ĐHĐCĐ, cổ tức) đến từ đầu năm, chưa có catalyst mới cụ thể trong tháng 8/2026.
+- Về "tín hiệu đảo chiều còn mới": tín hiệu kỹ thuật (cắt MA20/50 + volume xác nhận) trùng thời điểm với catalyst cơ bản đã công bố (cổ tức tiền mặt, tăng trưởng khách thuê thực +23–25%) — hai loại bằng chứng độc lập cùng chiều làm giảm khả năng đây chỉ là nhiễu giá ngắn hạn.
+- Về tỷ lệ lấp đầy 88,1%: chính B cũng ghi nhận đây "vừa là dư địa vừa là điểm yếu hiện tại" — công ty đã đặt mục tiêu cải thiện chỉ số này trong 2026.
+- RSI 58 còn dư địa lớn trước ngưỡng quá mua so với VIC (68,74) → biên an toàn về mặt kỹ thuật cao hơn nếu muốn vào lệnh mới thay vì mua đuổi.
+- SL −5% và time-stop 25 ngày giới hạn rủi ro nếu tín hiệu đảo chiều không được xác nhận tiếp.
 
 ---
 
-**Kèo bò tự tin nhất:** VRE — kết hợp xác nhận volume mạnh nhất nhóm về kỹ thuật (Agent A) với catalyst FTSE cụ thể + không có rủi ro tiêu cực nổi bật trong tin tức tìm được (Agent B), trong khi dư địa giá chưa bị "chạy trước" như VIC.
+### Kèo bò tự tin nhất
+**VIC** — vì đây là mã duy nhất trong nhóm có đồng thời: điểm kỹ thuật cao nhất (7/10, breakout + volume xác nhận mạnh nhất), catalyst cơ bản đã xảy ra và định lượng được rõ ràng nhất (doanh thu +73%, LNST x4,5 YoY), và score mô hình cao nhất toàn bảng (0,6478) — dù rủi ro mua đuổi sau gap là có thật và cần tôn trọng SL nghiêm ngặt.
 
-KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ.
+---
+**KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ** — đây là luận điểm phe BÒ phục vụ tranh luận nội bộ hội đồng (chuẩn bị đối chiếu với Agent D phe gấu), dựa hoàn toàn trên bằng chứng đã ghi của Agent A/B và signals_latest.csv. Mô hình định lượng nền có edge yếu (AUC ~0,53–0,55); một số thông tin catalyst (ngày công bố KQKD tiếp theo của VIC, danh sách 30 mã hưởng lợi FTSE, ngày GDKHQ cổ tức VRE) được chính Agent B ghi là "chưa kiểm chứng" và cần xem như vậy.
+
+Đã ghi vào: `/home/runner/work/vn-stock-market-agent/vn-stock-market-agent/analysis/runs/log_run_2026-08-28_02-05-58/debate/notes/C_bull.md`

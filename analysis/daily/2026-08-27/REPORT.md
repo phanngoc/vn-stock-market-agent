@@ -34,16 +34,16 @@
 
 | # | Mã | Ngành | Giá | Score | Chốt lời (+8%) | Cắt lỗ (−5%) | RSI | Trend | Vol× |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | **KDH** | RealEstate | 18,300 | 0.5912 | 19,764 | 17,385 | 50 | ↓ dưới MA50 | 0.15 |
-| 2 | **VIC** | RealEstate | 232,000 | 0.5843 | 250,560 | 220,400 | 67 | ↑ trên MA50 | 0.23 |
-| 3 | **PNJ** | Retail/Consumer | 42,650 | 0.5776 | 46,062 | 40,518 | 59 | ↓ dưới MA50 | 0.10 |
-| 4 | **PDR** | RealEstate | 12,600 | 0.5758 | 13,608 | 11,970 | 53 | ↓ dưới MA50 | 0.25 |
-| 5 | **VRE** | RealEstate | 26,350 | 0.5517 | 28,458 | 25,032 | 60 | ↑ trên MA50 | 0.66 |
-| 6 | **GAS** | Energy | 83,100 | 0.5178 | 89,748 | 78,945 | 61 | ↑ trên MA50 | 0.19 |
-| 7 | **PLX** | Energy | 36,750 | 0.5176 | 39,690 | 34,912 | 54 | ↑ trên MA50 | 0.67 |
-| 8 | **GVR** | Materials | 32,950 | 0.5083 | 35,586 | 31,303 | 62 | ↑ trên MA50 | 0.20 |
-| 9 | **DGC** | Materials | 44,300 | 0.5068 | 47,844 | 42,085 | 57 | ↑ trên MA50 | 0.15 |
-| 10 | **VCI** | Securities | 22,500 | 0.5051 | 24,300 | 21,375 | 56 | ↑ trên MA50 | 0.30 |
+| 1 | **VIC** | RealEstate | 236,000 | 0.6478 | 254,880 | 224,200 | 69 | ↑ trên MA50 | 1.49 |
+| 2 | **PNJ** | Retail/Consumer | 41,900 | 0.5945 | 45,252 | 39,805 | 57 | ↓ dưới MA50 | 0.98 |
+| 3 | **PDR** | RealEstate | 12,650 | 0.5784 | 13,662 | 12,018 | 54 | ↓ dưới MA50 | 0.76 |
+| 4 | **KDH** | RealEstate | 18,400 | 0.5778 | 19,872 | 17,480 | 51 | ↓ dưới MA50 | 0.68 |
+| 5 | **VRE** | RealEstate | 26,000 | 0.5608 | 28,080 | 24,700 | 58 | ↑ trên MA50 | 1.37 |
+| 6 | **DGC** | Materials | 43,200 | 0.5277 | 46,656 | 41,040 | 51 | ↓ dưới MA50 | 1.26 |
+| 7 | **GAS** | Energy | 84,300 | 0.5277 | 91,044 | 80,085 | 64 | ↑ trên MA50 | 0.95 |
+| 8 | **GVR** | Materials | 32,950 | 0.5188 | 35,586 | 31,303 | 62 | ↑ trên MA50 | 0.76 |
+| 9 | **PLX** | Energy | 36,400 | 0.5171 | 39,312 | 34,580 | 52 | ↑ trên MA50 | 1.82 |
+| 10 | **VCI** | Securities | 22,600 | 0.5041 | 24,408 | 21,470 | 57 | ↑ trên MA50 | 0.92 |
 
 **Cách đọc / kế hoạch giao dịch (rule-based):**
 - **Thời gian vào hàng:** các mã score cao ở trên, ưu tiên mã *trên MA50* (xu hướng lên) và RSI chưa quá nóng (<70). Vào ở phiên kế tiếp, hoặc chờ nhịp chỉnh về vùng MA20 để giá vào tốt hơn.
@@ -57,10 +57,10 @@ Tạo/cập nhật bằng `python plot_signals.py` (matplotlib thuần). Mỗi c
 
 ![Tổng quan top 6](charts/overview_top6.png)
 
-*Tổng quan top 6 tín hiệu.* Chart từng mã: [`KDH`](charts/KDH_setup.png), [`VIC`](charts/VIC_setup.png), [`PNJ`](charts/PNJ_setup.png), [`PDR`](charts/PDR_setup.png), [`VRE`](charts/VRE_setup.png), [`GAS`](charts/GAS_setup.png).
+*Tổng quan top 6 tín hiệu.* Chart từng mã: [`VIC`](charts/VIC_setup.png), [`PNJ`](charts/PNJ_setup.png), [`PDR`](charts/PDR_setup.png), [`KDH`](charts/KDH_setup.png), [`VRE`](charts/VRE_setup.png), [`DGC`](charts/DGC_setup.png).
 
-**Quy tắc chạy thật trong quá khứ** — KDH: mỗi ▲ là một điểm mô hình từng ra tín hiệu (**xanh = thắng**, chạm +8% trước; **đỏ = thua**), theo đúng luật TP/SL/time-stop:
-![KDH history](charts/KDH_history.png)
+**Quy tắc chạy thật trong quá khứ** — VIC: mỗi ▲ là một điểm mô hình từng ra tín hiệu (**xanh = thắng**, chạm +8% trước; **đỏ = thua**), theo đúng luật TP/SL/time-stop:
+![VIC history](charts/VIC_history.png)
 
 ## 5. Hạn chế & cảnh báo (đọc kỹ)
 

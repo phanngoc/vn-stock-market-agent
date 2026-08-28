@@ -1,6 +1,6 @@
 # 🧑‍⚖️ WHITEBOARD — Tranh luận đa tác nhân về cơ hội swing (as-of 2026-08-27)
 
-*Board tạo lúc 2026-08-27 03:08:31. Đây là bảng chung: **mỗi agent viết ý kiến của mình lên đây, ai cũng đọc được**, mỗi khối
+*Board tạo lúc 2026-08-28 02:13:42. Đây là bảng chung: **mỗi agent viết ý kiến của mình lên đây, ai cũng đọc được**, mỗi khối
 ý kiến ghi rõ tên agent. Không phải khuyến nghị đầu tư.*
 
 ## 📌 Bối cảnh (do quant pipeline sinh ra)
@@ -8,14 +8,14 @@
 - Quy tắc "sóng": vào tại giá đóng cửa → **chốt lời +8% / cắt lỗ −5% / time-stop 25 phiên (~5 tuần)**.
 - ⚠️ Edge mô hình YẾU (AUC ~0.53–0.55). Tranh luận này để *bổ sung* góc nhìn kỹ thuật + tin tức, không thay quản trị rủi ro.
 
-## 🎯 Ứng viên tranh luận (top 5 theo score): KDH, VIC, PNJ, PDR, VRE
+## 🎯 Ứng viên tranh luận (top 5 theo score): VIC, PNJ, PDR, KDH, VRE
 | # | Mã | Ngành | Giá (VND) | Score | Chốt lời +8% | Cắt lỗ −5% | RSI | Trend |
 |---|---|---|---|---|---|---|---|---|
-| 1 | **KDH** | RealEstate | 18,300 | 0.59 | 19,764 | 17,385 | 50 | ↓ dưới MA50 |
-| 2 | **VIC** | RealEstate | 232,000 | 0.58 | 250,560 | 220,400 | 67 | ↑ trên MA50 |
-| 3 | **PNJ** | Retail/Consumer | 42,650 | 0.58 | 46,062 | 40,518 | 59 | ↓ dưới MA50 |
-| 4 | **PDR** | RealEstate | 12,600 | 0.58 | 13,608 | 11,970 | 53 | ↓ dưới MA50 |
-| 5 | **VRE** | RealEstate | 26,350 | 0.55 | 28,458 | 25,032 | 60 | ↑ trên MA50 |
+| 1 | **VIC** | RealEstate | 236,000 | 0.65 | 254,880 | 224,200 | 69 | ↑ trên MA50 |
+| 2 | **PNJ** | Retail/Consumer | 41,900 | 0.59 | 45,252 | 39,805 | 57 | ↓ dưới MA50 |
+| 3 | **PDR** | RealEstate | 12,650 | 0.58 | 13,662 | 12,018 | 54 | ↓ dưới MA50 |
+| 4 | **KDH** | RealEstate | 18,400 | 0.58 | 19,872 | 17,480 | 51 | ↓ dưới MA50 |
+| 5 | **VRE** | RealEstate | 26,000 | 0.56 | 28,080 | 24,700 | 58 | ↑ trên MA50 |
 
 ## 👥 Roster & thứ tự
 1. 🅰️ **Agent A — Kỹ thuật** và 🅱️ **Agent B — News/Cơ bản** viết bằng chứng độc lập (song song).
@@ -34,105 +34,92 @@
 
 *(A và B điền khối của mình vào đây / hoặc ghi ở `notes/` rồi orchestrator gộp lên.)*
 
-### 🅰️ Agent A — Phân tích Kỹ thuật · 2026-08-27 03:08
+### 🅰️ Agent A — Phân tích Kỹ thuật · 2026-08-28 02:15
 
-| Mã | Trend (giá vs MA20/MA50) | RSI(14) | vol_ratio | Điểm KT /10 | Ghi chú |
+**Nguồn số liệu**: `signals_latest.csv` (RSI-14, trend vs MA50, vol_ratio, TP/SL) + chart `<TICKER>_setup.png` (nến, MA20/MA50) cho 5 mã ứng viên top theo score. Không dùng tin tức/định giá cơ bản.
+
+| Mã | Trend (vs MA50) | RSI-14 | Vol_ratio | Điểm KT /10 | Ghi chú |
 |---|---|---|---|---|---|
-| **VIC** | ↑ trên MA20 & MA50, MA50 đang dốc lên rõ | 66.6 (cận vùng quá mua, chưa >70) | 0.23 (èo uột) | **7/10** | Uptrend sạch nhất nhóm (từ đáy ~125k tháng 3 lên >240k), vừa điều chỉnh nhẹ từ đỉnh 242k về 232k, SL 220,400 trùng vùng MA50/hỗ trợ gần — hợp lý; TP 250,560 vượt đỉnh cũ, cần phá kháng cự mới đạt. Volume xác nhận yếu. |
-| **VRE** | ↑ vừa cắt lên trên MA50 (MA20/MA50 hội tụ) | 60.2 | 0.655 (cao nhất nhóm — sôi động nhất) | **6.5/10** | Sau downtrend Apr–Jul (đỉnh 36k → đáy ~21k), giá đang phá MA50 kèm khối lượng tốt nhất trong 5 mã — tín hiệu đảo chiều đáng chú ý nhất về volume. TP 28,458 phải test lại vùng kháng cự cũ quanh 28–30k. SL 25,032 khá sát entry. |
-| **PDR** | ↓ dưới MA50 nhưng vừa cắt lên trên MA20 | 53.2 | 0.25 (yếu) | **5/10** | Đang hồi từ đáy ~11,400 (tháng 7), 2 phiên gần nhất tăng phá MA20, nhưng MA50 vẫn dốc xuống và entry 12,600 sát ngay dưới kháng cự MA50 ~13,000 — TP 13,608 đòi hỏi phá vùng này. Volume chưa xác nhận đảo chiều. |
-| **PNJ** | ↓ dưới MA50, MA50 vẫn dốc xuống | 59.0 | 0.10 (yếu nhất nhóm) | **4/10** | Giá hồi kỹ thuật từ đáy ~30k (tháng 7) lên 42,650 nhưng đúng ngay dưới MA50 đang giảm (~45–46k) — TP 46,062 gần như trùng kháng cự MA50, xác suất bị chặn cao. Khối lượng thấp nhất nhóm → hồi yếu, chưa có dòng tiền xác nhận. |
-| **KDH** | ↓ dưới MA20 & MA50 rõ ràng, MA50 vẫn dốc xuống mạnh | 50.2 (trung tính, không phải oversold bounce rõ) | 0.15 (yếu) | **3/10** | Downtrend liên tục từ 28k (tháng 2) về 18,300, chưa có tín hiệu tạo đáy rõ (RSI trung tính chứ không phân kỳ tăng). Đây là setup gần với **"bắt dao rơi"** nhất trong nhóm — giá dưới cả 2 MA, xu hướng giảm chưa gãy. TP/SL theo tỷ lệ cố định 8%/5% không dựa trên vùng S/R cụ thể của biểu đồ. |
+| **VIC** | ↑ trên MA50 | 68.7 (cận quá mua) | 1.49 (sôi động) | **7/10** | Vừa breakout tăng mạnh bằng 1 nến gap lớn vượt vùng đỉnh cũ ~225–230k, khối lượng xác nhận tốt, nhưng nến vào lệnh đã giãn xa MA20 → mua đuổi sau gap, RSI gần 70 nên dư địa trước khi "quá mua" không còn nhiều, rủi ro điều chỉnh ngắn hạn để lấp gap. |
+| **VRE** | ↑ trên MA50 (mới cắt lên) | 58.0 (trung tính, còn dư địa) | 1.37 (sôi động) | **6.5/10** | Giá vừa cắt lên lại MA20/MA50 đang đi ngang sau downtrend từ đỉnh tháng 4 (~36k → đáy ~24k), khối lượng ủng hộ, RSI chưa quá mua nên dư địa tốt hơn VIC. Nhưng đây là tín hiệu đảo chiều **mới hình thành**, chưa phải xu hướng tăng đã xác lập — độ tin cậy thấp hơn VIC. |
+| **PNJ** | ↓ dưới MA50 | 56.5 (trung tính) | 0.98 (~trung bình, không xác nhận) | **3.5/10** | Downtrend sâu và kéo dài (80k → ~30k từ đầu năm), giá đang hồi phục dưới MA50 vẫn đang dốc xuống rõ. Khối lượng không có gì đột biến để xác nhận đảo chiều → giống nhịp hồi trong downtrend hơn là đảo chiều thật, cảnh báo "bắt dao rơi". |
+| **PDR** | ↓ dưới MA50 | 54.2 (trung tính) | 0.76 (èo uột) | **3.5/10** | Downtrend rõ từ ~17k xuống đáy ~11.4k, mới nhích lên nhưng vẫn dưới MA50 đang giảm; vol_ratio <1 cho thấy nhịp hồi thiếu dòng tiền xác nhận. Rủi ro kỹ thuật là hồi kỹ thuật ngắn trong xu hướng giảm. |
+| **KDH** | ↓ dưới MA50 | 51.4 (trung tính, sát 50) | 0.68 (èo uột nhất nhóm) | **2.5/10** | Downtrend đều đặn và dai dẳng nhất nhóm (28k → 18k xuyên suốt Feb–Aug), giá vẫn nằm dưới cả MA20 lẫn MA50 đang dốc xuống, khối lượng yếu nhất → setup kỹ thuật yếu nhất trong 5 mã, gần như "bắt dao rơi" điển hình. |
 
-**Nhận định chung:**
-- Setup kỹ thuật đẹp nhất nhóm (theo trend + vị trí giá): **VIC** — uptrend rõ, giá trên MA20/MA50, nhưng RSI đã cận vùng quá mua và volume xác nhận yếu, rủi ro là mua đuổi gần đỉnh ngắn hạn.
-- Setup có tín hiệu volume ủng hộ tốt nhất: **VRE** — vol_ratio 0.655 cao vượt trội so với 4 mã còn lại, đi kèm cú cắt lên MA50 — nhưng đây mới là giai đoạn đầu đảo chiều sau downtrend dài, chưa có track record.
-- Setup kỹ thuật yếu/rủi ro nhất: **KDH** — downtrend chưa gãy, giá dưới cả MA20/MA50, khối lượng èo uột — gần nhất với kiểu "bắt dao rơi" trong nhóm 5 mã.
-- **PNJ** và **PDR** đều là các cú hồi kỹ thuật trong downtrend (dưới hoặc sát MA50), khối lượng thấp — chưa đủ bằng chứng đảo chiều bền vững, TP đặt ngay tại vùng kháng cự MA50 nên xác suất đạt TP thấp hơn về mặt kỹ thuật thuần túy.
-- Toàn bộ 5 mã đều có vol_ratio <1 (giao dịch dưới trung bình lịch sử) trừ VRE — nhìn chung dòng tiền chưa thật sự sôi động ở nhóm ứng viên top score.
-- Lưu ý: đây là góc nhìn kỹ thuật thuần túy dựa trên MA20/MA50/RSI/volume trong `signals_latest.csv` và chart; **không đánh giá tin tức/định giá cơ bản**, và cần nhắc lại edge mô hình dự báo hiện đang **yếu (AUC ~0.53–0.55)** — các điểm số/xếp hạng trên chỉ mang tính xác suất tham khảo, không phải khuyến nghị đầu tư.
+**Nhận định chung**
+- Setup kỹ thuật đẹp nhất nhóm: **VIC** (uptrend + volume xác nhận mạnh nhất) nhưng đi kèm rủi ro mua đuổi vì RSI đã cận 70 và nến vào lệnh giãn xa MA20 sau gap tăng lớn.
+- **VRE** là ứng viên đáng chú ý thứ hai — vừa cắt lên MA50 với khối lượng tốt và RSI còn dư địa hơn VIC, nhưng tín hiệu đảo chiều còn mới, chưa được kiểm chứng qua thời gian.
+- **PNJ, PDR, KDH** đều đang ở dưới MA50 trong xu hướng giảm trung/dài hạn, khối lượng hồi phục yếu (đặc biệt PDR và KDH có vol_ratio <0.8) → rủi ro kỹ thuật lớn nhất nhóm là "bắt dao rơi", nhịp hồi kỹ thuật không có xác nhận dòng tiền.
+- Rủi ro kỹ thuật lớn nhất toàn nhóm: **KDH** — downtrend dai dẳng nhất, khối lượng èo uột nhất, chưa có dấu hiệu tạo đáy rõ ràng.
+- Về TP (+8%)/SL (−5%) so với vùng hỗ trợ/kháng cự cụ thể: chỉ đối chiếu được bằng mắt qua chart, **chưa kiểm chứng định lượng** (không có dữ liệu vùng S/R tính toán sẵn trong signals_latest.csv). Với VRE, vùng chốt lời 28,080 gần trùng vùng kháng cự cũ tháng 6 (~28–29k) — hợp lý. Với PNJ, vùng chốt lời 45,252 nằm ngay dưới MA50 đang giảm (~45k) nên có thể gặp cản kỹ thuật trước khi đạt TP.
+- Lưu ý bắt buộc: mô hình có edge yếu (AUC ~0.53–0.55), các nhận định trên chỉ mang tính xác suất tương đối giữa các mã, không phải tín hiệu chắc chắn.
 
-KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ.
+**KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ** — chỉ là phân tích kỹ thuật độc lập, phục vụ tranh luận nội bộ hội đồng.
 
-### 🅱️ Agent B — Phân tích News / Cơ bản · 2026-08-27 03:20
+Đã ghi vào: `/home/runner/work/vn-stock-market-agent/vn-stock-market-agent/analysis/runs/log_run_2026-08-28_02-05-58/debate/notes/A_technical.md`
 
-*Độc lập với biểu đồ kỹ thuật (Agent A). Không phải khuyến nghị đầu tư.*
+### 🅱️ Agent B — Phân tích News / Cơ bản · 2026-08-28 02:16
 
----
-
-#### 1. KDH — Đầu tư & Kinh doanh Nhà Khang Điền (RealEstate)
-
-- ĐHĐCĐ 2026: kế hoạch doanh thu 4.200 tỷ, lãi sau thuế 1.500 tỷ (+44% svck); đã **sạch nợ trái phiếu** từ giữa 2025, không có kế hoạch phát hành vốn/trái phiếu mới trong 2026 → **tích cực** (giảm rủi ro pha loãng/đòn bẩy). [doanhnhan.baophapluat.vn](https://doanhnhan.baophapluat.vn/dhdcd-khang-dien-kdh-2026-sach-no-trai-phieu-noi-khong-voi-phat-hanh-von-moi-va-muc-tieu-lai-1-500-ty-dong.html)
-- Dự án trọng điểm **Gladia by the Waters** (11,8ha, hợp tác Keppel) mở bán từ Q4/2025, đã ghi nhận >100 giao dịch trị giá >4.000 tỷ — nguồn lợi nhuận chính 2026 → **tích cực**. [doanhnhan.baophapluat.vn](https://doanhnhan.baophapluat.vn/dhdcd-khang-dien-kdh-2026-sach-no-trai-phieu-noi-khong-voi-phat-hanh-von-moi-va-muc-tieu-lai-1-500-ty-dong.html)
-- Tháng 2/2026: thâu tóm 99% An Lập Real Estate Development qua công ty con Phúc Thọ, giá trị 2.553 tỷ — mở rộng quỹ đất → **trung tính/tích cực** (cần theo dõi tiến độ triển khai). [tienphong.vn](https://tienphong.vn/tap-doan-khang-dien-kdh-to-chuc-dai-hoi-dong-co-dong-thuong-nien-nam-2026-post1837416.tpo)
-- Cổ tức 2025 tỷ lệ 10% đã được thông qua chi trả; **chưa kiểm chứng** ngày GDKHQ cụ thể cho đợt chi trả 2026.
-- **Không** nằm trong danh sách 27 mã được FTSE đưa vào rổ thị trường mới nổi (công bố 21/08/2026) — không có catalyst dòng vốn ngoại thụ động trực tiếp từ sự kiện này.
-
-#### 2. VIC — Tập đoàn Vingroup (RealEstate)
-
-- **Catalyst lớn: VIC nằm trong danh sách 27 mã được FTSE Russell đưa vào rổ FTSE GEIS thị trường mới nổi**, công bố chính thức 21/08/2026, hiệu lực từ **21/09/2026** — dòng vốn thụ động ước tính 2,2–4,3 tỷ USD toàn thị trường (SSI Research), Vietcap nâng dự phóng ~78.900 tỷ đồng vào TTCK Việt Nam → **rất tích cực**, đây là catalyst gần nhất và cụ thể nhất trong nhóm 5 mã. [vietstock.vn](https://vietstock.vn/2026/08/ftse-cong-bo-danh-muc-ssi-research-dua-ra-kich-ban-43-ty-usd-chay-vao-chung-khoan-viet-3358-1484369.htm)
-- Giá cổ phiếu VIC đã tăng ~60% trong 1 tháng qua (tính đến 21/08/2026), đưa Vingroup vào top 5 doanh nghiệp vốn hóa lớn nhất Đông Nam Á → **tích cực nhưng cần lưu ý đã tăng nóng**, rủi ro chốt lời/điều chỉnh sau tin FTSE đã "ra tin". [24hmoney.vn](https://24hmoney.vn/stock/VIC)
-- Kế hoạch 2026: doanh thu mục tiêu 450.000 tỷ đồng (+36% svck), 2025 lãi trước thuế 26.300 tỷ nhờ mảng BĐS → **tích cực**.
-- **Rủi ro nợ**: tổng nợ tài chính tăng mạnh (một số nguồn ghi nhận tăng 47-53% svck, có nguồn nêu ~321.928 tỷ đồng), phần lớn phục vụ VinFast (nhà máy nước ngoài, trạm sạc) và dự án BĐS; **63% nợ là ngắn hạn đáo hạn trong 2026** → **tiêu cực/rủi ro cần theo dõi**, dù công ty chưa từng chậm trả nợ và có lịch sử trả trước hạn. Số liệu nợ cụ thể giữa các nguồn không đồng nhất — **chưa kiểm chứng đầy đủ**, cần đối chiếu BCTC chính thức. [thitruongtaichinhtiente.vn](https://thitruongtaichinhtiente.vn/phat-hanh-thanh-cong-250-trieu-usd-trai-phieu-hoan-doi-giup-vingroup-vic-keo-dai-ky-han-no-va-chu-dong-quan-ly-rui-ro-52057.html), [rfa.org](https://www.rfa.org/vietnamese/trong-nuoc/2026/08/21/vingroup-chu-no-ngan-hang/)
-- Đã phát hành thành công 250 triệu USD trái phiếu hoán đổi để kéo dài kỳ hạn nợ → **tích cực** (chủ động quản trị rủi ro thanh khoản).
-
-#### 3. PNJ — Vàng bạc Đá quý Phú Nhuận (Retail/Consumer)
-
-- **Rủi ro tiêu cực đáng chú ý**: bê bối liên quan lãnh đạo PNJ-LAB bị cáo buộc "phù phép" giấy kiểm định kim cương, công ty phải trích lập dự phòng 865,5 tỷ đồng khiến **Q2/2026 lỗ sau thuế ~283 tỷ đồng** → **tiêu cực mạnh**, ảnh hưởng trực tiếp lợi nhuận và uy tín thương hiệu. [vietnamnet.vn](https://vietnamnet.vn/pnj-sau-cu-soc-kim-cuong-ca-map-danh-cuoc-gi-o-doanh-nghiep-vang-bac-2549047.html)
-- Tuy nhiên cơ quan điều tra đã công bố kết luận ban đầu, giúp giảm bớt lo ngại thị trường về rủi ro pháp lý — có thể hỗ trợ phục hồi niềm tin → **trung tính/dần tích cực** nhưng vẫn cần theo dõi tiếp diễn biến pháp lý. [vietnamnet.vn](https://vietnamnet.vn/pnj-sau-cu-soc-kim-cuong-ca-map-danh-cuoc-gi-o-doanh-nghiep-vang-bac-2549047.html)
-- Q1/2026: doanh thu thuần 17.245 tỷ (+79% svck), lãi sau thuế 1.467 tỷ (+116,5% svck) — kết quả trước khi xảy ra sự cố Q2 → **tích cực nhưng đã bị đảo ngược một phần bởi khoản lỗ Q2**. [tinnhanhchungkhoan.vn](https://www.tinnhanhchungkhoan.vn/pnj-dat-doanh-thu-17245-ty-dong-loi-nhuan-giam-nhe-trong-quy-i2026-post389260.html)
-- Lũy kế H1/2026: doanh thu 25.729 tỷ (+49,4%), lãi sau thuế 1.256 tỷ (+6,3% svck, tăng trưởng chậm lại rõ rệt do ảnh hưởng Q2) — phản ánh cú sốc kể trên. [baomoi.com](https://baomoi.com/pnj-duy-tri-da-tang-truong-trong-nua-dau-nam-2026-c55730106.epi)
-- Tháng 8/2026: một nhóm quỹ ngoại mua thêm ~1,63 triệu cổ phiếu, quay lại làm cổ đông lớn → **tích cực** (tín hiệu dòng tiền tổ chức). [nguoiquansat.vn](https://nguoiquansat.vn/co-phieu-pnj-tang-40-duoc-san-don-nhat-thi-truong-312252.html)
-- Giá vàng cao gây sức ép biên lợi nhuận do tỷ trọng vàng 24K tăng, làm suy yếu nhu cầu trang sức → **rủi ro cơ cấu** đang diễn ra.
-- **Không** nằm trong rổ FTSE emerging market vừa công bố.
-
-#### 4. PDR — Phát triển Bất động sản Phát Đạt (RealEstate)
-
-- **Rủi ro pha loãng**: kế hoạch chào bán ~199,56 triệu cổ phiếu cho cổ đông hiện hữu tỷ lệ 5:1, giá 10.000đ/CP (thấp hơn nhiều thị giá 12.600đ và giá trị sổ sách), thu về ~1.996 tỷ đồng → **tiêu cực với cổ đông hiện hữu** (pha loãng EPS/thị giá), dù mục đích dùng cho dự án cụ thể. [congluan.vn](https://congluan.vn/phat-dat-pdr-chao-ban-gan-200-trieu-co-phieu-gia-duoi-so-sach-doc-1-550-ty-dong-thau-tom-du-an-ven-song-han-10336560.html)
-- Chủ tịch Nguyễn Văn Đạt đã mua trọn toàn bộ hơn 51 triệu (một nguồn ghi 3 triệu) cổ phiếu PDR phát hành thêm theo quyền — tín hiệu cam kết của lãnh đạo → **tích cực**, dù số liệu giữa các nguồn chưa nhất quán (**chưa kiểm chứng số chính xác**). [mekongasean.vn](https://mekongasean.vn/chu-tich-phat-dat-mua-tron-hon-51-trieu-co-phieu-pdr-phat-hanh-them-29753.html)
-- Q1/2026: lãi sau thuế >137 tỷ (gấp 2,7 lần cùng kỳ) nhưng **doanh thu giảm 76%**, lợi nhuận chủ yếu đến từ giao dịch chuyển nhượng vốn (không phải hoạt động kinh doanh cốt lõi) → **trung tính/cảnh báo chất lượng lợi nhuận**. [baomoi.com](https://baomoi.com/tag/c%E1%BB%95-phi%E1%BA%BFu-PDR.epi)
-- Chuyển 900 tỷ đồng đặt cọc theo thỏa thuận với Lotte Properties HCMC cho dự án Thu Thiêm Eco Smart City, tổng giá trị thương vụ ước 10.400 tỷ → **tích cực dài hạn** nếu hoàn tất, nhưng rủi ro pháp lý/tiến độ chưa rõ.
-- BSC nâng khuyến nghị từ THEO DÕI lên MUA (**đây là quan điểm của bên thứ 3, không phải khuyến nghị của agent này**). [vinabull.vn](https://www.vinabull.vn/danh-gia-co-phieu-pdr-phat-dat-bsc-nang-khuyen-nghi-tu-theo-doi-len-mua-a831.html)
-- Mục tiêu 2026: doanh thu 8.830 tỷ, lãi sau thuế 868 tỷ (+69% svck).
-- **Không** nằm trong rổ FTSE emerging market vừa công bố.
-
-#### 5. VRE — Vincom Retail (RealEstate)
-
-- **Catalyst: VRE nằm trong danh sách 27 mã được FTSE đưa vào rổ thị trường mới nổi**, hiệu lực 21/09/2026 → **tích cực**, cùng nhóm với VIC được hưởng dòng vốn ngoại thụ động. [vietstock.vn](https://vietstock.vn/2026/08/ftse-cong-bo-danh-muc-ssi-research-dua-ra-kich-ban-43-ty-usd-chay-vao-chung-khoan-viet-3358-1484369.htm)
-- ĐHĐCĐ 2026: kế hoạch doanh thu 10.132 tỷ, lãi sau thuế 5.375 tỷ (+16%/+15% svck, loại trừ khoản thu nhập một lần 2025) → **tích cực**, tăng trưởng ổn định. [baophapluat.vn](https://baophapluat.vn/dhdcd-vincom-retail-vre-2026-ke-hoach-lai-5-375-ty-dong-chot-chia-co-tuc-tien-mat-ty-le-10.html)
-- Q1/2026: doanh thu đạt 25% kế hoạch năm, lợi nhuận đạt ~30% kế hoạch; lượng khách đến TTTM tăng 13-15%, doanh số khách thuê tăng 23-25% svck → **tích cực**.
-- Cổ tức tiền mặt 10% (1.000đ/CP), tổng chi ~2.272 tỷ, dự kiến chi trả **Q3/2026** → **sự kiện sắp tới**, chưa có ngày GDKHQ cụ thể (**chưa kiểm chứng**).
-- Chiến lược mới: ra mắt thương hiệu "Vincom Collection" (phố mua sắm ngoài trời, phối hợp Vinhomes) theo mô hình nhận hoa hồng thay vì đầu tư vốn trực tiếp → **tích cực dài hạn**, giảm áp lực vốn.
-- Tỷ lệ lấp đầy trung bình toàn hệ thống 88%, còn ~12% diện tích sàn để khai thác thêm doanh thu → **trung tính/tích cực**.
+*Phạm vi: 5 mã ứng viên top-score (VIC, PNJ, PDR, KDH, VRE) + bối cảnh vĩ mô/ngành. Nguồn: WebSearch/WebFetch, kèm link. Không phải khuyến nghị đầu tư.*
 
 ---
 
-#### 📅 Sự kiện sắp tới
+#### VIC — Vingroup
+- **Đỉnh lịch sử, KQKD 6 tháng bùng nổ (tích cực, đã xảy ra):** Ngày 27/8/2026 cổ phiếu VIC tăng 2,6% lên 236.000đ, lập đỉnh lịch sử; vốn hóa vượt 1,8 triệu tỷ đồng (>20% vốn hóa HOSE). Doanh thu thuần hợp nhất 6 tháng đạt 222.300 tỷ đồng (+73% YoY), LNST gấp 4,5 lần cùng kỳ. ([cafef.vn](https://cafef.vn/tin-vui-cho-co-dong-vingroup-188260827153640657.chn))
+- **Lịch công bố KQKD tiếp theo (sự kiện sắp tới):** Vingroup dự kiến công bố báo cáo tiếp theo vào 30/10/2026 (chưa kiểm chứng chéo nguồn thứ 2, chỉ từ kết quả tìm kiếm tổng hợp). ([finance.vietstock.vn](https://finance.vietstock.vn/vic/tin-tuc-su-kien.htm))
+- **Rủi ro tập trung ngành (trung tính/cần lưu ý):** VN-Index tuần 17–21/8 có phiên riêng nhóm Vingroup (VIC/VHM/VRE...) kéo chỉ số giảm gần 39 điểm trước khi phục hồi — cho thấy biến động nhóm Vingroup có ảnh hưởng lớn tới cả chỉ số, độ rộng thị trường thực chất hẹp khi phụ thuộc một nhóm cổ phiếu. ([vietstock.vn](https://vietstock.vn/2026/08/vn-index-hut-buoc-truoc-nguong-1800-diem-nhom-vingroup-keo-chi-so-giam-gan-39-diem-830-1481208.htm))
+- **Nhận định:** Tin tức nền tảng rất tích cực (KQKD, giá cổ phiếu) nhưng đã tăng mạnh (đỉnh lịch sử) — rủi ro "mua đuổi" ở vùng giá cao; chưa kiểm chứng được catalyst mới cụ thể nào khác ngoài đà tăng giá đã phản ánh.
 
-- **21/09/2026**: FTSE Russell chính thức nâng hạng Việt Nam lên thị trường mới nổi thứ cấp — VIC, VRE (trong nhóm 5 mã tranh luận) nằm trong danh sách 27 mã được đưa vào rổ. Kỳ cơ cấu tiếp theo tăng tỷ trọng giải ngân lên 20% vào tháng 3/2027. [baochinhphu.vn](https://baochinhphu.vn/chinh-thuc-xac-nhan-lo-trinh-nang-hang-thi-truong-chung-khoan-viet-nam-102260407214555354.htm)
-- **Q3/2026**: VRE dự kiến chi trả cổ tức tiền mặt 10% (chưa rõ ngày GDKHQ chính xác — chưa kiểm chứng).
-- PDR: đợt chào bán ~199,56 triệu cổ phiếu cho cổ đông hiện hữu dự kiến thực hiện trong 2026, chờ UBCKNN phê duyệt (chưa có ngày GDKHQ cụ thể).
-- KDH: chưa kiểm chứng ngày GDKHQ cụ thể cho đợt chi trả cổ tức 10% năm 2025.
+#### PNJ — Vàng bạc Đá quý Phú Nhuận
+- **Vụ "buôn lậu kim cương" được minh oan một phần (tích cực, đã xảy ra 21/8/2026):** Công an Thanh Hóa xác nhận PNJ có đầy đủ hồ sơ nhập khẩu kim cương hợp lệ, quy trình nhập khẩu/phân phối tuân thủ pháp luật. Cổ phiếu tăng trần (39.900đ) phiên 21/8, thanh khoản 30 phút đầu đạt hơn 127 tỷ đồng; vốn hóa hồi phục khoảng 20.000 tỷ đồng. Giá đã tăng >30% từ đáy cuối tháng 7 nhưng vẫn thấp hơn 53% so với đỉnh đầu năm. ([znews.vn](https://znews.vn/co-phieu-pnj-chay-hang-sau-tin-moi-ve-vu-buon-lau-kim-cuong-post1678341.html))
+- **Lãnh đạo/quỹ ngoại mua vào (tích cực):** Tổng giám đốc PNJ hoàn tất mua 1 triệu cổ phiếu trong giai đoạn 31/7–14/8/2026, đúng lúc công ty vừa báo lỗ quý 2/2026. Nhóm quỹ Vanguard nâng sở hữu lên trên 5%, trở thành cổ đông lớn. ([vietstock.vn](https://vietstock.vn/2026/08/tong-giam-doc-pnj-hoan-tat-mua-1-trieu-co-phieu-739-1482253.htm))
+- **KQKD quý 2/2026 lỗ (tiêu cực, đã xảy ra):** PNJ báo lỗ quý 2/2026, liên quan trích lập dự phòng; công ty tổ chức ĐHĐCĐ bất thường để điều chỉnh kế hoạch kinh doanh 2026 (hạn đăng ký dự họp 25/8/2026, họp dự kiến tháng 10/2026 — **sự kiện sắp tới**).
+- **Nhận định:** Tin vừa qua là "gỡ nút thắt pháp lý" quan trọng (rủi ro tố tụng giảm) nhưng nền tảng kinh doanh quý 2 vẫn yếu (lỗ) — hỗn hợp tích cực ngắn hạn (tâm lý) và tiêu cực nền tảng (lợi nhuận).
 
-#### 🌍 Bối cảnh chung
+#### PDR — Phát triển BĐS Phát Đạt
+- **Hoàn tất thâu tóm dự án Lotte Eco Smart City Thủ Thiêm (tích cực, đã xảy ra 10/8/2026):** PDR thanh toán xong toàn bộ nghĩa vụ 7.666 tỷ đồng, chính thức sở hữu 35% pháp nhân triển khai dự án. ([theo tổng hợp tìm kiếm, chưa fetch trực tiếp bài gốc — cần kiểm chứng thêm nguồn chính thống])
+- **Kế hoạch phát hành gần 200 triệu cổ phiếu (rủi ro pha loãng, đã công bố):** PDR dự kiến chào bán ~200 triệu cổ phiếu giá dưới sổ sách để dồn vốn cho dự án Đà Nẵng (ven sông Hàn) và dự án "đất vàng" 239 Cách Mạng Tháng Tám (TP.HCM). ([congluan.vn](https://congluan.vn/phat-dat-pdr-chao-ban-gan-200-trieu-co-phieu-gia-duoi-so-sach-doc-1-550-ty-dong-thau-tom-du-an-ven-song-han-post340561.html), [doanhnhan.baophapluat.vn](https://doanhnhan.baophapluat.vn/phat-dat-pdr-du-kien-phat-hanh-gan-200-trieu-co-phieu-don-luc-cho-du-an-da-nang-va-tp-hcm.html))
+- **Chủ tịch thừa nhận "rất buồn" vì giá cổ phiếu chưa tăng (trung tính, ĐHĐCĐ 2026):** Ông Nguyễn Văn Đạt phát biểu tại ĐHĐCĐ 2026 về việc giá cổ phiếu chưa phản ánh đúng giá trị công ty. ([stockbiz.vn](https://stockbiz.vn/tin-tuc/dhdcd-pdr-2026-chu-tich-nguyen-van-dat-thua-nhan-rat-buon-vi-gia-co-phieu-chua-tang/39519779))
+- **Ngày GDKHQ cổ tức 2026:** Không tìm được thông tin cụ thể, đáng tin cậy cho 2026 — **chưa kiểm chứng**.
+- **Nhận định:** Catalyst M&A dự án tích cực nhưng đi kèm rủi ro pha loãng vốn (phát hành giá thấp hơn sổ sách) và nợ vay/trái phiếu dùng để tài trợ dự án — cần theo dõi tiến độ pháp lý dự án Đà Nẵng, TP.HCM.
 
-- Sự kiện vĩ mô lớn nhất hiện nay là **nâng hạng FTSE** — chính thức có hiệu lực 21/09/2026, ước tính hút 2,2–4,3 tỷ USD vốn thụ động vào TTCK Việt Nam theo kịch bản SSI Research; Vietcap ước ~78.900 tỷ đồng. Room ngoại vẫn là điểm nghẽn cần theo dõi. [elibook.vn](https://elibook.vn/2026/08/25/nang-hang-ftse-vietcap-ssi-bsc-dong-loat-nang-du-phong-dong-von-nhung-room-ngoai-moi-la-chot-chan-that-su/)
-- Nhóm ngành BĐS (chiếm 4/5 mã ứng viên: KDH, VIC, PDR, VRE) đang trong giai đoạn phục hồi lợi nhuận sau siết room tín dụng/pháp lý các năm trước; nhiều DN công bố kế hoạch lãi tăng mạnh 2026 (KDH +44%, VRE +15%, PDR +69%).
-- Ngành bán lẻ trang sức (PNJ) chịu ảnh hưởng kép: giá vàng cao (biên lợi nhuận) + rủi ro uy tín từ bê bối PNJ-LAB — cần theo dõi sát diễn biến pháp lý trước khi đánh giá phục hồi.
+#### KDH — Đầu tư và Kinh doanh Nhà Khang Điền
+- **Lãnh đạo mua vào lượng lớn cổ phiếu (tích cực, đã xảy ra 23/7–21/8/2026):** Phó TGĐ Lý Tuấn Kiệt hoàn tất mua 20 triệu cổ phiếu KDH; nhóm 5 thành viên liên quan hiện sở hữu ~39,77 triệu cổ phiếu (~3,54% vốn). ([cafef.vn](https://cafef.vn/dieu-gi-dang-sau-su-xuat-hien-cua-con-trai-ong-ly-dien-son-tai-khang-dien-188260824064507401.chn))
+- **Dự án Chợ Gà - Gạo được duyệt quy hoạch 1/500 (tích cực, đã xảy ra đầu tháng 8/2026):** UBND phường Bến Thành duyệt quy hoạch chi tiết khu Chợ Gà - Gạo; dự án triển khai 2026-2029, khởi công quý 3/2026, hoàn thành quý 4/2028, khai thác từ 2029. Công ty vốn 2.500 tỷ được lập để thực hiện dự án khu Mả Lạng và Chợ Gà - Gạo. ([vietstock.vn](https://vietstock.vn/2026/08/khang-dien-lap-cong-ty-von-2500-ty-de-lam-du-an-khu-ma-lang-va-cho-ga-gao-4222-1482478.htm))
+- **ĐHĐCĐ 2026 — "sạch nợ trái phiếu" (tích cực):** KDH tuyên bố đã tất toán hết nợ trái phiếu, không phát hành vốn mới, mục tiêu LN 1.500 tỷ đồng năm 2026. ([doanhnhan.baophapluat.vn](https://doanhnhan.baophapluat.vn/dhdcd-khang-dien-kdh-2026-sach-no-trai-phieu-noi-khong-voi-phat-hanh-von-moi-va-muc-tieu-lai-1-500-ty-dong.html))
+- **Doanh thu bán nhà giảm mạnh (tiêu cực, cùng kỳ báo cáo trên):** Doanh thu bán nhà giảm gần 85%, lợi nhuận chủ yếu đến từ thoái vốn 2% một khoản đầu tư — chất lượng lợi nhuận cần lưu ý (không phải từ hoạt động lõi). ([baomoi.com](https://baomoi.com/khang-dien-lai-nghin-ty-tu-ban-2-von-doanh-thu-ban-nha-giam-gan-85-c55753120.epi))
+- **Nhận định:** Bảng cân đối sạch nợ + lãnh đạo mua vào là tín hiệu tích cực về niềm tin nội bộ, nhưng doanh thu lõi (bán nhà) đang yếu — lợi nhuận công bố có thể không bền vững.
+
+#### VRE — Vincom Retail
+- **ĐHĐCĐ 2026 — cổ tức tiền mặt 10% (tích cực, đã công bố):** Kế hoạch lãi 5.375 tỷ đồng năm 2026, chốt chia cổ tức tiền mặt tỷ lệ 10% (1.000đ/cp), tổng chi trả ~2.272 tỷ đồng. Quý 1/2026 lợi nhuận đạt ~30% kế hoạch năm. Ngày GDKHQ cụ thể: **chưa kiểm chứng** (chưa tìm thấy thông báo chính thức). ([baomoi.com](https://baomoi.com/dhdcd-vincom-retail-vre-2026-ke-hoach-lai-5-375-ty-dong-chot-chia-co-tuc-tien-mat-ty-le-10-c55006411.epi))
+- **Mô hình mới "Vincom Collection" (tích cực/kỳ vọng):** Ra mắt mô hình phố mua sắm ngoài trời kết hợp với các đô thị Vinhomes, mục tiêu triển khai 10 điểm đến kết hợp + 50 thương hiệu trong 2026. Lượt khách tới TTTM tăng 13-15%, doanh thu khách thuê chung tăng 23-25% so với cùng kỳ. ([dnse.com.vn](https://www.dnse.com.vn/senses/tin-tuc/mo-hinh-moi-giup-vincom-retail-hut-khach-co-phieu-vre-con-hap-dan-35234874))
+- **Rủi ro lấp đầy (trung tính/tiêu cực nhẹ):** Tỷ lệ lấp đầy cuối 2025 chỉ đạt 88,1%, trọng tâm 2026 là tối đa hóa tỷ lệ này — cho thấy dư địa nhưng cũng là điểm yếu hiện tại.
+- **Nhận định:** Câu chuyện tăng trưởng bán lẻ/mô hình mới hợp lý nhưng chưa có tin tức tháng 8/2026 cụ thể mới — phần lớn thông tin có sẵn từ đầu năm (ĐHĐCĐ tháng 4-6).
 
 ---
 
-#### 🏆 Xếp hạng theo hỗ trợ tin tức (mạnh → yếu)
+### 📅 Sự kiện sắp tới (toàn ngành/vĩ mô)
+- **21/9/2026 — FTSE Russell chính thức nâng hạng VN từ Frontier Market lên Secondary Emerging Market**, áp dụng trọng số 10% ban đầu trong rổ FTSE Emerging Markets, hoàn tất 100% vào tháng 9/2027; ~30 cổ phiếu được kỳ vọng hưởng lợi dòng vốn ETF ngoại. VIC, VRE (nhóm vốn hóa lớn) thường được nhắc tên trong nhóm hưởng lợi tiềm năng nhưng **danh sách cụ thể 30 mã chưa kiểm chứng trong tìm kiếm này**. ([vneconomy.vn](https://vneconomy.vn/ftse-russell-xac-nhan-viet-nam-vuot-qua-ky-review-chinh-thuc-nang-hang-vao-thang-92026.htm), [elibook.vn](https://elibook.vn/2026/08/22/nang-hang-ftse-27-cai-ten-da-chot-nhung-dung-tuong-tien-ty-do-do-vao-sau-mot-dem/))
+- **31/8/2026 — Nghị định 281/2026/NĐ-CP** có hiệu lực, sửa đổi quy định xử phạt vi phạm hành chính trong lĩnh vực đất đai (liên quan gián tiếp nhóm BĐS: PDR, KDH, VIC, VRE). ([batdongsan.baoxaydung.vn](https://batdongsan.baoxaydung.vn/loat-chinh-sach-dat-dai-bat-dong-san-moi-co-hieu-luc-tu-thang-8-192260807183037461.htm))
+- **Quốc hội xem xét sửa 3 luật lớn (Đất đai, Nhà ở, Kinh doanh BĐS)** tại kỳ họp không thường lệ — thời điểm cụ thể **chưa kiểm chứng**, cần theo dõi vì có thể ảnh hưởng giá đất, bồi thường, chung cư. ([kevesko.vn](https://kevesko.vn/20260821/viet-nam-xem-xet-cai-to-ba-luat-lon-chi-phoi-thi-truong-bat-dong-san-43808511.html))
+- **Nghỉ lễ Quốc khánh 2/9 (5 ngày)** — dòng tiền có thể thận trọng hơn trước kỳ nghỉ dài. ([kenh14.vn](https://kenh14.vn/chung-khoan-se-ra-sao-truoc-ky-nghi-2-9-215260823161801554.chn))
+- **Hội nghị Jackson Hole 27-29/8/2026** — giới đầu tư toàn cầu theo dõi định hướng lãi suất Fed, có thể ảnh hưởng dòng vốn ngoại vào thị trường mới nổi/cận biên như VN. ([thoibaotaichinhvietnam.vn](https://thoibaotaichinhvietnam.vn/chung-khoan-tuan-cuoi-thang-8-2026-dong-tien-tro-lai-vn-index-se-tai-thu-suc-moc-1-800-diem-202776.html))
 
-1. **VRE** — catalyst FTSE cụ thể + KQKD/cổ tức ổn định, không có rủi ro tiêu cực nổi bật trong tin tìm được.
-2. **VIC** — catalyst FTSE mạnh nhất (đã tăng giá phản ánh một phần) nhưng đi kèm rủi ro nợ đáo hạn ngắn hạn lớn cần theo dõi; số liệu nợ giữa nguồn chưa đồng nhất.
-3. **KDH** — nền tảng cơ bản vững (sạch nợ, không pha loãng, dự án bán tốt) nhưng thiếu catalyst dòng vốn ngoại gần hạn.
-4. **PDR** — có tín hiệu tích cực (chủ tịch mua cổ phiếu, dự án Thu Thiêm) nhưng rủi ro pha loãng từ đợt chào bán 5:1 và chất lượng lợi nhuận Q1 phụ thuộc giao dịch một lần.
-5. **PNJ** — rủi ro tiêu cực rõ nhất trong nhóm: bê bối PNJ-LAB gây lỗ Q2/2026 và ảnh hưởng uy tín, dù có tín hiệu dòng tiền quỹ ngoại quay lại.
+### 🌏 Bối cảnh chung
+- **VN-Index:** Sau giai đoạn tích lũy quanh 1.730 điểm, chỉ số bật tăng đóng cửa quanh 1.768 điểm phiên 21/8/2026 nhờ dòng tiền quay lại nhóm chứng khoán/ngân hàng/BĐS, một phần nhờ tin NHNN tái cấp vốn hỗ trợ thanh khoản tổ chức tín dụng. Vùng 1.800-1.810 điểm được xem là ngưỡng thử thách lớn. ([thoibaotaichinhvietnam.vn](https://thoibaotaichinhvietnam.vn/chung-khoan-tuan-cuoi-thang-8-2026-dong-tien-tro-lai-vn-index-se-tai-thu-suc-moc-1-800-diem-202776.html))
+- **Tín dụng ngân hàng:** NHNN định hướng tăng trưởng tín dụng 2026 khoảng 15%, nhiều ngân hàng lớn (Techcombank, Vietcombank, MB, ACB, VietinBank, HDBank, VPBank) được cấp room cao hơn (>17%). Có thông tin thí điểm bỏ room tín dụng từ 2026 — **mức độ áp dụng cụ thể chưa kiểm chứng đầy đủ**. ([vneconomy.vn](https://vneconomy.vn/ngan-hang-nao-duoc-cap-room-tin-dung-cao-nhat-nam-2026.htm), [baodautu.vn](https://baodautu.vn/ngan-hang-o-at-cho-vay-bat-dong-san-thi-diem-bo-room-tin-dung-tu-nam-2026-d354104.html))
+- **Ngành BĐS:** Nhiều chính sách đất đai mới có hiệu lực tháng 8/2026 (Nghị định 281, Thông tư 29/2026/TT-BXD về thanh tra/dữ liệu vi phạm hành chính lĩnh vực xây dựng) — xu hướng siết chặt giám sát tuân thủ, có thể tăng chi phí pháp lý cho chủ đầu tư nhưng cũng giảm rủi ro dự án "ma"/vi phạm. Thứ trưởng Bộ Xây dựng nhận định thị trường BĐS 2026 sẽ "tiến triển tích cực". ([vietnamnet.vn](https://vietnamnet.vn/thu-truong-xay-dung-thi-truong-bat-dong-san-2026-se-tien-trien-tich-cuc-2475927.html))
+- **Nhóm Vingroup chi phối chỉ số:** VIC/VHM/VRE có ảnh hưởng lớn bất thường lên biến động VN-Index trong tháng 8/2026 (một phiên riêng lẻ kéo giảm gần 39 điểm) — cần lưu ý rủi ro tương quan cao giữa các mã cùng hệ sinh thái Vingroup (VIC, VRE, và cả KDH/PDR gián tiếp qua ngành BĐS).
+
+### 🏆 Xếp hạng theo hỗ trợ tin tức (mạnh → yếu)
+1. **KDH** — Sạch nợ trái phiếu, lãnh đạo mua vào lượng lớn, dự án mới được duyệt quy hoạch; điểm trừ là doanh thu lõi giảm mạnh.
+2. **VIC** — KQKD 6 tháng vượt trội, đỉnh lịch sử, nhưng giá đã phản ánh phần lớn tin tốt (rủi ro mua đuổi).
+3. **PNJ** — Gỡ được rủi ro pháp lý lớn (vụ kim cương) + lãnh đạo/quỹ ngoại mua vào, nhưng nền tảng quý 2 lỗ.
+4. **VRE** — Câu chuyện cổ tức + mô hình bán lẻ mới hợp lý nhưng thiếu tin tức mới trong tháng 8, tỷ lệ lấp đầy còn thấp.
+5. **PDR** — Catalyst M&A dự án tích cực nhưng đi kèm rủi ro pha loãng cổ phiếu rõ ràng (phát hành ~200 triệu cp dưới giá sổ sách).
 
 ---
-
-*Đây KHÔNG PHẢI khuyến nghị đầu tư — chỉ là tổng hợp tin tức/bối cảnh để hội đồng tranh luận tham khảo. Mô hình dự báo có edge yếu (AUC ~0.53-0.55); tin tức trên bổ sung góc nhìn định tính, không thay thế quản trị rủi ro.*
+**⚠️ Đây KHÔNG PHẢI khuyến nghị đầu tư.** Thông tin trên chỉ nhằm bổ sung góc nhìn tin tức/cơ bản cho hội đồng tranh luận; mô hình định lượng nền có edge yếu (AUC ~0.53–0.55), nhà đầu tư cần tự đánh giá rủi ro và không nên coi bất kỳ nội dung nào ở đây là lời khuyên mua/bán.
 
 
 
@@ -140,73 +127,69 @@ KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ.
 
 # 🗣️ PHIÊN 2 — LUẬN ĐIỂM BÒ (Agent C)
 
-### 🐂 Agent C — Tổng hợp hướng BÒ · 2026-08-27 03:35
+### 🐂 Agent C — Tổng hợp hướng BÒ · 2026-08-28 02:25
 
-*Lưu ý mở đầu: mô hình dự báo có edge yếu (AUC ~0.53–0.55, score cao nhất trong nhóm chỉ 0.59). Luận điểm bò dưới đây KHÔNG dựa vào score mô hình để thuyết phục, mà đứng trên catalyst tin tức (Agent B) + xác nhận kỹ thuật (Agent A). Nơi nào không đủ hai chân này, tôi không xếp vào "kèo bò".*
+*Phạm vi: chọn từ 5 mã ứng viên top-score (VIC, PNJ, PDR, KDH, VRE) đã được Agent A (kỹ thuật) và Agent B (news/cơ bản) phân tích. Chỉ dùng lại bằng chứng đã có trên whiteboard, không thêm dữ kiện mới. Mô hình nền có edge yếu (AUC ~0.53–0.55) — luận điểm dưới đây không dựa vào score một mình mà bắt buộc phải có xác nhận song song từ kỹ thuật + catalyst tin tức.*
 
 ---
 
-## 1) VIC — Tập đoàn Vingroup
+## 1) VIC — Vingroup
 
-**Luận điểm mua:**
-Theo Agent A, VIC là "uptrend rõ nhất nhóm" — giá nằm trên cả MA20 và MA50, MA50 đang dốc lên rõ, đã đi từ đáy ~125k (tháng 3) lên trên 240k, hiện điều chỉnh nhẹ về 232k (điểm KT 7/10 — cao nhất nhóm 5 mã). Theo Agent B, đây là mã có catalyst cụ thể và gần hạn nhất trong nhóm: VIC nằm trong danh sách 27 mã được FTSE Russell đưa vào rổ FTSE GEIS thị trường mới nổi, hiệu lực chính thức 21/09/2026 — SSI Research ước dòng vốn thụ động 2,2–4,3 tỷ USD toàn thị trường, Vietcap ước riêng ~78.900 tỷ đồng chảy vào TTCK Việt Nam. Đây là nâng hạng thị trường, một sự kiện hiếm và có cơ chế dòng vốn thụ động rõ ràng, không phải tin đồn.
+**Luận điểm mua**
+Theo Agent A, VIC là setup kỹ thuật đẹp nhất nhóm (**7/10**, cao nhất trong 5 mã): giá đã breakout vượt vùng đỉnh cũ ~225–230k bằng một nến gap lớn, có khối lượng xác nhận mạnh nhất nhóm (vol_ratio 1.49). Đây không phải hồi kỹ thuật đơn thuần mà là xác nhận xu hướng bằng dòng tiền thật. Số liệu signals_latest.csv cũng cho VIC điểm mô hình cao nhất trong toàn bộ 38 mã quét được (score 0.6478).
 
-**Catalyst:**
-- FTSE nâng hạng hiệu lực 21/09/2026 (Agent B) — cách entry hiện tại khoảng 3-4 tuần, nằm gọn trong time-stop 25 ngày của mô hình.
-- Kế hoạch kinh doanh 2026: doanh thu mục tiêu 450.000 tỷ (+36% svck) (Agent B).
-- Đã phát hành thành công 250 triệu USD trái phiếu hoán đổi để kéo dài kỳ hạn nợ — công ty đang chủ động quản trị thanh khoản, không bị động (Agent B).
+**Catalyst**
+Theo Agent B, ngày 27/8/2026 VIC tăng 2,6% lên 236.000đ, lập đỉnh lịch sử, vốn hóa vượt 1,8 triệu tỷ đồng. Đây là catalyst cơ bản có thật và rất mạnh: doanh thu thuần hợp nhất 6 tháng đạt 222.300 tỷ đồng (+73% YoY), LNST gấp 4,5 lần cùng kỳ. Việc giá phá đỉnh lịch sử ngay sau kết quả kinh doanh bùng nổ cho thấy đà tăng có nền tảng cơ bản đi kèm, không phải thuần đầu cơ kỹ thuật.
 
-**Kịch bản giá tới TP (250.560đ, +8% từ entry ~232.000đ):**
-Suy luận (không phải dữ kiện whiteboard): nếu dòng tiền đón đầu sự kiện FTSE (hiệu lực 21/09) tiếp tục vào trước ngày cơ cấu — như đã từng đẩy giá +60% trong 1 tháng qua (Agent B) — thì việc phá đỉnh cũ 242k để chạm TP 250.560đ là kịch bản hợp lý về mặt kỹ thuật, vì xu hướng MA50 vẫn đang dốc lên (Agent A) và giá mới chỉ điều chỉnh nhẹ chứ chưa gãy trend.
+*Suy luận (chưa có trên whiteboard, chỉ là logic thời gian):* mốc nâng hạng FTSE Russell dự kiến 21/9/2026 (theo Agent B) rơi vào trong khung time-stop 25 ngày kể từ 27/8 (~21/9). Nếu VIC nằm trong nhóm cổ phiếu hưởng lợi dòng vốn ETF ngoại như B nêu, đây là một catalyst tiềm năng bổ sung nằm gọn trong thời gian nắm giữ của tín hiệu — dù B đã ghi rõ danh sách 30 mã cụ thể "chưa kiểm chứng", nên đây chỉ là optionality, không phải catalyst chắc chắn.
 
-**Rủi ro & vì sao chịu được:**
-- RSI 66,6 cận vùng quá mua, volume xác nhận yếu (vol_ratio 0.23) (Agent A) — rủi ro mua đuổi. Tuy nhiên SL 220.400đ được đặt trùng vùng MA50/hỗ trợ gần (Agent A) — về mặt kỹ thuật đây là vùng phòng thủ hợp lý, không phải SL tùy tiện.
-- Nợ tài chính tăng mạnh, 63% là nợ ngắn hạn đáo hạn 2026 (Agent B, số liệu giữa nguồn chưa đồng nhất — Agent B ghi rõ "chưa kiểm chứng đầy đủ"). Đây là rủi ro cấu trúc dài hạn hơn là rủi ro biến động giá trong khung thời gian time-stop 25 ngày của kèo swing này; công ty "chưa từng chậm trả nợ và có lịch sử trả trước hạn" (Agent B).
-- Rủi ro "tin đã ra giá đã chạy" (sell-the-news) khi FTSE chính thức có hiệu lực — R:R của setup (TP +8% / SL ~5% quanh vùng MA50) là cơ chế quản trị rủi ro cho đúng kịch bản này, không phụ thuộc vào việc dự đoán chính xác phản ứng giá quanh ngày 21/09.
+**Kịch bản giá tới TP (+8%)**
+Giá 236.000 → TP 254.880đ, SL 224.200đ (theo signals_latest.csv), time-stop 25 ngày. R:R ước tính ≈ (254.880−236.000)/(236.000−224.200) ≈ 1,6:1. Với khối lượng xác nhận mạnh nhất nhóm đi cùng breakout, xác suất giá tiếp tục xu hướng trước khi chạm SL cao hơn so với các mã có vol_ratio thấp trong nhóm.
+
+**Rủi ro & vì sao chịu được**
+Rủi ro rõ nhất (theo A): RSI 68,74 cận vùng quá mua, nến vào lệnh đã giãn xa MA20 sau gap lớn → rủi ro mua đuổi, có thể điều chỉnh lấp gap ngắn hạn. Theo B: giá đã lập đỉnh lịch sử nên một phần tin tốt có thể đã phản ánh vào giá, và nhóm Vingroup (VIC/VHM/VRE) có rủi ro chi phối/tương quan cao với biến động chỉ số (một phiên riêng lẻ đã kéo VN-Index giảm gần 39 điểm).
+- Về RSI: 68,74 vẫn **chưa** chạm ngưỡng quá mua kỹ thuật kinh điển (70), và đi kèm vol_ratio cao nhất nhóm — tổ hợp này gần với xác nhận dòng tiền hơn là dấu hiệu kiệt sức.
+- Về "giá đã phản ánh hết tin tốt": catalyst đã xảy ra là KQKD, nhưng khung thời gian nắm giữ (25 ngày) còn overlap với sự kiện nâng hạng FTSE — nếu đúng, đây là biên độ có thể chưa phản ánh hết vào giá hiện tại.
+- SL −5% và time-stop 25 ngày giới hạn rõ mức lỗ tối đa và thời gian chịu rủi ro nếu breakout thất bại.
 
 ---
 
 ## 2) VRE — Vincom Retail
 
-**Luận điểm mua:**
-Theo Agent A, VRE có "tín hiệu volume ủng hộ tốt nhất" nhóm: vol_ratio 0.655 — cao vượt trội so với 4 mã còn lại — đi kèm cú cắt lên trên MA50 sau downtrend Apr–Jul (đỉnh 36k → đáy ~21k). Đây là xác nhận dòng tiền thực đang vào, không chỉ là hồi kỹ thuật suông. Theo Agent B, VRE là mã được xếp hạng tin tức mạnh nhất nhóm 5 mã ("catalyst FTSE cụ thể + KQKD/cổ tức ổn định, không có rủi ro tiêu cực nổi bật trong tin tìm được").
+**Luận điểm mua**
+Theo Agent A, VRE là ứng viên đáng chú ý thứ hai (**6,5/10**): giá vừa cắt lên lại MA20/MA50 sau downtrend từ đỉnh tháng 4 (~36k → đáy ~24k), có khối lượng ủng hộ (vol_ratio 1,37) và RSI 58,0 — còn nhiều dư địa trước vùng quá mua hơn hẳn VIC. Đây là điểm mạnh riêng của VRE so với VIC: rủi ro mua đuổi thấp hơn.
 
-**Catalyst:**
-- Cùng nhóm VIC, VRE nằm trong danh sách 27 mã được FTSE đưa vào rổ mới nổi, hiệu lực 21/09/2026 (Agent B) — nhưng khác VIC, giá VRE *chưa* tăng nóng trước (VRE vẫn đang ở giai đoạn đầu đảo chiều theo Agent A), nên dư địa phản ứng với dòng vốn ngoại có thể còn nguyên.
-- ĐHĐCĐ 2026: kế hoạch lãi sau thuế 5.375 tỷ (+15% svck) (Agent B); Q1/2026 đã đạt ~30% kế hoạch lợi nhuận năm, khách đến TTTM +13-15%, doanh số khách thuê +23-25% svck (Agent B) — tăng trưởng thực đang xác nhận kế hoạch, không chỉ là mục tiêu trên giấy.
-- Cổ tức tiền mặt 10% dự kiến chi trả Q3/2026 (ngày GDKHQ chưa kiểm chứng — Agent B).
-- Mô hình "Vincom Collection" hợp tác Vinhomes theo cơ chế nhận hoa hồng thay vì đầu tư vốn trực tiếp — giảm áp lực vốn (Agent B).
+**Catalyst**
+Theo Agent B, VRE có hai catalyst cơ bản thật, độc lập với tín hiệu kỹ thuật: (1) ĐHĐCĐ 2026 đã chốt kế hoạch lãi 5.375 tỷ đồng, chia cổ tức tiền mặt 10% (1.000đ/cp, tổng ~2.272 tỷ đồng), quý 1/2026 lợi nhuận đã đạt ~30% kế hoạch năm; (2) mô hình bán lẻ mới "Vincom Collection" đang cho số liệu vận hành thực đo được: lượt khách tới TTTM tăng 13–15%, doanh thu khách thuê chung tăng 23–25% so với cùng kỳ. Đây là tăng trưởng hoạt động lõi thật, không phải kỳ vọng suông.
 
-**Kịch bản giá tới TP (28.458đ, +8% từ entry ~26.350đ):**
-Suy luận: với vol_ratio cao nhất nhóm xác nhận cú cắt MA50 (Agent A) cộng thêm cùng catalyst FTSE như VIC (Agent B), việc test lại vùng kháng cự cũ 28-30k (theo ghi chú của Agent A) là kịch bản hợp lý nếu đà mua ròng trước ngày cơ cấu 21/09 tiếp diễn.
+**Kịch bản giá tới TP (+8%)**
+Giá 26.000 → TP 28.080đ, SL 24.700đ, time-stop 25 ngày. Theo Agent A, vùng chốt lời 28.080 gần trùng vùng kháng cự cũ tháng 6/2026 (~28–29k) — nghĩa là mục tiêu TP được xác nhận chéo bằng cả mô hình lẫn quan sát chart, không phải con số áp đặt máy móc. R:R ≈ (28.080−26.000)/(26.000−24.700) ≈ 1,6:1.
 
-**Rủi ro & vì sao chịu được:**
-- Đây "mới là giai đoạn đầu đảo chiều sau downtrend dài, chưa có track record" (Agent A) — nói cách khác, mẫu hình đảo chiều chưa được kiểm chứng qua thời gian. SL 25.032đ khá sát entry (Agent A) — nghĩa là rủi ro giảm giá bị giới hạn chặt, không cho phép "hy vọng" kéo dài nếu volume không duy trì.
-- Không tìm thấy rủi ro tiêu cực nổi bật nào trong tin tức (Agent B) — đây là điểm khác biệt so với PNJ/PDR/KDH, nơi đều có ít nhất một rủi ro cụ thể (bê bối, pha loãng, hoặc thiếu catalyst). Bò VRE không phải vì không có rủi ro, mà vì rủi ro chính (mẫu hình đảo chiều mới, chưa track-record) đã được set giá qua SL sát entry.
-
----
-
-## Phản biện trước (chuẩn bị cho Agent D)
-
-- *"Score mô hình chỉ 0.55-0.58, AUC 0.53-0.55, gần như random"* — đúng, và vì vậy luận điểm bò ở đây **không dựa vào score** để thuyết phục mà dựa vào: (1) catalyst FTSE có cơ chế dòng vốn cụ thể, ngày hiệu lực rõ ràng (21/09/2026), nằm trong time-stop 25 ngày; (2) xác nhận kỹ thuật độc lập (trend + volume) từ Agent A.
-- *"VIC đã tăng 60%/tháng, mua đuổi"* — thừa nhận đúng (Agent B), đây là lý do tôi ưu tiên VRE hơn về mặt "dư địa còn nguyên", dù cả hai đều có catalyst chung.
-- *"VRE chưa có track record đảo chiều"* — thừa nhận đúng (Agent A), nhưng volume xác nhận là bằng chứng thực tế mạnh nhất trong nhóm 5 mã, và SL được đặt sát để giới hạn rủi ro nếu giả thuyết sai.
-- *"Ngành BĐS chiếm 4/5 mã, rủi ro tập trung ngành"* — đúng theo cơ cấu danh sách (Agent B), nhưng đây là rủi ro hệ thống áp dụng cho toàn nhóm ứng viên, không riêng VIC/VRE, và cả hai đều có động lực tăng trưởng lợi nhuận công bố riêng (VIC +36% doanh thu, VRE +15% lợi nhuận — Agent B).
+**Rủi ro & vì sao chịu được**
+Theo A, đây là tín hiệu đảo chiều mới hình thành, chưa được kiểm chứng qua thời gian — độ tin cậy kỹ thuật thấp hơn một xu hướng tăng đã xác lập như VIC. Theo B, tỷ lệ lấp đầy trung tâm thương mại cuối 2025 chỉ đạt 88,1%, và phần lớn tin tức tích cực (ĐHĐCĐ, cổ tức) đến từ đầu năm, chưa có catalyst mới cụ thể trong tháng 8/2026.
+- Về "tín hiệu đảo chiều còn mới": tín hiệu kỹ thuật (cắt MA20/50 + volume xác nhận) trùng thời điểm với catalyst cơ bản đã công bố (cổ tức tiền mặt, tăng trưởng khách thuê thực +23–25%) — hai loại bằng chứng độc lập cùng chiều làm giảm khả năng đây chỉ là nhiễu giá ngắn hạn.
+- Về tỷ lệ lấp đầy 88,1%: chính B cũng ghi nhận đây "vừa là dư địa vừa là điểm yếu hiện tại" — công ty đã đặt mục tiêu cải thiện chỉ số này trong 2026.
+- RSI 58 còn dư địa lớn trước ngưỡng quá mua so với VIC (68,74) → biên an toàn về mặt kỹ thuật cao hơn nếu muốn vào lệnh mới thay vì mua đuổi.
+- SL −5% và time-stop 25 ngày giới hạn rủi ro nếu tín hiệu đảo chiều không được xác nhận tiếp.
 
 ---
 
-**Kèo bò tự tin nhất:** VRE — kết hợp xác nhận volume mạnh nhất nhóm về kỹ thuật (Agent A) với catalyst FTSE cụ thể + không có rủi ro tiêu cực nổi bật trong tin tức tìm được (Agent B), trong khi dư địa giá chưa bị "chạy trước" như VIC.
+### Kèo bò tự tin nhất
+**VIC** — vì đây là mã duy nhất trong nhóm có đồng thời: điểm kỹ thuật cao nhất (7/10, breakout + volume xác nhận mạnh nhất), catalyst cơ bản đã xảy ra và định lượng được rõ ràng nhất (doanh thu +73%, LNST x4,5 YoY), và score mô hình cao nhất toàn bảng (0,6478) — dù rủi ro mua đuổi sau gap là có thật và cần tôn trọng SL nghiêm ngặt.
 
-KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ.
+---
+**KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ** — đây là luận điểm phe BÒ phục vụ tranh luận nội bộ hội đồng (chuẩn bị đối chiếu với Agent D phe gấu), dựa hoàn toàn trên bằng chứng đã ghi của Agent A/B và signals_latest.csv. Mô hình định lượng nền có edge yếu (AUC ~0,53–0,55); một số thông tin catalyst (ngày công bố KQKD tiếp theo của VIC, danh sách 30 mã hưởng lợi FTSE, ngày GDKHQ cổ tức VRE) được chính Agent B ghi là "chưa kiểm chứng" và cần xem như vậy.
+
+Đã ghi vào: `/home/runner/work/vn-stock-market-agent/vn-stock-market-agent/analysis/runs/log_run_2026-08-28_02-05-58/debate/notes/C_bull.md`
 
 
 ---
 
 # 🗣️ PHIÊN 3 — LUẬN ĐIỂM GẤU + PHẢN BIỆN (Agent D)
 
-### 🐻 Agent D — Tổng hợp hướng GẤU + phản biện · 2026-08-27 03:50
+### 🐻 Agent D — Tổng hợp hướng GẤU + phản biện · 2026-08-28 02:35
 
-*Vai trò: devil's advocate. Mục tiêu là stress-test luận điểm bò của Agent C bằng chính dữ kiện A+B, không bịa tin xấu. Nơi suy đoán, ghi rõ "giả định".*
+*Phạm vi: phản biện trực tiếp luận điểm mua của Agent C (VIC, VRE) dựa trên chính bằng chứng của Agent A (kỹ thuật) + Agent B (news), không thêm dữ kiện mới. Mô hình nền có edge yếu (AUC ~0,53–0,55) — gần với random, mọi khác biệt điểm số giữa các mã (0,64 vs 0,56) không nên được coi là tín hiệu thống kê mạnh.*
 
 ---
 
@@ -214,57 +197,70 @@ KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ.
 
 ### 1) VIC
 
-- **Agent C cho rằng** "MA50 đang dốc lên rõ… giá mới chỉ điều chỉnh nhẹ chứ chưa gãy trend" là cơ sở để tin giá phá đỉnh cũ chạm TP 250.560đ. Nhưng chính Agent A ghi nhận **RSI 66,6 cận vùng quá mua** và **vol_ratio 0,23 — "èo uột"**, tức là chuỗi tăng dẫn tới điều chỉnh hiện tại **không có xác nhận dòng tiền**. Một uptrend không có volume ủng hộ là uptrend dễ gãy khi gặp áp lực chốt lời, không phải nền tảng chắc để kỳ vọng phá đỉnh mới.
-- **Agent C thừa nhận** "VIC đã tăng 60%/tháng, mua đuổi" là đúng nhưng vẫn xếp VIC vào kèo bò với lý do time-stop 25 ngày trùng khớp ngày FTSE hiệu lực (21/09/2026). Vấn đề: tin FTSE **đã công bố từ 21/08/2026**, tức đã hơn 1 tuần trước khi entry — đây là kịch bản kinh điển "buy the rumor, sell the news". Giá +60% trong 1 tháng nhiều khả năng đã phản ánh phần lớn kỳ vọng dòng vốn thụ động; kịch bản "dòng tiền tiếp tục đón đầu tới sát ngày cơ cấu" mà C đưa ra **tự C cũng ghi rõ là "suy luận, không phải dữ kiện whiteboard"** — không có bằng chứng volume nào trong A hay B hỗ trợ giả định này, ngược lại vol_ratio hiện tại đang thấp nhất nhóm cùng VIC/PNJ.
-- **Agent C giảm nhẹ rủi ro nợ** bằng lập luận "rủi ro cấu trúc dài hạn hơn là rủi ro biến động giá trong 25 ngày". Đây là một giả định không thể kiểm chứng: nợ ngắn hạn đáo hạn 2026 chiếm tới **63% tổng nợ tài chính** (Agent B, dù số liệu giữa nguồn chưa đồng nhất — "chưa kiểm chứng đầy đủ"). Rủi ro tái cấp vốn/thanh khoản của một tập đoàn đa ngành lớn có thể kích hoạt tin xấu bất ngờ (hạ tín nhiệm, chậm giải ngân dự án, tin đồn) bất kỳ lúc nào trong khung 25 ngày — không thể loại trừ chỉ vì "chưa từng chậm trả trong quá khứ", vì đó là dữ liệu quá khứ, không phải bảo chứng tương lai.
-- **Rủi ro room ngoại chưa được C nhắc tới**: chính Agent B ghi "room ngoại vẫn là điểm nghẽn cần theo dõi" — nếu room ngoại tại VIC/VRE đã hạn chế, dòng vốn thụ động FTSE có thể **không giải ngân được ngay** ở các mã cụ thể này, làm giảm động lực giá ngắn hạn mà C đang đặt cược.
+**C cho rằng**: vol_ratio 1,49 + gap breakout = "xác nhận xu hướng bằng dòng tiền thật", không phải hồi kỹ thuật.
+**Nhưng**: khối lượng đột biến ngay tại vùng giá đỉnh lịch sử (236.000đ) cũng là đặc trưng kinh điển của một phiên phân phối/chốt lời (blow-off), không chỉ của dòng tiền mới vào. Bản thân whiteboard (A, B) không có công cụ nào phân biệt được hai khả năng này — vol_ratio cao chỉ nói "giao dịch sôi động", không nói "ai đang mua, ai đang bán". Coi mặc định là tích cực là một bước nhảy logic của C, không phải bằng chứng.
+
+**C cho rằng**: RSI 68,74 "chưa chạm 70" nên chưa quá mua, kết hợp vol cao là "gần xác nhận dòng tiền hơn là kiệt sức".
+**Nhưng**: đây là ngụy biện ranh giới cứng (bright-line fallacy). RSI 68,74 và 70 khác biệt không đáng kể về ý nghĩa — cả hai đều nằm trong vùng cảnh báo quá mua theo chính Agent A ("cận quá mua", "dư địa trước khi quá mua không còn nhiều"). Không có gì đảm bảo RSI sẽ không vượt 70 và điều chỉnh ngay phiên sau entry.
+
+**C cho rằng**: giá lập đỉnh lịch sử ngay sau KQKD bùng nổ chứng tỏ "đà tăng có nền tảng, không phải đầu cơ kỹ thuật".
+**Nhưng**: chính B đã nêu rủi ro ngược lại — "giá đã tăng mạnh, đỉnh lịch sử — rủi ro mua đuổi ở vùng giá cao; chưa kiểm chứng catalyst mới cụ thể ngoài đà tăng giá đã phản ánh". Đây là mẫu hình kinh điển "buy the rumor, sell the news" đảo ngược: tin đã ra, giá đã phản ánh, người mua sau cùng (late buyer sau gap) thường là người gánh rủi ro điều chỉnh khi thông tin hết mới.
+
+**C cho rằng**: mốc nâng hạng FTSE 21/9 là catalyst bổ sung nằm trong khung time-stop 25 ngày.
+**Nhưng**: chính C tự thừa nhận đây là "suy luận chưa có trên whiteboard, chỉ là logic thời gian" và B đã ghi rõ danh sách 30 mã hưởng lợi cụ thể "chưa kiểm chứng". Dùng một catalyst chưa kiểm chứng, chưa rõ VIC có nằm trong danh sách hay không, để củng cố luận điểm mua là suy diễn có lợi cho phe bò (confirmation bias), không phải bằng chứng vững.
+
+**Rủi ro hệ thống bị C giảm nhẹ**: B ghi nhận nhóm Vingroup (VIC/VHM/VRE) "chi phối chỉ số bất thường" — một phiên riêng lẻ đã kéo VN-Index giảm gần 39 điểm. Điều này có nghĩa nếu VIC điều chỉnh sau khi cận quá mua, rủi ro không dừng ở riêng mã này: thanh khoản/tâm lý cả nhóm liên quan (kể cả VRE — cũng nằm trong danh mục mua của C) có thể bị kéo theo cùng lúc. C đề xuất mua cả VIC lẫn VRE nghĩa là gánh rủi ro tương quan tập trung vào một hệ sinh thái, không phải hai vị thế độc lập.
+
+**R:R thực tế**: TP/SL cho R:R ≈ 1,6:1 — cần xác suất thắng >38% để hoà vốn. Với mô hình AUC 0,53–0,55 (chỉ nhỉnh hơn tung đồng xu một chút), không có cơ sở định lượng để tin xác suất thắng thực tế vượt ngưỡng hoà vốn một cách chắc chắn.
 
 ### 2) VRE
 
-- **Agent C dựa vào** vol_ratio 0,655 cao nhất nhóm để khẳng định "dòng tiền thực đang vào, không chỉ hồi kỹ thuật suông". Nhưng chính Agent A gọi đây là **"giai đoạn đầu đảo chiều sau downtrend dài, chưa có track record"**. Một phiên/vài phiên volume cao kèm cắt MA50 hoàn toàn có thể là short-covering hoặc bull trap — cần nhiều phiên giữ vững trên MA50 mới đủ xác nhận xu hướng đảo chiều bền vững, điều mà dữ liệu hiện có **chưa cung cấp**.
-- **Agent C coi SL sát entry (25.032đ, ~-5%) là ưu điểm** ("rủi ro giới hạn chặt"). Nhưng đây cũng là con dao hai lưỡi: sau một downtrend sâu (đỉnh 36k → đáy ~21k, tương đương **-42%** theo Agent A), biến động nhiễu (noise) thông thường của những phiên đầu đảo chiều rất dễ quét qua một SL đặt sát, trước khi xu hướng thực sự (nếu có) kịp xác nhận — tức là setup này có xác suất bị "stop out" sớm cao hơn bình thường.
-- **TP 28.458đ nằm ngay trong vùng kháng cự cũ 28-30k** mà chính Agent A nêu ("phải test lại vùng kháng cự cũ"). Đây là cùng một dạng rủi ro mà cả Agent A và Agent C đều dùng để hạ điểm PNJ/PDR (TP trùng kháng cự MA50/vùng cản) — nhưng khi áp dụng cho VRE, Agent C lại bỏ qua và coi là "kịch bản hợp lý". Logic không nhất quán giữa hai mã.
-- **"Không có rủi ro tiêu cực nổi bật trong tin tức" (Agent B) không đồng nghĩa với "không có rủi ro"** — đơn giản là chưa tìm thấy. VRE vận hành TTTM bán lẻ, vẫn chịu rủi ro tiêu dùng chậm lại nếu vĩ mô xấu đi, một rủi ro hệ thống không được lượng hoá trong cả A lẫn B.
+**C cho rằng**: tín hiệu kỹ thuật (cắt MA20/50 + volume) trùng thời điểm với catalyst cơ bản (cổ tức, Vincom Collection) là "hai loại bằng chứng độc lập cùng chiều", giảm khả năng nhiễu.
+**Nhưng**: chính Agent A đã cảnh báo đây là "tín hiệu đảo chiều mới hình thành, chưa được kiểm chứng qua thời gian". Giá mới hồi từ đáy ~24k lên 26.000đ (~8%) sau một downtrend kéo dài từ đỉnh 36k — biên độ này hoàn toàn nằm trong dao động nhiễu bình thường của một xu hướng giảm, chưa đủ để khẳng định đảo chiều. Một hoặc vài phiên cắt MA không phải là "xác nhận", đó chính là định nghĩa của rủi ro "bull trap".
 
-### 3) Phản biện chung tới phần "Phản biện trước" của Agent C
+**C cho rằng** catalyst cổ tức + mô hình Vincom Collection là "tăng trưởng hoạt động lõi thật, không phải kỳ vọng suông".
+**Nhưng**: chính B ghi rõ "phần lớn thông tin có sẵn từ đầu năm (ĐHĐCĐ tháng 4–6)... chưa có tin tức mới trong tháng 8/2026". Nếu catalyst đã cũ 4-5 tháng, câu hỏi hợp lý là: tại sao thị trường lại phản ứng đúng vào lúc này? Không có lý do mới nào giải thích tại sao dòng tiền chọn thời điểm cuối tháng 8 để định giá lại một thông tin đã biết từ tháng 4 — nhiều khả năng đây chỉ là một nhịp hồi kỹ thuật ăn theo đà tăng của cả nhóm Vingroup (VIC) chứ không phải catalyst riêng của VRE.
 
-- C tự nhận model score AUC 0,53-0,55 "gần như random" và chuyển toàn bộ luận điểm sang catalyst FTSE + kỹ thuật độc lập. Nhưng **cả VIC và VRE đều dùng chung một catalyst (FTSE 21/09/2026) và cùng một ngành (RealEstate)** — đây không phải hai kèo độc lập mà là **đặt cược tập trung vào cùng một sự kiện, cùng một rủi ro hệ thống ngành BĐS**. Nếu giả định về phản ứng giá quanh sự kiện FTSE sai (ví dụ sell-the-news, hoặc dòng vốn giải ngân chậm do vướng room ngoại), cả hai kèo bò của C đều sai cùng lúc — không có sự đa dạng hoá thực sự như cách trình bày "hai kèo bò tách biệt".
-- Bản thân khung "catalyst + kỹ thuật thay cho model score" **chưa từng được backtest** trong whiteboard này — đây là một framework suy luận mới do Agent C tự đề xuất, chưa có track record để tin tưởng hơn model, dù model yếu.
+**C giảm nhẹ rủi ro lấp đầy 88,1%** bằng cách trích B rằng đây "vừa là dư địa vừa là điểm yếu".
+**Nhưng**: 88,1% là chỉ số vận hành cốt lõi của một doanh nghiệp cho thuê bán lẻ — thấp hơn đáng kể so với kỳ vọng thông thường cho TTTM chất lượng cao (>95%). Đây là điểm yếu thực chất về nhu cầu thuê, không chỉ là "cơ hội cải thiện trong tương lai"; kỳ vọng cải thiện là giả định, chưa có số liệu quý gần nhất xác nhận đã cải thiện.
+
+**Rủi ro tương quan Vingroup**: như đã nêu ở phần VIC, nếu VIC (đang cận quá mua, RSI 68,74) điều chỉnh, VRE — cùng hệ sinh thái và cùng bị B ghi nhận rủi ro chi phối chỉ số — nhiều khả năng bị kéo theo, bất kể tín hiệu kỹ thuật/cổ tức riêng của VRE tốt đến đâu.
 
 ---
 
-## Rủi ro downside theo mã (tới SL hoặc xa hơn)
+## Rủi ro downside theo mã
 
-| Mã | SL (từ signals_latest.csv) | Rủi ro downside cụ thể |
-|---|---|---|
-| **VIC** | 220.400đ (~-5%) | Sell-the-news sau FTSE (tin đã ra từ 21/08, giá đã +60%/tháng); volume xác nhận yếu (0,23) khiến uptrend dễ gãy; nợ ngắn hạn lớn đáo hạn 2026 (số liệu chưa kiểm chứng đầy đủ) có thể là nguồn tin xấu bất ngờ; RSI cận quá mua (66,6) tăng xác suất điều chỉnh sâu hơn MA50, xuyên SL. |
-| **VRE** | 25.032đ (~-5%) | Mẫu hình đảo chiều mới 1 giai đoạn, chưa có track record (Agent A) — dễ là bull trap; downtrend trước đó rất sâu (-42%) nên áp lực bán tại vùng kháng cự 28-30k cao; SL sát dễ bị quét bởi nhiễu giá thông thường. |
-| **PDR** | 11.970đ (~-5%) | Rủi ro pha loãng **cụ thể và đã công bố**: chào bán ~199,56 triệu CP giá 10.000đ — thấp hơn thị giá 12.600đ (Agent B) → áp lực giảm giá kỹ thuật khi thị trường định giá lại theo mức pha loãng. Doanh thu Q1 giảm 76%, lãi chủ yếu từ chuyển nhượng vốn (phi cốt lõi) — chất lượng lợi nhuận yếu. MA50 vẫn dốc xuống, volume yếu (0,25) — hồi kỹ thuật trong downtrend chưa gãy. |
-| **PNJ** | 40.518đ (~-5%) | Tin xấu **đã xảy ra và đã ảnh hưởng số liệu thật**: lỗ sau thuế Q2/2026 ~283 tỷ do bê bối PNJ-LAB, trích lập dự phòng 865,5 tỷ; biên lợi nhuận bị ép do giá vàng cao; Agent B tự ghi "vẫn cần theo dõi tiếp diễn biến pháp lý" — rủi ro chưa khép lại. Kỹ thuật yếu nhất nhóm: dưới MA50 đang giảm, volume thấp nhất (0,10), TP trùng kháng cự MA50. |
-| **KDH** | 17.385đ (~-5%) | Downtrend liên tục và chưa gãy (28k → 18,3k), giá dưới cả MA20/MA50, RSI trung tính (không phải phân kỳ tăng oversold) — theo chính Agent A đây là setup **gần nhất với "bắt dao rơi"** trong nhóm 5 mã. Cơ bản tốt (sạch nợ, dự án bán chạy — Agent B) là câu chuyện dài hạn, không phải catalyst ngắn hạn đủ để đảo ngược downtrend kỹ thuật trong 25 ngày. |
+- **VIC**: SL −5% (224.200đ) có thể bị xuyên qua nếu điều chỉnh "lấp gap" xảy ra nhanh sau breakout (rủi ro chính A đã nêu); do biên độ HOSE ±7%/phiên, một phiên giảm mạnh có thể khiến giá gap qua vùng SL dự kiến, trượt giá (slippage) lớn hơn mức lỗ tính toán. Rủi ro hệ thống: nếu nhóm Vingroup điều chỉnh đồng loạt (đã có tiền lệ một phiên kéo VN-Index giảm ~39 điểm), thanh khoản thoát hàng có thể kém hơn dự kiến.
+- **VRE**: rủi ro "bull trap" trong xu hướng giảm chưa xác lập đáy rõ ràng; tỷ lệ lấp đầy thấp (88,1%) là điểm yếu vận hành thật; tương quan cao với VIC/nhóm Vingroup nghĩa là rủi ro không độc lập với vị thế VIC nếu nắm giữ đồng thời.
+- **PNJ**: KQKD quý 2/2026 lỗ là sự thật đã xảy ra (không phải suy đoán) — phục hồi giá gần đây chủ yếu đến từ tâm lý "gỡ nút thắt pháp lý" (vụ kim cương) và tin lãnh đạo/quỹ ngoại mua vào, chứ chưa có bằng chứng nền tảng kinh doanh cải thiện. Giá vẫn dưới MA50 đang giảm, downtrend dài (80k→30k) — nhịp hồi hiện tại (~42k) chỉ là một phần nhỏ so với biên độ giảm, rủi ro tiếp tục giảm nếu ĐHĐCĐ bất thường (dự kiến họp tháng 10/2026) đưa ra kế hoạch kinh doanh điều chỉnh giảm thêm.
+- **PDR**: rủi ro pha loãng cụ thể và đã công bố — kế hoạch phát hành ~200 triệu cổ phiếu giá dưới sổ sách. Đây là headwind trực tiếp lên giá (tăng cung, pha loãng EPS) độc lập với catalyst M&A dự án Lotte Eco Smart City. Kỹ thuật yếu (vol_ratio 0,76 <1, dưới MA50) — nhịp hồi thiếu dòng tiền xác nhận, đúng như A cảnh báo là "hồi kỹ thuật ngắn trong xu hướng giảm".
+- **KDH**: dù có tin lãnh đạo mua vào lượng lớn và "sạch nợ trái phiếu", chính B ghi nhận doanh thu bán nhà (hoạt động lõi) giảm gần 85%, lợi nhuận chủ yếu đến từ thoái vốn một lần (không lặp lại được) — chất lượng lợi nhuận thấp. Kỹ thuật là yếu nhất nhóm theo A (2,5/10): downtrend dai dẳng nhất, dưới cả MA20/MA50, vol_ratio 0,68 thấp nhất nhóm — gần như "bắt dao rơi" điển hình.
 
-**Rủi ro hệ thống chung cả nhóm:**
-- **4/5 mã (KDH, VIC, PDR, VRE) đều thuộc ngành RealEstate** — rủi ro tập trung ngành cao; nếu có cú sốc vĩ mô (lãi suất, room tín dụng BĐS, hoặc tâm lý bán tháo sau khi FTSE "ra tin") thì cả nhóm có thể giảm đồng loạt, làm mất tác dụng phân bổ rủi ro giữa các mã.
-- Margin kỷ lục, khối ngoại bán ròng, biên độ dao động ±7%/phiên, tình trạng kẹp hàng T+2 — **không có dữ liệu nào trong whiteboard A/B xác nhận hay phủ nhận các yếu tố này** ở thời điểm hiện tại; đây là rủi ro hệ thống cần lưu ý nhưng "chưa kiểm chứng" trong phạm vi tài liệu này.
-- Trong phiên biến động mạnh, lệnh cắt lỗ tại các mức SL nêu trên có thể bị "nhảy cóc" (gap) qua do biên độ ±7%, khiến giá khớp thực tế xấu hơn mức SL dự kiến.
+**Rủi ro hệ thống/vĩ mô chung** (theo B, có thật trên whiteboard):
+- Nhóm Vingroup (VIC/VHM/VRE) chi phối bất thường lên biến động VN-Index — rủi ro tập trung nếu danh mục có cả VIC và VRE.
+- Kỳ nghỉ lễ Quốc khánh 2/9 (5 ngày) ngay sau thời điểm entry — thanh khoản có thể co lại trước kỳ nghỉ, biến động khó lường.
+- Hội nghị Jackson Hole 27–29/8/2026 diễn ra đúng lúc — định hướng lãi suất Fed có thể ảnh hưởng dòng vốn ngoại vào thị trường cận biên/mới nổi như VN, tạo biến động ngoài dự đoán của mô hình kỹ thuật thuần túy.
+- Chính sách đất đai mới (Nghị định 281/2026/NĐ-CP hiệu lực 31/8/2026, dự thảo sửa 3 luật lớn) ảnh hưởng trực tiếp nhóm BĐS (PDR, KDH, VIC, VRE) — có thể là chi phí tuân thủ tăng, hoặc thay đổi cách tính bồi thường/giá đất chưa lường trước được.
+- **Margin kỷ lục, khối ngoại bán ròng cụ thể, biên độ ±7% áp dụng thực tế phiên nào, tình trạng kẹp hàng T+2**: **chưa kiểm chứng** trong whiteboard hiện có (A, B không đề cập số liệu cụ thể) — đây là rủi ro cấu trúc thị trường luôn tồn tại ở HOSE cần lưu ý độc lập, không phải bằng chứng lấy từ báo cáo A/B/C.
 
 ---
 
 ## Mã nên tránh
 
-- **KDH** — rủi ro kỹ thuật rõ ràng nhất nhóm: downtrend chưa gãy, dưới cả MA20/MA50, khối lượng èo uột, đây là dạng "bắt dao rơi" theo chính đánh giá của Agent A. Cơ bản tốt không đủ để bù đắp một xu hướng giá đang giảm chưa có tín hiệu tạo đáy kỹ thuật rõ ràng.
-- **PNJ** — duy nhất trong nhóm có tin xấu **đã xảy ra và đã phản ánh vào kết quả kinh doanh thực** (lỗ Q2 ~283 tỷ), kết hợp kỹ thuật yếu nhất (volume thấp nhất, dưới MA50 đang giảm). Rủi ro pháp lý/uy tín theo Agent B "vẫn cần theo dõi" — chưa có gì đảm bảo đã kết thúc.
-- **PDR** — rủi ro pha loãng cổ phần là dữ kiện cụ thể, đã công bố (không phải suy đoán), trực tiếp đe doạ thị giá khi đợt chào bán 5:1 giá 10.000đ triển khai.
+**KDH** — rủi ro nhất trong nhóm 5 mã: kỹ thuật yếu nhất (2,5/10, dưới MA20/MA50, vol_ratio thấp nhất), doanh thu lõi giảm 85% khiến chất lượng lợi nhuận công bố (mục tiêu 1.500 tỷ 2026) đáng ngờ, thiếu xác nhận dòng tiền cho bất kỳ nhịp hồi nào. Tin lãnh đạo mua vào là tín hiệu niềm tin nội bộ, nhưng không thay thế được bằng chứng kỹ thuật/dòng tiền thị trường — đây là setup "bắt dao rơi" gần như thuần túy.
+
+**PDR** đứng thứ nhì về rủi ro tránh: rủi ro pha loãng cổ phiếu đã công bố rõ ràng (~200 triệu cp dưới sổ sách) là headwind định lượng được, cộng với kỹ thuật yếu (vol_ratio 0,76).
 
 ---
 
-## Nhắc lại edge mô hình
+## Cảnh báo edge mô hình yếu (nhắc lại)
 
-Mô hình dự báo hiện có **AUC ~0,53–0,55**, score cao nhất nhóm chỉ 0,5912 (KDH) — gần với mức phân loại ngẫu nhiên. Toàn bộ thứ hạng/điểm số trong `signals_latest.csv`, kể cả các luận điểm catalyst + kỹ thuật của Agent C, **không nên được xem là tín hiệu có xác suất thắng cao đã được kiểm chứng** — chúng là suy luận định tính dựa trên dữ liệu whiteboard, không phải kết quả backtest có ý nghĩa thống kê. Sự tự tin trong cách trình bày luận điểm bò (đặc biệt phần "vì sao chịu được" rủi ro) cần được cân với thực tế rằng mô hình nền tảng của toàn bộ pipeline gần như không có edge dự báo đáng kể.
+Toàn bộ phân tích trên — của cả A, B, C và D — dựa trên một mô hình nền có **AUC chỉ ~0,53–0,55**, tức gần sát mức dự đoán ngẫu nhiên (0,50). Chênh lệch điểm số giữa mã đứng đầu (VIC, 0,6478) và mã thấp nhất trong nhóm 5 (VRE, 0,5608) là rất nhỏ và **không nên được diễn giải như một tín hiệu xác suất đáng tin cậy**. Cả luận điểm bò của C lẫn phản biện gấu của D đều là suy luận định tính dựa trên cùng một tập bằng chứng hạn chế (5 mã, 1 thời điểm) — không phải kiểm định thống kê độc lập. Bất kỳ mức độ tự tin cao nào (cả hai chiều mua/bán) đều nên được chiết khấu mạnh vì bản chất yếu của edge mô hình.
 
 ---
+**KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ** — đây là luận điểm phe GẤU/phản biện phục vụ tranh luận nội bộ hội đồng (stress-test luận điểm bò của Agent C), dựa hoàn toàn trên bằng chứng đã ghi của Agent A/B/C và signals_latest.csv. Một số suy luận rủi ro (margin kỷ lục, khối ngoại bán ròng cụ thể, kẹp hàng T+2) chưa có số liệu kiểm chứng trong whiteboard và được ghi rõ là "chưa kiểm chứng".
 
-KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ. Toàn bộ phân tích trên nhằm mục đích stress-test luận điểm bò để Agent E tổng hợp quyết định cuối, không phải khuyến nghị mua/bán.
+Đã ghi vào: `/home/runner/work/vn-stock-market-agent/vn-stock-market-agent/analysis/runs/log_run_2026-08-28_02-05-58/debate/notes/D_bear.md`
 
 
 ---
@@ -273,19 +269,19 @@ KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ. Toàn bộ phân tích trên nhằm m�
 
 *(Tóm tắt; chi tiết đầy đủ ở [`DECISION.md`](DECISION.md).)*
 
-### 🎩 Agent E — Giám đốc Chiến lược · 2026-08-27 03:16
+### 🎩 Agent E — Giám đốc Chiến lược · 2026-08-28 02:45
 
-*Phân xử giữa Agent C (bò) và Agent D (gấu), dựa trên bằng chứng A (kỹ thuật) + B (tin tức). Ưu tiên bảo toàn vốn — mô hình có edge yếu (AUC ~0,53–0,55). KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ.*
+**KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ** — quyết định mô phỏng, tôn trọng edge mô hình yếu (AUC ~0,53–0,55).
 
 | Mã | Quyết định | Độ tin cậy | Lý do 1 dòng |
 |---|---|---|---|
-| **VIC** | THEO DÕI | TB | Uptrend + catalyst FTSE thật, nhưng volume xác nhận yếu (0,23) và rủi ro sell-the-news (tin đã ra 21/08) khiến bò≈gấu. |
-| **VRE** | THEO DÕI | TB | Volume tốt nhất nhóm + catalyst FTSE, nhưng mới là giai đoạn đầu đảo chiều chưa track-record và TP nằm trong vùng kháng cự cũ — bò≈gấu. |
-| **PDR** | TRÁNH | TB | Rủi ro pha loãng cụ thể đã công bố (chào bán 5:1 dưới thị giá) + kỹ thuật vẫn dưới MA50 → gấu thắng rõ. |
-| **PNJ** | TRÁNH | Cao | Tin xấu đã ngấm vào KQKD thực (lỗ Q2 ~283 tỷ) + kỹ thuật yếu nhất nhóm. |
-| **KDH** | TRÁNH | Cao | Downtrend chưa gãy, dưới cả MA20/MA50 — setup gần nhất "bắt dao rơi" theo chính Agent A. |
+| VIC | THEO DÕI | TB | Setup tốt nhất nhóm nhưng phản biện D về RSI cận 70/khối lượng đỉnh lịch sử đủ mạnh để chờ xác nhận thay vì mua đuổi. |
+| VRE | THEO DÕI | TB | Bò≈gấu: tín hiệu đảo chiều mới + catalyst đã cũ, cần thêm phiên xác nhận trên MA20/50. |
+| PNJ | TRÁNH | TB | Kỹ thuật yếu dưới MA50, KQKD quý 2 lỗ thật — hồi giá chủ yếu do tâm lý pháp lý. |
+| PDR | TRÁNH | Cao | Rủi ro pha loãng ~200 triệu cp đã công bố + kỹ thuật yếu (vol_ratio <1, dưới MA50). |
+| KDH | TRÁNH | Cao | Kỹ thuật yếu nhất nhóm, doanh thu lõi giảm 85%, chất lượng lợi nhuận đáng ngờ. |
 
-**Stance danh mục: Thận trọng.** Không mã nào đạt mức MUA — 4/5 mã cùng ngành RealEstate (rủi ro tập trung), hai kèo bò khá nhất (VIC/VRE) cùng dựa một catalyst FTSE 21/09/2026 nên không phải hai vị thế độc lập thực sự. Chi tiết đầy đủ + kế hoạch giao dịch: `debate/DECISION.md`.
+**Stance danh mục**: Thận trọng — bò/gấu cân bằng ở 2 ứng viên khả dĩ nhất, rủi ro tương quan nhóm Vingroup, kỳ nghỉ lễ 2/9 và Jackson Hole 27–29/8 làm tăng bất định vĩ mô. Ưu tiên bảo toàn vốn: chỉ thăm dò nhỏ (2–3%/mã) khi có xác nhận thêm, không mở vị thế mới ở PNJ/PDR/KDH.
 
-KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ.
+Đã ghi vào: `/home/runner/work/vn-stock-market-agent/vn-stock-market-agent/analysis/runs/log_run_2026-08-28_02-05-58/debate/notes/E_cio.md`
 

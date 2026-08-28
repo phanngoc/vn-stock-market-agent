@@ -81,54 +81,54 @@
   ],
   "top_signals": [
     {
-      "symbol": "KDH",
-      "score": 0.5912,
-      "price_vnd": 18300
-    },
-    {
       "symbol": "VIC",
-      "score": 0.5843,
-      "price_vnd": 232000
+      "score": 0.6478,
+      "price_vnd": 236000
     },
     {
       "symbol": "PNJ",
-      "score": 0.5776,
-      "price_vnd": 42650
+      "score": 0.5945,
+      "price_vnd": 41900
     },
     {
       "symbol": "PDR",
-      "score": 0.5758,
-      "price_vnd": 12600
+      "score": 0.5784,
+      "price_vnd": 12650
+    },
+    {
+      "symbol": "KDH",
+      "score": 0.5778,
+      "price_vnd": 18400
     },
     {
       "symbol": "VRE",
-      "score": 0.5517,
-      "price_vnd": 26350
-    },
-    {
-      "symbol": "GAS",
-      "score": 0.5178,
-      "price_vnd": 83100
-    },
-    {
-      "symbol": "PLX",
-      "score": 0.5176,
-      "price_vnd": 36750
-    },
-    {
-      "symbol": "GVR",
-      "score": 0.5083,
-      "price_vnd": 32950
+      "score": 0.5608,
+      "price_vnd": 26000
     },
     {
       "symbol": "DGC",
-      "score": 0.5068,
-      "price_vnd": 44300
+      "score": 0.5277,
+      "price_vnd": 43200
+    },
+    {
+      "symbol": "GAS",
+      "score": 0.5277,
+      "price_vnd": 84300
+    },
+    {
+      "symbol": "GVR",
+      "score": 0.5188,
+      "price_vnd": 32950
+    },
+    {
+      "symbol": "PLX",
+      "score": 0.5171,
+      "price_vnd": 36400
     },
     {
       "symbol": "VCI",
-      "score": 0.5051,
-      "price_vnd": 22500
+      "score": 0.5041,
+      "price_vnd": 22600
     }
   ]
 }
