@@ -5,8 +5,9 @@ name: Daily VN swing brief
 
 on:
   schedule:
-    # 00:30 UTC = 07:30 giờ VN (UTC+7), T2–T6 (trước giờ mở cửa 09:00). Cron GitHub theo UTC & có thể trễ 10-40'.
-    - cron: "30 0 * * 1-5"
+    # 00:23 UTC = 07:23 giờ VN (UTC+7), T2–T6 (trước giờ mở cửa 09:00). Cron GitHub theo UTC & có thể trễ 10-40'.
+    # Dùng phút lẻ (:23) để né mốc tròn giờ/:00/:30 hay bị GitHub trễ hoặc drop khi tải cao.
+    - cron: "23 0 * * 1-5"
   workflow_dispatch: {}   # cho phép chạy tay từ tab Actions
 
 permissions:
