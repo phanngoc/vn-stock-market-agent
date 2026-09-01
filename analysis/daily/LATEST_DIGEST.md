@@ -1,39 +1,40 @@
 # 📈 Bản tin swing hằng ngày — TTCK Việt Nam
 
-*Tạo lúc 2026-08-31 06:04 · dữ liệu giá as-of **2026-08-28** (vnstock/VCI) · hội đồng 5 tác nhân đã tranh luận.*
+*Tạo lúc 2026-09-01 05:39 · dữ liệu giá as-of **2026-08-28** (vnstock/VCI) · hội đồng 5 tác nhân đã tranh luận.*
 
 > ⚠️ **KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ — NOT INVESTMENT ADVICE.** Đây là kết quả mô phỏng (ML + khung tranh luận đa tác nhân) trên dữ liệu quá khứ, edge mô hình YẾU (AUC ~0.53–0.55). Quyết định là của bạn; ưu tiên quản trị rủi ro.
 
 ## 🎩 Khẩu vị danh mục hôm nay: **Thận trọng**
-Mô hình nền edge yếu (AUC ~0.53-0.55) và ensemble không đồng thuận ở cả 5 mã ứng viên; 4/5 mã cùng ngành RealEstate chịu chung rủi ro chính sách room tín dụng BĐS 2026, nên ưu tiên bảo toàn vốn thay vì giải ngân dàn trải.
+Mô hình định lượng có edge yếu (AUC ~0.53-0.55) và ngay trong 2 mã setup tốt nhất, 2/5 mô hình con vẫn nghiêng dưới 50%; 4/5 mã ứng viên cùng ngành Bất động sản là rủi ro tập trung, nên không giải ngân mới ngay, ưu tiên bảo toàn vốn và chờ xác nhận thêm.
 
 
 ### 👀 THEO DÕI
 | Mã | Tin cậy | Vùng vào | Chốt lời | Cắt lỗ | Time-stop | Cỡ vị thế |
 |---|---|---|---|---|---|---|
-| **VIC** | TB | 228000-233000 | 254,880 | 224,200 | 25 phiên | 2-3% |
-| **VRE** | TB | 25500-26100 | 28,188 | 24,795 | 25 phiên | 2-3% |
+| **VIC** | TB | 224000-230000 | 254,880 | 224,200 | 25 phiên | 2-3% |
+| **VRE** | TB | 25800-26500 | 28,188 | 24,795 | 25 phiên | 2-3% |
 
 ### ⛔ TRÁNH
 | Mã | Độ tin cậy | Lý do |
 |---|---|---|
-| **PDR** | Cao | Dưới MA50, RSI trung tính không xác nhận đảo chiều, volume yếu (0,61); tin Chủ tịch mua vào bị lấn át bởi giá giảm 40,6%/năm và áp lực dòng tiền ra lớn từ thương vụ Lotte. |
-| **KDH** | Cao | Dưới MA50, volume dưới trung bình, dòng tiền kinh doanh âm 634 tỷ và rủi ro bị loại khỏi rổ VNDiamond chưa được bù đắp đủ bởi tin mở rộng quỹ dự án. |
-| **PNJ** | TB | Kỹ thuật yếu nhất nhóm (4,0/10, dưới MA50, volume 0,65); catalyst minh oan pháp lý đã phần lớn phản ánh vào giá (giá hiện tại cao hơn ~5,5% so với đỉnh phiên tăng trần). |
+| **PDR** | Cao | Kỹ thuật yếu nhất nhóm (downtrend dài từ tháng 3, vol_ratio 0.61 thấp nhất) cộng rủi ro pha loãng ~200 triệu cổ phiếu và phát hành trái phiếu 5.600 tỷ đồng đang triển khai, không có catalyst bù đắp. |
+| **KDH** | Cao | Downtrend xác nhận bởi cả nhãn định lượng (trend_up=False) lẫn thời gian: tin tốt Gladia (90% booking) đã gần 1 tháng mà vol_ratio vẫn dưới trung bình (0.84) - thị trường chưa phản ứng bằng dòng tiền, dạng bắt dao rơi. |
+| **PNJ** | Cao | Lỗ kỷ lục quý II/2026 (gần 283 tỷ đồng) do trích lập dự phòng liên quan bê bối P-Lab, rủi ro uy tín thương hiệu chưa rõ đã xử lý dứt điểm; kỹ thuật dưới MA50 với khối lượng yếu (0.65) không xác nhận nhịp hồi giá. |
 
 ### 📋 Chi tiết luận điểm & điều kiện huỷ
-- **VIC** — KQKD 6T2026 vượt trội (+73% DT, LNST x4,5) và trend kỹ thuật xác nhận trên MA50, nhưng catalyst đã phản ánh vào giá (mua sau ATH) và RSI 68,7 cận quá mua.
-  - *Huỷ luận điểm nếu:* Giá đóng cửa xuống dưới MA50 hoặc dưới 224.200đ; RSI tiếp tục leo qua 72-75 kèm volume giảm; xuất hiện tin pháp lý/quản trị tiêu cực bất ngờ.
-- **VRE** — Setup kỹ thuật tốt nhất nhóm (7,0/10, trên MA50, volume 1,44) và cổ tức tiền mặt hiếm gặp sau 7 năm, nhưng biến động lịch sử cực đoan và 2/5 model con dự báo dưới 50% cho thấy ensemble không đồng thuận.
-  - *Huỷ luận điểm nếu:* Giá đóng cửa rơi lại dưới MA50 hoặc dưới 24.795đ; nhịp tăng tuần qua thoái lui >50% trong vài phiên tới; tin xấu mới về ngành bán lẻ/BĐS thương mại hoặc room tín dụng.
+- **VIC** — Catalyst FTSE mạnh nhất nhóm (GEIS + All-World) và KQKD kỷ lục là điểm cộng thực, nhưng RSI sát quá mua và mua gần đỉnh ngắn hạn (236k, cách đỉnh 242k chỉ 2.5%) cộng đòn bẩy 86% nợ/tài sản giữa lúc NHNN siết tín dụng BĐS khiến chưa đủ cơ sở mua đuổi ngay.
+  - *Huỷ luận điểm nếu:* Giá thủng SL 224.200đ; hoặc có tin cụ thể về siết room tín dụng ảnh hưởng trực tiếp nhóm Vingroup; hoặc dấu hiệu sell-the-news rõ rệt quanh/sau ngày FTSE hiệu lực 21/9.
+- **VRE** — Setup kỹ thuật + tin tức đồng thuận tốt nhất nhóm (uptrend mới, vol xác nhận, cổ tức lần đầu sau 7 năm, FTSE 21/9), nhưng vùng kháng cự 27.000-28.000đ trùng sát TP và catalyst FTSE đã biết trước 11 ngày (rủi ro sell-the-news) khiến chưa đủ tin cậy để vào full vị thế ngay.
+  - *Huỷ luận điểm nếu:* Giá thủng SL 24.795đ trước khi vượt được vùng cản 27-28k; hoặc tiếp cận kháng cự mà không có xác nhận khối lượng; hoặc GDKHQ cổ tức xác nhận rơi ngoài time-stop mà giá không có động lực khác.
 
 ### 📅 Cần theo dõi tuần này
-- VIC: phản ứng giá vùng 228.000-236.000đ và RSI có hạ nhiệt dưới 65 không
-- VRE: nhịp tăng tuần qua (+11,21%) có giữ trên MA50 hay thoái lui mạnh (dead-cat bounce)
-- FTSE Russell nâng hạng hiệu lực 21/9/2026 - giai đoạn giải ngân đầu tiên của dòng vốn ETF thụ động
-- KDH: thông báo chính thức về khả năng bị loại khỏi rổ VNDiamond kỳ review Q2/2026
-- PNJ: diễn biến tố tụng vụ kim cương liên đới công ty giám định con; nội dung họp ĐHĐCĐ bất thường dự kiến tháng 10/2026
-- Chính sách room tín dụng bất động sản 2026: văn bản/tín hiệu tiếp theo từ NHNN
+- VRE: giá có vượt dứt khoát vùng cản 27.000-28.000đ kèm khối lượng xác nhận hay bị chặn lại
+- VIC: giá có giữ vững trên vùng hỗ trợ MA20/MA50 hay tiếp tục điều chỉnh từ đỉnh ngắn hạn 242.000đ, RSI có hạ nhiệt khỏi vùng quá mua
+- Chính sách NHNN siết tăng trưởng tín dụng bất động sản theo từng ngân hàng - nếu cụ thể hoá sẽ ảnh hưởng cả nhóm VIC/VRE/KDH/PDR
+- Ngày GDKHQ cổ tức tiền mặt 10% của VRE (hiện chưa kiểm chứng)
+- KDH: tỷ lệ hấp thụ đợt mở bán phần cao tầng Gladia Q3/2026 và diễn biến vol_ratio
+- PNJ: diễn biến tiếp theo của bê bối P-Lab và rủi ro trích lập/uy tín thương hiệu
+- Phản ứng giá VIC/VRE quanh và sau ngày FTSE hiệu lực 21/9/2026 (rủi ro sell-the-news)
 
 ---
 ### 🧭 Bối cảnh & cảnh báo
@@ -46,4 +47,4 @@ Mô hình nền edge yếu (AUC ~0.53-0.55) và ensemble không đồng thuận 
 - Tranh luận đầy đủ: [`debate/WHITEBOARD.md`](debate/WHITEBOARD.md) · quyết định CIO: [`debate/DECISION.md`](debate/DECISION.md)
 - Biểu đồ nến: [`charts/overview_top6.png`](charts/overview_top6.png)
 
-*Nguồn: run `log_run_2026-08-31_05-45-16`. Chạy lại: skill `vn-swing-daily`.*
+*Nguồn: run `log_run_2026-09-01_05-18-44`. Chạy lại: skill `vn-swing-daily`.*

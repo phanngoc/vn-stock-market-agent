@@ -1,77 +1,62 @@
-### 🐻 Agent D — Tổng hợp hướng GẤU + phản biện · 2026-08-31 06:25
+### 🐻 Agent D — Tổng hợp hướng GẤU + phản biện · 2026-09-01 06:00
 
-*Vai trò: devil's advocate — stress-test luận điểm bò của Agent C bằng chính dữ liệu đã có trong whiteboard (A, B, signals_latest.csv), không bịa thêm tin. Nếu suy đoán, ghi rõ "giả định".*
-
----
-
-#### Phản biện Agent C
-
-**1) VIC — "combo hiếm: kỹ thuật xác nhận trend + KQKD vượt trội"**
-
-Agent C cho rằng đây là setup hiếm gặp giữa kỹ thuật và cơ bản đồng thuận, nhưng có ít nhất 4 điểm yếu C giảm nhẹ:
-
-- **Catalyst đã phản ánh vào giá.** Giá VIC *đã* lập đỉnh lịch sử 236.000đ (+2,6% phiên) trước khi vào lệnh — nghĩa là KQKD +73% doanh thu / LNST gấp 4,5 lần đã được thị trường biết và phản ứng. Mua ở đỉnh lịch sử sau khi tin đã ra là mua theo "fact đã confirm", không phải mua trước catalyst — rủi ro cổ điển "buy the news, sell the fact".
-- **Không có catalyst mới trong suốt thời gian nắm giữ.** Time-stop 25 phiên (~5 tuần) từ 28/8/2026 sẽ hết hạn trước khi có KQKD quý tiếp theo (30/10/2026, theo B). Nghĩa là trong toàn bộ giai đoạn nắm giữ, không có sự kiện cơ bản mới nào để "đẩy" giá — vị thế phụ thuộc thuần túy vào đà kỹ thuật đúng lúc RSI đã sát vùng quá mua.
-- **RSI 68,74 — C thừa nhận nhưng đánh giá thấp mức độ nghiêm trọng.** C coi đây là lý do để đặt SL/time-stop chứ "không phải lý do loại kèo". Nhưng với mô hình có edge yếu (xem mục cuối), R:R 8%/5% chỉ có ý nghĩa nếu xác suất thắng đủ cao; RSI cận biên quá mua thường đi kèm xác suất *giảm* trong ngắn hạn, không phải trung tính — tức là làm xấu đi chính xác suất mà tỷ lệ R:R cần dựa vào, không phải yếu tố độc lập.
-- **Rủi ro tập trung không phải "rủi ro hệ thống chung chung" như C mô tả.** VIC chiếm >20% vốn hóa HoSE (theo B). Nếu VIC điều chỉnh sau khi lập đỉnh (kịch bản rất phổ biến sau các phiên tăng trần/gần trần), áp lực bán có thể tự khuếch đại: nhà đầu tư theo chỉ số, phái sinh, và tâm lý thị trường đều phản ứng mạnh hơn với biến động của chính VIC — rủi ro *đặc thù* của việc cổ phiếu này vừa là công cụ vừa là nạn nhân của biến động chỉ số.
-- Ngoài ra, cần chú ý **độ phân tán giữa các model con** (xem signals_latest.csv): VIC có p_GradBoost = 0.5043 — gần như tung đồng xu — trong khi p_LSTM = 0.8164 kéo điểm tổng lên. Đây không phải "đồng thuận mạnh", mà là một model lạc quan bất thường gánh cả điểm số.
-
-**2) VRE — "setup kỹ thuật tốt nhất nhóm + cổ tức tiền mặt lần đầu sau 7 năm"**
-
-Agent C dùng cổ tức và định giá rẻ để bù cho việc giá đã giảm ~49% từ đỉnh, nhưng:
-
-- **Giảm 49% từ đỉnh + tuần +11,21% có thể là một nhịp bật kỹ thuật ngắn (dead-cat bounce/short-covering), không phải đảo chiều xu hướng.** Bản thân biến động cực đoan hai chiều mà B ghi nhận (tuần +11,21%, tháng -13,83%, năm -12,75%) cho thấy đây là cổ phiếu có biên độ dao động rất lớn — rủi ro retrace một phần đáng kể của nhịp tăng tuần vừa qua là hoàn toàn khả dĩ, và mức thoái lui đó có thể xuyên thẳng qua SL -5%.
-- **"Định giá rẻ" có thể là value trap, không phải cơ hội.** P/E ~7x, P/B ~1,0x thấp hơn lịch sử — nhưng lý do B đưa (ngành bán lẻ/BĐS thương mại chịu rủi ro cơ cấu, room tín dụng BĐS 2026 không ưu ái) gợi ý định giá thấp phản ánh đúng rủi ro cấu trúc dài hạn của ngành, chứ không hẳn thị trường đang "định giá sai" như hàm ý của C.
-- **Chi cổ tức tiền mặt 10% lần đầu sau 7 năm cũng có thể đọc theo hướng tiêu cực**: công ty ưu tiên trả vốn cho cổ đông thay vì tái đầu tư mở rộng — dấu hiệu ban lãnh đạo không thấy cơ hội tăng trưởng hấp dẫn để rót vốn, phù hợp với một ngành đang chững lại hơn là một công ty tăng trưởng. Đây là góc nhìn thay thế hợp lý không kém góc nhìn "tự tin dòng tiền" của C — cả hai đều là suy luận, "giả định" cả hai chiều.
-- Về model con: p_GradBoost = 0.4025 và p_XGBoost = 0.439 — **hai trong năm model dự báo dưới 50% (nghiêng về xác suất giảm)** cho VRE, mã mà C gọi là "kèo bò tự tin nhất". Điểm tổng hợp 0.5656 chủ yếu được kéo lên bởi p_LSTM = 0.875 — một model duy nhất lạc quan bất thường, không phải sự đồng thuận của cả ensemble.
-
-**3) PNJ — "catalyst tin tức bù cho kỹ thuật yếu"**
-
-Đây là điểm C tự thừa nhận yếu nhất, và đúng là như vậy:
-
-- **Đây chính là "bắt dao rơi" theo đúng tiêu chí mà brief D được giao kiểm tra**: dưới MA50, điểm KT chỉ 4.0/10, volume 0.65 (dưới trung bình) — không có xác nhận dòng tiền. C tự nhận "kèo dựa nhiều vào catalyst tin tức hơn kỹ thuật thuần túy", nhưng khi kỹ thuật và tin tức mâu thuẫn nhau (tin tốt nhưng dòng tiền chưa xác nhận), phần bất lợi hơn (kỹ thuật) thường là tín hiệu đáng tin hơn cho khung thời gian ngắn (swing 25 phiên), vì volume phản ánh hành vi thực của dòng tiền lớn tại thời điểm hiện tại, còn tin tức là thông tin đã công khai cho tất cả mọi người.
-- **Catalyst đã "cũ" và đã phản ánh phần lớn vào giá.** Tin minh oan + tăng trần xảy ra ngày 20–21/8/2026 (giá đóng cửa 39.900đ). Giá tham chiếu hiện tại trong signals_latest.csv là 42.100đ (28/8/2026) — **đã cao hơn mức đỉnh tăng trần đó ~5,5%**. Nói cách khác, phần lớn "phần thưởng" từ catalyst minh oan có thể đã được thị trường hấp thụ trước khi vào lệnh; mua ở đây là mua *sau* nhịp tăng do tin, kỳ vọng thêm 8% nữa từ một nền kỹ thuật yếu.
-- **SL rất sát vùng hỗ trợ tâm lý mỏng manh.** SL -5% = 39.995đ gần trùng đúng giá đóng cửa phiên tăng trần 21/8 (39.900đ). C coi đây là "vùng hỗ trợ tâm lý" nhưng logic ngược lại cũng đúng: nếu đà tăng không giữ được, đây là vùng dễ bị xuyên thủng nhanh vì không có volume/kỹ thuật bên dưới hỗ trợ, chỉ có yếu tố tâm lý — tâm lý có thể đảo chiều nhanh hơn kỹ thuật.
-- **Rủi ro pháp lý dư âm chưa hết hẳn.** B ghi nhận công ty giám định liên quan (PNJ-LAP) có giám đốc bị khởi tố cùng 30 bị can — dù kết luận có lợi cho PNJ về mặt bán lẻ, mối liên đới này vẫn có thể tạo tin bất lợi phái sinh (ví dụ diễn biến tố tụng tiếp theo) trong 25 phiên tới — rủi ro đuôi (tail risk) chưa đóng hoàn toàn, chỉ "đang giảm dần" như chính B ghi.
-- p_XGBoost = 0.4271 — model duy nhất trong 5 model dự báo PNJ **dưới 50%**, ngược hẳn với các model khác; lại thêm minh chứng cho việc ensemble không đồng thuận rõ ràng ở tất cả 3 mã C chọn.
-
-**Phản hồi trực tiếp với mục "Phản biện trước cho Agent D" của Agent C:**
-
-- C nói "RSI gần quá mua là cơ sở cho SL/time-stop chứ không phải lý do loại kèo" — D không đồng ý hoàn toàn: RSI cận biên quá mua làm *giảm xác suất thắng* cùng lúc, không chỉ ảnh hưởng tới quy mô rủi ro. Với edge mô hình đã yếu sẵn (xem dưới), bất kỳ yếu tố nào kéo xác suất thắng xuống thêm đều đáng cân nhắc là lý do giảm quy mô/loại kèo, không chỉ là lý do đặt SL.
-- C nói loại PDR/KDH vì kỹ thuật+tin tức không đủ mạnh — D đồng ý PDR/KDH yếu hơn, nhưng lưu ý: **VIC, PDR, KDH, VRE đều cùng ngành RealEstate**, cùng chịu rủi ro chính sách room tín dụng BĐS 2026 mà B nêu. Nếu Agent E chọn cả VIC và VRE (2/3 kèo bò của C), đây không phải là hai vị thế độc lập về rủi ro ngành — một cú sốc chính sách/tín dụng BĐS ảnh hưởng đồng thời cả hai, làm giảm tác dụng đa dạng hóa mà danh mục có vẻ như đang có.
-- C nói "score mô hình yếu nên luận điểm dựa vào kỹ thuật + catalyst, không dựa vào score" — D nhấn mạnh thêm: ngay cả kỹ thuật (điểm A cho, 6.5–7.0/10) và catalyst (B cung cấp) cũng là đánh giá **định tính, chủ quan**, không phải xác suất đã kiểm chứng. Khi cả ba lớp bằng chứng (score mô hình, điểm kỹ thuật, catalyst tin tức) đều có độ không chắc chắn riêng, việc cộng dồn chúng lại tạo cảm giác chắc chắn hơn thực tế — đây chính là dạng "tự tin thái quá" (overconfidence) cần cảnh giác.
-- C nói rủi ro room tín dụng BĐS "được cân bằng bởi KQKD/cổ tức đã công bố, còn tác động cụ thể đến giá vẫn chưa kiểm chứng" — D lưu ý: việc chưa có bằng chứng tác động tiêu cực **không đồng nghĩa** với việc rủi ro không tồn tại hoặc đã được phản ánh vào giá. Trong quản trị rủi ro, thiếu bằng chứng không phải là bằng chứng của sự an toàn ("absence of evidence ≠ evidence of absence") — nhất là với các mã BĐS có đòn bẩy (PDR chi 7.666 tỷ cho thương vụ Lotte; KDH dòng tiền kinh doanh âm 634 tỷ, theo B) cho thấy ngành đang trong giai đoạn cần vốn lớn đúng lúc tín dụng bị siết.
+*Vai trò: phản biện có cơ sở (devil's advocate), không bịa tin xấu. Nếu suy đoán sẽ ghi rõ "giả định"/"chưa kiểm chứng". Mục tiêu là stress-test luận điểm bò của Agent C, không phải bi quan cho có.*
 
 ---
 
-#### Rủi ro downside theo mã (tới SL −5% hoặc xa hơn)
+## 0. Cảnh báo nền trước khi vào chi tiết: mô hình chỉ nhỉnh hơn tung đồng xu — và bản thân ensemble score đang "che" một sự bất đồng lớn
 
-| Mã | SL (-5%) | Kịch bản giảm chính | Rủi ro vượt SL |
-|---|---|---|---|
-| **VIC** | 224.200đ | Điều chỉnh "nhả RSI" sau đỉnh lịch sử; không có catalyst mới trong 25 phiên tới để chặn đà giảm nếu tâm lý chốt lời sau ATH lan rộng. | Do tỷ trọng >20% vốn hóa HoSE, một phiên bán tháo mạnh (biên độ HoSE ±7%) có thể khiến giá giảm sâu trong 1 phiên; kết hợp T+2 (mua T, chỉ bán được từ T+2) có thể "kẹp hàng" nếu tin xấu bất ngờ xuất hiện trong 2 ngày chưa thể giao dịch. |
-| **VRE** | 24.795đ | Thoái lui một phần nhịp tăng tuần +11,21% vừa qua (biến động lịch sử cho thấy đảo chiều nhanh là bình thường với mã này); ngành bán lẻ/BĐS thương mại chịu áp lực room tín dụng gián tiếp qua sức mua người thuê/khách hàng. | Nếu nhịp bật vừa qua là short-covering/dead-cat bounce (chưa kiểm chứng — "giả định"), retrace có thể vượt 5% nhanh chóng vì chưa có nền tích lũy dài để làm hỗ trợ chắc. |
-| **PNJ** | 39.995đ | SL nằm sát vùng giá đóng cửa phiên tăng trần 21/8 (39.900đ) — nếu đà tăng hụt hơi (kỹ thuật đã cảnh báo: dưới MA50, volume yếu), giá dễ quay lại vùng này nhanh vì thiếu nền kỹ thuật vững. | Rủi ro pháp lý dư âm (công ty giám định liên quan có giám đốc bị khởi tố) có thể tái xuất hiện trên truyền thông bất kỳ lúc nào trong 25 phiên, gây gap giảm giá vượt SL trước khi lệnh dừng lỗ khớp được — đặc biệt nếu trùng phiên biên độ ±7% hoặc thanh khoản mỏng. |
-| **PDR / KDH** (ngoài danh sách bò của C nhưng cần nêu) | 11.780đ / 17.290đ | Cả hai đều dưới MA50, RSI trung tính không xác nhận đảo chiều, volume yếu — mua ở đây gần như chắc chắn là "bắt dao rơi" theo đúng nhận định của Agent A. | KDH thêm rủi ro dòng tiền kinh doanh âm 634 tỷ + khả năng bị loại khỏi VNDiamond (áp lực bán từ quỹ ETF mô phỏng, dù B ghi "chưa kiểm chứng đầy đủ"); PDR thêm áp lực dòng tiền ra lớn (7.666 tỷ cho Lotte) và phát ngôn tiêu cực của Chủ tịch. |
+Agent C tự nhận "luận điểm bò không dựa vào score mô hình làm lý do chính". Nhưng nhìn vào breakdown 5 mô hình con trong `signals_latest.csv`, vấn đề còn nghiêm trọng hơn AUC 0.53–0.55 gợi ý:
 
-**Rủi ro hệ thống chung cho cả nhóm (áp dụng mọi mã ở trên, theo B):**
-- Room tín dụng BĐS 2026 bị siết (tín dụng BĐS không được tăng nhanh hơn tín dụng chung của từng ngân hàng) — ảnh hưởng gián tiếp tới khả năng vay của người mua nhà/chủ đầu tư cho toàn bộ nhóm RealEstate (VIC, PDR, KDH, VRE).
-- Margin thị trường, khối ngoại bán ròng: **chưa kiểm chứng** trong phạm vi quét tin của B — không có dữ liệu cụ thể để khẳng định hay bác bỏ mức độ rủi ro này ở thời điểm hiện tại; không nên coi "im lặng" là dấu hiệu an toàn.
-- Biên độ dao động ±7% HoSE + cơ chế thanh toán T+2: làm tăng rủi ro trượt giá qua SL trong các phiên biến động mạnh, đặc biệt với các mã vừa có biến động lớn gần đây (VIC vừa lập đỉnh, VRE vừa tăng 11% trong tuần, PNJ vừa tăng trần).
+| Mã | LogReg | RandomForest | GradBoost | XGBoost | LSTM | Score tổng |
+|---|---|---|---|---|---|---|
+| VIC | 0.685 | 0.665 | **0.504** | 0.554 | **0.816** | 0.645 |
+| VRE | 0.585 | 0.527 | **0.403** | **0.439** | **0.875** | 0.566 |
+| KDH | 0.514 | 0.604 | 0.513 | 0.575 | **0.740** | 0.589 |
+
+Với **VRE — "kèo bò tự tin nhất" của Agent C** — 2/5 mô hình con (GradBoost 0.403, XGBoost 0.439) dự đoán xác suất đạt TP **thấp hơn 50%**, tức là *nghiêng về khả năng KHÔNG đạt TP*. Điểm tổng 0.566 chỉ "nhỉnh" vì LSTM cho ra 0.875 — một outlier cao bất thường so với 4 mô hình còn lại. Với VIC cũng tương tự: GradBoost gần như tung đồng xu (0.504), XGBoost chỉ 0.554. Nói cách khác, phần "đồng thuận" mà Agent C nhấn mạnh (kỹ thuật A + tin tức B cùng hướng) **không hề được phản ánh trong đồng thuận giữa các mô hình định lượng** — 2 trong 5 thuật toán tree-based đang nói ngược lại đúng lúc C chọn 2 mã này làm kèo tự tin nhất. Đây là lý do để hoài nghi thêm, không phải để bác bỏ hoàn toàn, nhưng cần nêu rõ cho Agent E.
 
 ---
 
-#### Mã nên tránh
+## 1. Phản biện từng luận điểm của Agent C
 
-1. **PDR và KDH** — rủi ro nhất trong 5 mã theo cả kỹ thuật (A: dưới MA50, RSI trung tính, volume yếu) lẫn tin tức có yếu tố tiêu cực đi kèm (PDR: giá giảm 40,6%/năm, Chủ tịch "rất buồn"; KDH: dòng tiền âm, rủi ro bị loại VNDiamond). Đây là "bắt dao rơi" rõ nhất, không có catalyst đủ mạnh để bù đắp.
-2. **PNJ** — trong chính rổ bò của Agent C, đây là kèo rủi ro nhất: kỹ thuật yếu nhất (4.0/10), catalyst đã một phần phản ánh vào giá (giá hiện tại đã vượt đỉnh tăng trần), SL nằm sát vùng hỗ trợ mỏng, còn dư âm rủi ro pháp lý liên đới chưa đóng hoàn toàn.
-3. **VIC** — dù có KQKD tốt nhất nhóm, RSI cận biên quá mua + không có catalyst mới trong suốt thời gian nắm giữ (time-stop hết hạn trước KQKD quý tới) + rủi ro tập trung/khuếch đại do tỷ trọng chỉ số quá lớn khiến đây là kèo "mua sau tin", rủi ro-phần thưởng kém hấp dẫn hơn vẻ ngoài.
+### VRE
+- **Agent C cho rằng** đây là "kèo bò rõ ràng nhất" nhờ đồng thuận kỹ thuật + tin tức. **Nhưng**: chính Agent A đã cảnh báo vùng cản cũ tháng 6 (27.000–28.000đ) gần như trùng khít với TP 28.188đ — nghĩa là gần như toàn bộ biên độ mục tiêu (+8%) nằm ngay trong hoặc sát vùng kháng cự đã từng chặn giá trước đây. Agent C thừa nhận rủi ro này nhưng gán nhãn "tích lũy bình thường trước catalyst" — đây là một *diễn giải lạc quan*, không phải sự thật đã kiểm chứng; kịch bản ngược lại (giá bị chặn hẳn tại 27–28k và quay đầu về MA20/MA50 rồi chạm SL) có xác suất tương đương và không được Agent C định lượng.
+- **Agent C cho rằng** cổ tức tiền mặt 10% (lần đầu sau 7 năm) là chất xúc tác tích cực. **Nhưng** theo chính Agent B, "ngày GDKHQ cụ thể chưa kiểm chứng" — nếu ngày chốt quyền rơi ngoài time-stop 25 ngày (đến ~22/9), catalyst này có thể không kịp phát huy tác dụng trong khung thời gian của lệnh. Tỷ suất cổ tức tuyệt đối (1.000đ/26.100đ ≈ 3,8%) cũng không đủ lớn để một mình đẩy giá vượt kháng cự nếu không có dòng tiền khác hỗ trợ.
+- **Agent C cho rằng** catalyst FTSE (hiệu lực 21/9) là điểm cộng lớn. **Nhưng** danh sách 27 mã đã công bố từ 21/8 — tức là **11 ngày trước thời điểm entry tham chiếu (28/8)** thị trường đã biết tin này. Rủi ro "price-in trước, bán ra sau ngày hiệu lực" (sell the news) mà chính Agent B cảnh báo cho VIC cũng áp dụng được cho VRE — Agent C chỉ né rủi ro này ở mục VIC mà không đề cập cho VRE, dù cùng một catalyst và cùng ngày hiệu lực.
+- **Rủi ro thanh khoản/độ mới của tín hiệu:** vol_ratio 1.44 là một con số tại một thời điểm (28/8) — Agent A không xác nhận đây là xu hướng dòng tiền bền vững qua nhiều phiên hay chỉ một phiên đột biến. Agent C mặc định coi đây là "dòng tiền chủ động xác nhận đà tăng" nhưng đó là suy diễn, chưa có bằng chứng về tính liên tục.
+
+### VIC
+- **Agent C cho rằng** nến rút chân từ 242k về 236k là "chốt lời ngắn hạn... tích lũy lại trước catalyst". **Nhưng** đây là một trong hai cách diễn giải khả dĩ — cách còn lại là bắt đầu phân phối (distribution) sau một sóng tăng mạnh, đặc biệt khi RSI đã chạm 68,7 sát vùng quá mua. Agent A không khẳng định đây là tích lũy; Agent C đã chọn diễn giải có lợi cho luận điểm mua mà không nêu khả năng ngược lại.
+- **Agent C cho rằng** SL 224.200đ "bảo vệ" nếu đà tăng hụt hơi. **Nhưng** đây là chấp nhận rủi ro giảm 5% để đổi lấy cơ hội tăng 8% vào một vùng giá "chưa từng test" (breakout) — tỷ lệ R:R khoảng 1:1,6 chỉ hấp dẫn *nếu* xác suất thành công đủ cao, mà như mục 0 đã nêu, 2/5 mô hình con gần như trung lập/tiêu cực về khả năng này.
+- **Agent C cho rằng** đòn bẩy tài chính cao (nợ/tài sản ~86%) chỉ là "rủi ro nền dài hạn", không ảnh hưởng trong khung time-stop 25 ngày. **Nhưng** Agent B cũng nêu bối cảnh vĩ mô: NHNN đang siết tăng trưởng tín dụng bất động sản theo từng ngân hàng trong năm 2026. Một cổ phiếu có đòn bẩy cao trong chính giai đoạn ngành bị siết tín dụng dễ nhạy cảm hơn với tin tức chính sách/thanh khoản bất ngờ — rủi ro này có thể kích hoạt *trong* 25 ngày tới nếu có tin siết room tín dụng cụ thể, không nhất thiết phải đợi "dài hạn".
+- **Điểm C không nhắc tới:** VIC đã tăng mạnh từ vùng 210-220k trước khi vào lệnh — nghĩa là phần lớn "tin tốt" KQKD nửa đầu năm 2026 (đã công bố) và triển vọng FTSE (đã biết từ 21/8) nhiều khả năng đã phần nào phản ánh vào giá. Mua ở gần đỉnh ngắn hạn (236k, cách đỉnh 242k chỉ 2,5%) sau một sóng tăng dài là rủi ro "mua đỉnh" cổ điển mà C không đề cập.
+
+### KDH
+- Agent C tự xếp đây là kèo "mức độ tự tin thấp hơn" — D đồng ý và **nhấn mạnh thêm**: theo dữ liệu gốc, `trend_up = False` cho KDH (cũng như PDR, PNJ) — tức bản thân pipeline định lượng đã gắn nhãn xu hướng giảm, không phải "trung tính chờ xác nhận" như cách diễn đạt của C. Đây là bắt dao rơi theo đúng nghĩa, được cả Agent A và dữ liệu thô xác nhận.
+- Tin tốt Gladia (90% booking) là thật, nhưng đã xảy ra từ 1/8/2026 — gần 1 tháng trước entry (28/8) — nếu tin này đủ mạnh để đảo chiều dòng tiền, nhẽ ra đã phải thấy vol_ratio tăng lên; thực tế vol_ratio KDH chỉ 0,84 (dưới trung bình), nghĩa là thị trường đã có gần 1 tháng để phản ứng và **chưa phản ứng**. Đây là bằng chứng ngược lại khá mạnh mà Agent C không đối chiếu thời gian.
 
 ---
 
-#### Nhắc lại về edge mô hình
+## 2. Rủi ro downside theo mã (tới SL hoặc xa hơn)
 
-Mô hình quant nền có **AUC ~0.53–0.55** — chỉ nhỉnh hơn tung đồng xu một chút. Nhìn vào chi tiết các model con trong signals_latest.csv, **cả 3 mã trong rổ bò của Agent C đều có ít nhất một model con dự báo dưới 50%** (VIC: GradBoost 0.5043 gần biên; VRE: GradBoost 0.4025 và XGBoost 0.439 dưới 50%; PNJ: XGBoost 0.4271 dưới 50%) — nghĩa là bản thân ensemble không đồng thuận, điểm tổng hợp bị kéo lên chủ yếu bởi model LSTM lạc quan hơn hẳn các model khác ở cả 3 mã. Khi mô hình định lượng đã yếu và không đồng thuận, việc cộng thêm lớp phân tích kỹ thuật (định tính, dựa trên ngưỡng RSI/MA50 tương đối) và lớp tin tức (catalyst có thể đã phản ánh một phần vào giá) không tự động tạo ra một luận điểm "chắc thắng" — mỗi lớp bằng chứng cộng thêm một mức độ không chắc chắn riêng, và việc xếp chồng ba lớp không chắc chắn không nên bị hiểu là ba lần củng cố lẫn nhau.
+- **VIC:** RSI 68,7 sát quá mua sau sóng tăng mạnh → rủi ro điều chỉnh sâu nếu dòng tiền chốt lời lan rộng, đặc biệt nếu xảy ra "sell the news" quanh/sau 21/9 (rủi ro chính Agent B nêu). Đòn bẩy 86% nợ/tài sản kết hợp bối cảnh NHNN siết tín dụng BĐS là rủi ro hệ thống có thể kích hoạt bất ngờ. Biên độ giao dịch ±7%/phiên + T+2 (không bán được ngay khi vừa mua) khiến việc "thoát sớm" khi có tin xấu bất ngờ trong 1-2 phiên đầu gần như bất khả thi.
+- **VRE:** Vùng kháng cự 27.000–28.000đ nằm sát TP — nếu bị chặn và có áp lực bán chung ngành BĐS (NHNN siết room tín dụng ảnh hưởng cả nhóm), giá có thể quay đầu nhanh về vùng SL 24.795đ (chỉ cách entry ~5%). Rủi ro cổ tức bị hoãn/GDKHQ ngoài time-stop.
+- **KDH:** Downtrend dài từ tháng 2 (MA50 giảm từ 26k→19k) chưa có dấu hiệu đảo chiều theo khối lượng; nếu đợt mở bán cao tầng Gladia Q3/2026 không đạt tỷ lệ hấp thụ như đợt đầu, hoặc tín dụng BĐS bị siết ảnh hưởng tới tiến độ giải ngân của khách mua nhà, giá dễ tiếp tục giảm xuyên SL 17.290đ.
+- **PDR (không được C đưa vào bò nhưng nằm trong top 5, cần nêu vì rủi ro cao):** Agent A xếp kỹ thuật yếu nhất nhóm (vol_ratio 0,61, downtrend dài từ tháng 3). Agent B nêu rủi ro pha loãng cổ phần lớn (200 triệu cp, giá phát hành thấp hơn thị giá) + phát hành trái phiếu 5.600 tỷ — áp lực pha loãng/nợ vay là rủi ro thực, đã xảy ra/đang triển khai, không phải suy đoán.
+- **PNJ (ngoài phạm vi bò của C nhưng đáng lưu ý cho E):** lỗ kỷ lục quý II/2026 (-283 tỷ) do bê bối P-Lab là tin xấu mới, rủi ro uy tín thương hiệu "chưa kiểm chứng liệu đã xử lý dứt điểm" — nếu Agent E cân nhắc đa dạng hóa ngoài nhóm BĐS, cần biết rủi ro này chưa hết.
+- **Rủi ro tập trung ngành (hệ thống, áp dụng chung):** 4/5 mã ứng viên top-score (VIC, PDR, KDH, VRE) đều thuộc nhóm BĐS. Nếu Agent E chọn cả VIC + VRE (kèo tự tin nhất của C) cùng lúc, đây **không phải hai vị thế độc lập** — cùng chịu chung rủi ro chính sách tín dụng BĐS, tâm lý ngành, và khối ngoại (nếu có bán ròng nhóm BĐS). Một tin chính sách bất lợi (VD: siết room tín dụng cụ thể một ngân hàng lớn cho vay BĐS) có thể khiến cả hai chạm SL gần như đồng thời.
 
 ---
 
-*Mục tiêu của ghi chú này là stress-test luận điểm bò để Agent E cân nhắc đầy đủ hai chiều, không phải bi quan cho có. KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ.*
+## 3. Mã nên tránh / rủi ro nhất
+
+1. **PDR** — kỹ thuật yếu nhất nhóm (theo Agent A: downtrend dài, vol_ratio 0,61 thấp nhất), cộng thêm rủi ro pha loãng cổ phần + phát hành trái phiếu lớn (theo Agent B) — hai lớp rủi ro kỹ thuật và cơ bản cùng tiêu cực, không có catalyst FTSE bù đắp.
+2. **KDH** — downtrend xác nhận bởi cả kỹ thuật (`trend_up=False`) lẫn thời gian (tin tốt Gladia đã gần 1 tháng mà chưa kéo được dòng tiền) — dạng bắt dao rơi rủi ro cao, đúng như Agent C tự thừa nhận mức tin cậy thấp nhất.
+3. **VIC** (thận trọng, không phải "tránh tuyệt đối" nhưng rủi ro downside lớn nhất trong 2 mã C tự tin nhất) — mua gần đỉnh ngắn hạn sau sóng tăng dài, RSI sát quá mua, đòn bẩy tài chính cao đúng lúc ngành bị siết tín dụng, và catalyst FTSE đã được biết trước 11 ngày (rủi ro sell-the-news do chính Agent B cảnh báo).
+
+---
+
+**Nhắc lại:** mô hình định lượng có edge yếu (AUC ~0.53–0.55) — chỉ nhỉnh hơn tung đồng xu một chút. Như phân tích ở mục 0, ngay cả trong 2 mã được Agent C chọn làm kèo tự tin nhất, một nửa số mô hình con trong ensemble (GradBoost, XGBoost) không đồng thuận với hướng mua. Sự "đồng thuận kỹ thuật + tin tức" mà Agent C nhấn mạnh là có thật ở tầng định tính, nhưng không nên diễn giải thành xác suất thắng cao — đây vẫn là các kèo xác suất mỏng, cần tuân thủ nghiêm ngặt SL/time-stop đã định sẵn, không nới lỏng dựa trên câu chuyện catalyst.
+
+*Đây KHÔNG PHẢI khuyến nghị đầu tư. Toàn bộ nội dung trên là phản biện nội bộ phục vụ tranh luận, dựa trên dữ liệu và bằng chứng đã có trong whiteboard của Agent A/B/C — không bổ sung tin tức mới ngoài các nguồn đã trích dẫn.*

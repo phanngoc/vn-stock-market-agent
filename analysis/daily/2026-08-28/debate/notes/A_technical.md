@@ -1,23 +1,18 @@
-### 🅰️ Agent A — Phân tích Kỹ thuật · 2026-08-31 06:05
+### 🅰️ Agent A — Phân tích Kỹ thuật · 2026-09-01 05:30
 
-**Bảng chấm điểm (top 5 ứng viên theo score mô hình)**
-
-| Mã | Trend | RSI(14) | Vol_ratio | Điểm KT /10 | Ghi chú |
+| Mã | Trend (giá vs MA20/MA50) | RSI(14) | Vol_ratio | Điểm KT /10 | Ghi chú |
 |---|---|---|---|---|---|
-| **VIC** | ↑ trên MA50 | 68.7 (sát vùng quá mua, chưa vượt 70) | 1.43 (sôi động) | **6.5** | Uptrend được xác nhận bởi volume >1, nhưng RSI gần 70 → dư địa tăng hẹp, rủi ro điều chỉnh ngắn hạn trước khi chạm TP +8%. |
-| **PDR** | ↓ dưới MA50 | 49.1 (trung tính) | 0.61 (èo uột) | **3.5** | Đang dưới MA50 (downtrend), RSI trung tính không cho tín hiệu đảo chiều rõ, volume yếu (<1) → không có dòng tiền xác nhận. Mua ở đây giống "bắt dao rơi" nhẹ; TP +8% ngược xu hướng chính. |
-| **KDH** | ↓ dưới MA50 | 48.8 (trung tính) | 0.84 (dưới TB, hơi yếu) | **4.0** | Tương tự PDR: dưới MA50, RSI trung tính, volume dưới 1 dù đỡ yếu hơn PDR. Chưa có bằng chứng kỹ thuật cho việc đảo chiều tăng.	 |
-| **PNJ** | ↓ dưới MA50 | 57.0 (trung tính, hơi nghiêng mua) | 0.65 (èo uột) | **4.0** | RSI cao hơn 2 mã kia dù vẫn dưới MA50 — có thể đang hồi kỹ thuật, nhưng volume yếu khiến hồi phục thiếu thuyết phục; MA50 phía trên nhiều khả năng là kháng cự. |
-| **VRE** | ↑ trên MA50 | 58.7 (trung tính, còn dư địa tăng) | 1.44 (sôi động) | **7.0** | Setup kỹ thuật tốt nhất trong nhóm: trend tăng xác nhận bởi MA50 + volume >1, RSI chưa quá mua nên còn biên độ trước khi chạm vùng 70. |
+| **VIC** | ↑ trên MA50, MA20>MA50 (uptrend rõ) | 68.7 (gần vùng quá mua, chưa vượt 70) | 1.43 (sôi động) | **6.5** | Vừa có nến bứt phá lên ~242k rồi rút về 236k — có thể là chốt lời ngắn hạn sau sóng tăng mạnh từ vùng 210-220k; SL 224,200 nằm ngay dưới vùng hỗ trợ MA20/MA50 cũ, hợp lý; TP 254,880 là vùng giá chưa từng test (breakout), rủi ro "hụt hơi" nếu RSI chạm quá mua. |
+| **VRE** | ↑ vừa cắt lên trên MA50 (uptrend mới hình thành) | 58.7 (trung tính, còn dư địa) | 1.44 (sôi động) | **6.5** | Setup sạch nhất về động lượng: chưa quá mua, khối lượng xác nhận đà tăng tốt. TP 28,188 có thể chạm vùng cản cũ tháng 6 (~27,000-28,000) trước khi lên tiếp — khả năng chốt lời sớm ở vùng này. SL 24,795 nằm dưới cả MA20 và MA50 hiện tại, hợp lý làm đáy bảo vệ. |
+| **PNJ** | ↓ dưới MA50 (~44,000, đang đi ngang/giảm nhẹ), giá vừa hồi mạnh từ đáy 30k | 57.0 (trung tính) | 0.65 (èo uột, <1) | **4.0** | Hồi giá mạnh (30k→45k) nhưng KHÔNG có khối lượng xác nhận — tín hiệu yếu, nghi ngờ hồi kỹ thuật ngắn hạn trong downtrend lớn hơn là đảo chiều thật. TP 45,468 nằm sát ngay MA50 (~44,000) — dễ bị chặn lại tại đây trước khi đạt +8%. |
+| **KDH** | ↓ dưới MA50 (MA50 đang giảm dốc từ 26k xuống ~19k) | 48.8 (trung tính) | 0.84 (dưới trung bình) | **3.5** | Downtrend rõ và kéo dài từ tháng 2; nhịp hồi cuối biểu đồ chỉ vừa chạm MA20, còn cách MA50 khá xa — dạng "bắt dao rơi" trong xu hướng giảm chưa xác nhận đảo chiều. Khối lượng dưới trung bình càng làm giảm độ tin cậy của nhịp hồi. |
+| **PDR** | ↓ dưới MA50 (MA50 đang giảm dốc từ ~16.2k xuống ~13k) | 49.1 (trung tính) | 0.61 (èo uột nhất trong nhóm) | **3.5** | Tương tự KDH: downtrend dài từ tháng 3, nhịp hồi cuối chuỗi rất nhỏ và khối lượng thấp nhất trong 5 mã — cảnh báo "bắt dao rơi", chưa có xác nhận kỹ thuật đủ mạnh để coi là điểm vào tốt. |
 
-*Ghi chú về S/R cụ thể (vùng đỉnh/đáy gần nhất ngoài MA20/MA50): chưa kiểm chứng — không có dữ liệu vùng giá lịch sử chi tiết trong signals_latest.csv, chỉ suy ra từ vị trí so với MA50 và RSI.*
+**Nhận định chung:**
+- Setup kỹ thuật đẹp nhất về mặt xu hướng + khối lượng: **VIC và VRE** — cả hai đều đã ở trên MA50 với vol_ratio >1.4 (dòng tiền chủ động tham gia), khác biệt với 3 mã còn lại vẫn nằm dưới MA50.
+- Setup kỹ thuật yếu/rủi ro nhất: **PDR và KDH** — cùng mô-típ "hồi kỹ thuật trong downtrend dài" với khối lượng dưới trung bình (<0.85), chưa đủ cơ sở gọi là đảo chiều xu hướng.
+- Rủi ro kỹ thuật lớn nhất trong nhóm top: VIC có RSI 68.7 sát ngưỡng quá mua sau một nến rút chân mạnh — dễ điều chỉnh ngắn hạn trước khi (nếu) tiếp tục lên.
+- PNJ là trường hợp trung gian: giá hồi tốt nhưng khối lượng không xác nhận, và TP nằm sát vùng cản MA50 — chưa kiểm chứng được liệu đây là đảo chiều hay chỉ là hồi kỹ thuật.
+- Toàn bộ đánh giá trên chỉ dựa vào số liệu RSI/trend/vol_ratio và biểu đồ nến trong signals_latest.csv + charts/, không xét tin tức hay định giá cơ bản. Cần nhấn mạnh: mô hình có edge yếu (AUC ~0.53-0.55), nên các điểm số kỹ thuật trên chỉ mang tính xác suất tương đối giữa các mã, không phải tín hiệu chắc chắn.
 
-**Nhận định chung**
-- Setup kỹ thuật đẹp nhất về mặt xu hướng + khối lượng: **VRE** (trên MA50, RSI còn dư địa, vol_ratio 1.44) — nhỉnh hơn VIC vì RSI chưa áp sát vùng quá mua.
-- **VIC** có xu hướng và volume tốt nhưng RSI 68.7 gần ngưỡng quá mua (>70) là rủi ro kỹ thuật đáng chú ý nhất trong nhóm 5 mã — dễ điều chỉnh ngắn hạn ("nhả" RSI) trước khi đi tiếp.
-- **PDR** là setup kỹ thuật yếu nhất: dưới MA50, RSI trung tính (không phải oversold để kỳ vọng bật), volume èo uột (0.61) — thiếu xác nhận dòng tiền cho một nhịp tăng +8%.
-- **KDH** và **PNJ** ở trạng thái tương tự nhau: dưới MA50, volume dưới 1 — tín hiệu kỹ thuật yếu, mang tính "đi ngang chờ xác nhận" hơn là setup breakout.
-- Toàn bộ nhóm dùng chung luật TP +8%/SL −5%/time-stop 25 phiên — luật này thuận theo trend hơn với VIC/VRE (đang trên MA50), trong khi với PDR/KDH/PNJ (dưới MA50) mục tiêu TP +8% đi ngược xu hướng chính nên xác suất thành công thấp hơn về mặt kỹ thuật thuần túy.
-- Nhắc lại: đây là góc nhìn kỹ thuật dựa trên mô hình có edge yếu (AUC ~0.53–0.55) — RSI/trend/volume chỉ phản ánh xác suất, không phải chắc chắn.
-
-KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ.
+*Đây KHÔNG PHẢI khuyến nghị đầu tư.*
