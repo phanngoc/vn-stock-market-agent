@@ -1,62 +1,51 @@
-### 🐻 Agent D — Tổng hợp hướng GẤU + phản biện · 2026-09-01 06:00
+### 🐻 Agent D — Tổng hợp hướng GẤU + phản biện · 2026-09-02 05:35
 
-*Vai trò: phản biện có cơ sở (devil's advocate), không bịa tin xấu. Nếu suy đoán sẽ ghi rõ "giả định"/"chưa kiểm chứng". Mục tiêu là stress-test luận điểm bò của Agent C, không phải bi quan cho có.*
-
----
-
-## 0. Cảnh báo nền trước khi vào chi tiết: mô hình chỉ nhỉnh hơn tung đồng xu — và bản thân ensemble score đang "che" một sự bất đồng lớn
-
-Agent C tự nhận "luận điểm bò không dựa vào score mô hình làm lý do chính". Nhưng nhìn vào breakdown 5 mô hình con trong `signals_latest.csv`, vấn đề còn nghiêm trọng hơn AUC 0.53–0.55 gợi ý:
-
-| Mã | LogReg | RandomForest | GradBoost | XGBoost | LSTM | Score tổng |
-|---|---|---|---|---|---|---|
-| VIC | 0.685 | 0.665 | **0.504** | 0.554 | **0.816** | 0.645 |
-| VRE | 0.585 | 0.527 | **0.403** | **0.439** | **0.875** | 0.566 |
-| KDH | 0.514 | 0.604 | 0.513 | 0.575 | **0.740** | 0.589 |
-
-Với **VRE — "kèo bò tự tin nhất" của Agent C** — 2/5 mô hình con (GradBoost 0.403, XGBoost 0.439) dự đoán xác suất đạt TP **thấp hơn 50%**, tức là *nghiêng về khả năng KHÔNG đạt TP*. Điểm tổng 0.566 chỉ "nhỉnh" vì LSTM cho ra 0.875 — một outlier cao bất thường so với 4 mô hình còn lại. Với VIC cũng tương tự: GradBoost gần như tung đồng xu (0.504), XGBoost chỉ 0.554. Nói cách khác, phần "đồng thuận" mà Agent C nhấn mạnh (kỹ thuật A + tin tức B cùng hướng) **không hề được phản ánh trong đồng thuận giữa các mô hình định lượng** — 2 trong 5 thuật toán tree-based đang nói ngược lại đúng lúc C chọn 2 mã này làm kèo tự tin nhất. Đây là lý do để hoài nghi thêm, không phải để bác bỏ hoàn toàn, nhưng cần nêu rõ cho Agent E.
+*Phạm vi: phản biện trực tiếp luận điểm bò của Agent C (VRE #1, VIC #2) dựa trên đối chiếu với Agent A (kỹ thuật) và Agent B (news), cộng thêm rủi ro downside/hệ thống mà A/B/C chưa nhấn đủ mạnh. Không bịa số liệu — mọi số dùng lại đều trích từ A/B/signals_latest.csv; phần suy đoán ghi rõ "giả định".*
 
 ---
 
-## 1. Phản biện từng luận điểm của Agent C
+## Phản biện Agent C
 
-### VRE
-- **Agent C cho rằng** đây là "kèo bò rõ ràng nhất" nhờ đồng thuận kỹ thuật + tin tức. **Nhưng**: chính Agent A đã cảnh báo vùng cản cũ tháng 6 (27.000–28.000đ) gần như trùng khít với TP 28.188đ — nghĩa là gần như toàn bộ biên độ mục tiêu (+8%) nằm ngay trong hoặc sát vùng kháng cự đã từng chặn giá trước đây. Agent C thừa nhận rủi ro này nhưng gán nhãn "tích lũy bình thường trước catalyst" — đây là một *diễn giải lạc quan*, không phải sự thật đã kiểm chứng; kịch bản ngược lại (giá bị chặn hẳn tại 27–28k và quay đầu về MA20/MA50 rồi chạm SL) có xác suất tương đương và không được Agent C định lượng.
-- **Agent C cho rằng** cổ tức tiền mặt 10% (lần đầu sau 7 năm) là chất xúc tác tích cực. **Nhưng** theo chính Agent B, "ngày GDKHQ cụ thể chưa kiểm chứng" — nếu ngày chốt quyền rơi ngoài time-stop 25 ngày (đến ~22/9), catalyst này có thể không kịp phát huy tác dụng trong khung thời gian của lệnh. Tỷ suất cổ tức tuyệt đối (1.000đ/26.100đ ≈ 3,8%) cũng không đủ lớn để một mình đẩy giá vượt kháng cự nếu không có dòng tiền khác hỗ trợ.
-- **Agent C cho rằng** catalyst FTSE (hiệu lực 21/9) là điểm cộng lớn. **Nhưng** danh sách 27 mã đã công bố từ 21/8 — tức là **11 ngày trước thời điểm entry tham chiếu (28/8)** thị trường đã biết tin này. Rủi ro "price-in trước, bán ra sau ngày hiệu lực" (sell the news) mà chính Agent B cảnh báo cho VIC cũng áp dụng được cho VRE — Agent C chỉ né rủi ro này ở mục VIC mà không đề cập cho VRE, dù cùng một catalyst và cùng ngày hiệu lực.
-- **Rủi ro thanh khoản/độ mới của tín hiệu:** vol_ratio 1.44 là một con số tại một thời điểm (28/8) — Agent A không xác nhận đây là xu hướng dòng tiền bền vững qua nhiều phiên hay chỉ một phiên đột biến. Agent C mặc định coi đây là "dòng tiền chủ động xác nhận đà tăng" nhưng đó là suy diễn, chưa có bằng chứng về tính liên tục.
+### Về VRE (kèo bò "tự tin nhất" của C)
 
-### VIC
-- **Agent C cho rằng** nến rút chân từ 242k về 236k là "chốt lời ngắn hạn... tích lũy lại trước catalyst". **Nhưng** đây là một trong hai cách diễn giải khả dĩ — cách còn lại là bắt đầu phân phối (distribution) sau một sóng tăng mạnh, đặc biệt khi RSI đã chạm 68,7 sát vùng quá mua. Agent A không khẳng định đây là tích lũy; Agent C đã chọn diễn giải có lợi cho luận điểm mua mà không nêu khả năng ngược lại.
-- **Agent C cho rằng** SL 224.200đ "bảo vệ" nếu đà tăng hụt hơi. **Nhưng** đây là chấp nhận rủi ro giảm 5% để đổi lấy cơ hội tăng 8% vào một vùng giá "chưa từng test" (breakout) — tỷ lệ R:R khoảng 1:1,6 chỉ hấp dẫn *nếu* xác suất thành công đủ cao, mà như mục 0 đã nêu, 2/5 mô hình con gần như trung lập/tiêu cực về khả năng này.
-- **Agent C cho rằng** đòn bẩy tài chính cao (nợ/tài sản ~86%) chỉ là "rủi ro nền dài hạn", không ảnh hưởng trong khung time-stop 25 ngày. **Nhưng** Agent B cũng nêu bối cảnh vĩ mô: NHNN đang siết tăng trưởng tín dụng bất động sản theo từng ngân hàng trong năm 2026. Một cổ phiếu có đòn bẩy cao trong chính giai đoạn ngành bị siết tín dụng dễ nhạy cảm hơn với tin tức chính sách/thanh khoản bất ngờ — rủi ro này có thể kích hoạt *trong* 25 ngày tới nếu có tin siết room tín dụng cụ thể, không nhất thiết phải đợi "dài hạn".
-- **Điểm C không nhắc tới:** VIC đã tăng mạnh từ vùng 210-220k trước khi vào lệnh — nghĩa là phần lớn "tin tốt" KQKD nửa đầu năm 2026 (đã công bố) và triển vọng FTSE (đã biết từ 21/8) nhiều khả năng đã phần nào phản ánh vào giá. Mua ở gần đỉnh ngắn hạn (236k, cách đỉnh 242k chỉ 2,5%) sau một sóng tăng dài là rủi ro "mua đỉnh" cổ điển mà C không đề cập.
+- **Agent C cho rằng** "setup sạch nhất trong nhóm" vì vừa cắt lên MA50 kèm volume tốt (1.44), RSI còn dư địa (58.7). **Nhưng**: Agent A chỉ nói MA50 vừa bị cắt lên, không hề xác nhận MA50 đang dốc lên hay còn đi ngang/xuống — một cú cắt lên MA50 phẳng/dốc xuống nhẹ sau khi "hồi phục từ đáy ~22k" hoàn toàn có thể là nhịp hồi kỹ thuật (dead-cat bounce) trong một downtrend lớn hơn, không phải xác nhận đảo chiều bền vững. Volume_ratio 1.44 là chỉ báo 1 thời điểm, không nói lên độ bền của dòng tiền qua nhiều phiên.
+- **Agent C cho rằng** catalyst FTSE GEIS là "xác nhận chính thức, có ngày cụ thể" nên chắc chắn hơn tin đồn. **Nhưng**: chính vì đã công bố *chính thức từ 21/8/2026* — tức 7 ngày trước as-of (28/8) — nên rủi ro "buy the rumor, sell the news" là có thật: thị trường có thể đã bắt đầu định giá một phần catalyst này vào giá trước khi dòng vốn ETF thực sự giải ngân (21/9/2026). Nếu dòng vốn thực tế giải ngân chậm/nhỏ hơn kỳ vọng (VRE chỉ ở nhóm Small Cap, thường nhận phân bổ nhỏ — điều chính Agent C cũng thừa nhận là "chưa kiểm chứng"), giá có thể "buy the news, sell the fact" ngay quanh hoặc trước 21/9 — đúng lúc gần time-stop 25 phiên của mô hình.
+- **Agent C thừa nhận nhưng giảm nhẹ**: "Small Cap FTSE inflow có thể nhỏ, không đáng kể" — D nhấn mạnh đây không phải rủi ro phụ mà là rủi ro CHÍNH của luận điểm mua, vì gần như toàn bộ "catalyst quan trọng nhất nhóm" theo B chỉ đứng vững nếu dòng vốn thực sự đáng kể. Không có agent nào (A/B/C) đưa ra con số USD cụ thể phân bổ riêng cho VRE — đây là lỗ hổng bằng chứng quan trọng.
+- **Về cổ tức**: C gạt bỏ đúng là cổ tức đã chốt quyền không còn là catalyst tới. D bổ sung: về mặt kỹ thuật, giá tham chiếu sau ngày GDKHQ (1/7/2026) đã bị điều chỉnh giảm tương ứng giá trị cổ tức 1,000đ/cp — nghĩa là nền giá hiện tại một phần phản ánh việc "xả" giá trị đó ra khỏi cổ phiếu, không phải yếu tố hỗ trợ.
+- **Suy luận thời gian của C** (time-stop 25 phiên trùng ngày FTSE hiệu lực 21/9) là **suy đoán logic, không phải bằng chứng từ A/B** — chính C cũng ghi rõ điều này. Đây là một giả định thuận lợi được xây trên lịch trình, không có gì đảm bảo dòng vốn phân bổ đúng vào giai đoạn đó thay vì trải dài tới tháng 9/2027 như B ghi nhận ("triển khai theo lộ trình tới tháng 9/2027").
+- **Rủi ro hệ thống C không đề cập**: VRE là cổ phiếu bất động sản (bán lẻ TTTM). Cả 4/5 mã ưu tiên của mô hình (VIC, PDR, KDH, VRE) đều thuộc nhóm RealEstate — nếu có cú sốc ngành BĐS (margin call, siết tín dụng, tin xấu pháp lý lan ngành), VRE không miễn nhiễm dù bản thân không có tin xấu riêng.
 
-### KDH
-- Agent C tự xếp đây là kèo "mức độ tự tin thấp hơn" — D đồng ý và **nhấn mạnh thêm**: theo dữ liệu gốc, `trend_up = False` cho KDH (cũng như PDR, PNJ) — tức bản thân pipeline định lượng đã gắn nhãn xu hướng giảm, không phải "trung tính chờ xác nhận" như cách diễn đạt của C. Đây là bắt dao rơi theo đúng nghĩa, được cả Agent A và dữ liệu thô xác nhận.
-- Tin tốt Gladia (90% booking) là thật, nhưng đã xảy ra từ 1/8/2026 — gần 1 tháng trước entry (28/8) — nếu tin này đủ mạnh để đảo chiều dòng tiền, nhẽ ra đã phải thấy vol_ratio tăng lên; thực tế vol_ratio KDH chỉ 0,84 (dưới trung bình), nghĩa là thị trường đã có gần 1 tháng để phản ứng và **chưa phản ứng**. Đây là bằng chứng ngược lại khá mạnh mà Agent C không đối chiếu thời gian.
+### Về VIC (kèo bò #2 của C)
 
----
-
-## 2. Rủi ro downside theo mã (tới SL hoặc xa hơn)
-
-- **VIC:** RSI 68,7 sát quá mua sau sóng tăng mạnh → rủi ro điều chỉnh sâu nếu dòng tiền chốt lời lan rộng, đặc biệt nếu xảy ra "sell the news" quanh/sau 21/9 (rủi ro chính Agent B nêu). Đòn bẩy 86% nợ/tài sản kết hợp bối cảnh NHNN siết tín dụng BĐS là rủi ro hệ thống có thể kích hoạt bất ngờ. Biên độ giao dịch ±7%/phiên + T+2 (không bán được ngay khi vừa mua) khiến việc "thoát sớm" khi có tin xấu bất ngờ trong 1-2 phiên đầu gần như bất khả thi.
-- **VRE:** Vùng kháng cự 27.000–28.000đ nằm sát TP — nếu bị chặn và có áp lực bán chung ngành BĐS (NHNN siết room tín dụng ảnh hưởng cả nhóm), giá có thể quay đầu nhanh về vùng SL 24.795đ (chỉ cách entry ~5%). Rủi ro cổ tức bị hoãn/GDKHQ ngoài time-stop.
-- **KDH:** Downtrend dài từ tháng 2 (MA50 giảm từ 26k→19k) chưa có dấu hiệu đảo chiều theo khối lượng; nếu đợt mở bán cao tầng Gladia Q3/2026 không đạt tỷ lệ hấp thụ như đợt đầu, hoặc tín dụng BĐS bị siết ảnh hưởng tới tiến độ giải ngân của khách mua nhà, giá dễ tiếp tục giảm xuyên SL 17.290đ.
-- **PDR (không được C đưa vào bò nhưng nằm trong top 5, cần nêu vì rủi ro cao):** Agent A xếp kỹ thuật yếu nhất nhóm (vol_ratio 0,61, downtrend dài từ tháng 3). Agent B nêu rủi ro pha loãng cổ phần lớn (200 triệu cp, giá phát hành thấp hơn thị giá) + phát hành trái phiếu 5.600 tỷ — áp lực pha loãng/nợ vay là rủi ro thực, đã xảy ra/đang triển khai, không phải suy đoán.
-- **PNJ (ngoài phạm vi bò của C nhưng đáng lưu ý cho E):** lỗ kỷ lục quý II/2026 (-283 tỷ) do bê bối P-Lab là tin xấu mới, rủi ro uy tín thương hiệu "chưa kiểm chứng liệu đã xử lý dứt điểm" — nếu Agent E cân nhắc đa dạng hóa ngoài nhóm BĐS, cần biết rủi ro này chưa hết.
-- **Rủi ro tập trung ngành (hệ thống, áp dụng chung):** 4/5 mã ứng viên top-score (VIC, PDR, KDH, VRE) đều thuộc nhóm BĐS. Nếu Agent E chọn cả VIC + VRE (kèo tự tin nhất của C) cùng lúc, đây **không phải hai vị thế độc lập** — cùng chịu chung rủi ro chính sách tín dụng BĐS, tâm lý ngành, và khối ngoại (nếu có bán ròng nhóm BĐS). Một tin chính sách bất lợi (VD: siết room tín dụng cụ thể một ngân hàng lớn cho vay BĐS) có thể khiến cả hai chạm SL gần như đồng thời.
+- **Agent C thừa nhận** RSI 68.7 cận quá mua là rủi ro thật, TP đòi phá đỉnh 6 tháng "không chắc chắn" — D đồng ý đây là điểm yếu cốt lõi: khi cả điểm vào lệnh đã sát vùng quá mua VÀ mục tiêu lợi nhuận đòi hỏi phá vùng giá chưa từng đạt trong 6 tháng, xác suất chạm TP trước khi chạm SL hoặc time-stop giảm đáng kể so với các mã có TP nằm trong vùng giá đã từng giao dịch (như VRE).
+- **Điểm C bỏ qua**: Agent B ghi rõ có **chênh lệch dữ liệu giá chưa đối chiếu** — signals_latest.csv ghi giá as-of 236,000đ (28/8/2026), nhưng nguồn tin Simplize mà B tìm được cho thấy giá quanh 205,000–208,500đ trong nửa cuối tháng 8. Đây là "chưa kiểm chứng" ở mức nghiêm trọng: nếu giá thực tế thấp hơn ~236,000đ đáng kể, toàn bộ entry/TP/SL/R:R trong bảng tín hiệu có thể lệch pha với thị trường thực — cần xác minh giá hiện tại trước khi dùng bất kỳ con số nào từ bảng tín hiệu cho VIC.
+- **Về pullback -3.6% tháng 8**: C diễn giải đây là "điều chỉnh nhỏ trong xu hướng tăng dài hạn". D phản biện: A/B không có đủ dữ liệu để loại trừ khả năng đây là *khởi đầu* của một nhịp điều chỉnh sâu hơn sau khi giá đã tăng +273% trong 1 năm — mức tăng lớn như vậy thường đi kèm rủi ro chốt lời/điều chỉnh mạnh hơn khi RSI đã cận vùng quá mua, không chỉ "pullback nhỏ".
+- **Rủi ro tập trung**: vốn hóa VIC >20% HoSE là con dao hai lưỡi mà B cũng nêu — nhạy với dòng vốn index/ETF theo cả hai chiều; nếu khối ngoại đảo chiều bán ròng hoặc thị trường chung điều chỉnh do margin kỷ lục, VIC (do tỷ trọng lớn) có thể kéo theo áp lực bán mạnh hơn tỷ lệ, không chỉ là câu chuyện tích cực một chiều như C trình bày.
 
 ---
 
-## 3. Mã nên tránh / rủi ro nhất
+## Rủi ro downside theo mã
 
-1. **PDR** — kỹ thuật yếu nhất nhóm (theo Agent A: downtrend dài, vol_ratio 0,61 thấp nhất), cộng thêm rủi ro pha loãng cổ phần + phát hành trái phiếu lớn (theo Agent B) — hai lớp rủi ro kỹ thuật và cơ bản cùng tiêu cực, không có catalyst FTSE bù đắp.
-2. **KDH** — downtrend xác nhận bởi cả kỹ thuật (`trend_up=False`) lẫn thời gian (tin tốt Gladia đã gần 1 tháng mà chưa kéo được dòng tiền) — dạng bắt dao rơi rủi ro cao, đúng như Agent C tự thừa nhận mức tin cậy thấp nhất.
-3. **VIC** (thận trọng, không phải "tránh tuyệt đối" nhưng rủi ro downside lớn nhất trong 2 mã C tự tin nhất) — mua gần đỉnh ngắn hạn sau sóng tăng dài, RSI sát quá mua, đòn bẩy tài chính cao đúng lúc ngành bị siết tín dụng, và catalyst FTSE đã được biết trước 11 ngày (rủi ro sell-the-news do chính Agent B cảnh báo).
+- **VIC**: (1) Chênh lệch giá chưa kiểm chứng (236k vs ~205-208k) → rủi ro entry/SL/TP tính sai; (2) RSI 68.7 sát quá mua, TP đòi phá đỉnh 6 tháng → xác suất thất bại kỹ thuật cao nếu không có lực mua vượt trội; (3) tỷ trọng vốn hóa lớn khiến nhạy với rủi ro thị trường chung (margin kỷ lục 435,000 tỷ, +30,000 tỷ so với Q1/2026).
+- **VRE**: (1) Catalyst FTSE GEIS có thể đã một phần phản ánh vào giá trước ngày hiệu lực 21/9; (2) rủi ro "sell the news" nếu dòng vốn Small Cap thực tế nhỏ hơn kỳ vọng (chưa có số liệu cụ thể); (3) cùng nhóm ngành BĐS nên chịu rủi ro hệ thống ngành dù bản thân không có tin xấu riêng; (4) R:R 1.6:1 chỉ hấp dẫn nếu giá không gap qua SL — biên độ ±7%/phiên của HoSE khiến 1 phiên giảm sàn có thể nhảy thẳng qua vùng SL 24,795đ mà không kịp cắt lỗ đúng giá.
+- **PDR**: theo A, dưới MA50 với MA50 đang dốc xuống, volume 0.61 — yếu nhất nhóm 5 mã — đúng mẫu "bắt dao rơi". Thêm rủi ro pha loãng cụ thể từ B: phát hành ~199.56 triệu cổ phiếu (tỷ lệ 5:1) có thể pha loãng EPS/giá tham chiếu trong ngắn-trung hạn, bất kể tín hiệu nội bộ Chủ tịch đăng ký mua 20 triệu cổ phiếu (chưa xác nhận đã mua xong theo B).
+- **KDH**: theo A, dưới MA50 với MA50 dốc xuống, volume 0.84 — cùng mẫu hình downtrend chưa xác nhận đảo chiều như PDR. Rủi ro cung từ cổ đông lớn (VinaCapital thoái vốn) theo B — dù "chưa kiểm chứng đầy đủ", nếu đúng thì đây là áp lực bán từ tổ chức, khó hấp thụ trong ngắn hạn.
+- **PNJ**: rủi ro nghiêm trọng nhất theo B — vụ án hình sự tại công ty con, giá đã mất ~50% từ đỉnh, bị loạt CTCK siết margin. Dù có phiên hồi kỹ thuật kịch trần, nền tảng niềm tin thị trường "chưa ổn định hoàn toàn" (theo B) — mọi tín hiệu kỹ thuật hồi phục ở đây có rủi ro cao là bull trap trong lúc thanh khoản bị siết bởi chính sách margin của CTCK, không phải cung-cầu tự nhiên.
+
+**Rủi ro hệ thống chung cho cả nhóm**: dư nợ margin toàn thị trường đang ở mức kỷ lục (~435,000 tỷ đồng cuối Q2/2026, +30,000 tỷ so với Q1) theo B — nếu có cú sốc kích hoạt margin call diện rộng, các mã có beta cao/thanh khoản sôi động gần đây (VIC, VRE) có thể giảm nhanh và mạnh hơn biên độ SL tính toán do hiệu ứng bán tháo dây chuyền + biên độ ±7% của HoSE khiến giá có thể gap qua SL. Toàn bộ 4/5 mã ưu tiên (VIC, PDR, KDH, VRE) đều thuộc ngành RealEstate — thiếu đa dạng hóa, một cú sốc chính sách/pháp lý ngành BĐS (dù Nghị định 281 và Thông tư 29/2026 hiện được B đánh giá "trung tính") ảnh hưởng đồng thời cả 4 mã.
 
 ---
 
-**Nhắc lại:** mô hình định lượng có edge yếu (AUC ~0.53–0.55) — chỉ nhỉnh hơn tung đồng xu một chút. Như phân tích ở mục 0, ngay cả trong 2 mã được Agent C chọn làm kèo tự tin nhất, một nửa số mô hình con trong ensemble (GradBoost, XGBoost) không đồng thuận với hướng mua. Sự "đồng thuận kỹ thuật + tin tức" mà Agent C nhấn mạnh là có thật ở tầng định tính, nhưng không nên diễn giải thành xác suất thắng cao — đây vẫn là các kèo xác suất mỏng, cần tuân thủ nghiêm ngặt SL/time-stop đã định sẵn, không nới lỏng dựa trên câu chuyện catalyst.
+## Mã nên tránh
 
-*Đây KHÔNG PHẢI khuyến nghị đầu tư. Toàn bộ nội dung trên là phản biện nội bộ phục vụ tranh luận, dựa trên dữ liệu và bằng chứng đã có trong whiteboard của Agent A/B/C — không bổ sung tin tức mới ngoài các nguồn đã trích dẫn.*
+- **PDR và KDH** — rủi ro cao nhất theo đồng thuận cả A lẫn C: dưới MA50, MA50 còn dốc xuống, volume yếu (<1), đúng mẫu hình "bắt dao rơi" không có xác nhận đảo chiều kỹ thuật. Tin tức dự án tích cực (Gladia Heights, quỹ đất mới) không đủ bù đắp thiếu xác nhận kỹ thuật trong ngắn hạn.
+- **PNJ** — rủi ro pháp lý/uy tín nghiêm trọng nhất nhóm, chưa hóa giải theo B; tín hiệu hồi phục giá hiện tại nhiều khả năng là phục hồi kỹ thuật ngắn hạn trong bối cảnh thanh khoản bị siết margin, không phải xác nhận ổn định nền tảng.
+- **VIC** — không xếp vào "tránh" hoàn toàn nhưng cần thận trọng đặc biệt: chênh lệch dữ liệu giá chưa kiểm chứng giữa signal (236,000đ) và nguồn tin B tìm được (~205-208k) là rủi ro vận hành nghiêm trọng cần xác minh giá thực tế trước khi cân nhắc bất kỳ hành động nào dựa trên entry/TP/SL trong bảng tín hiệu.
+
+---
+
+**Nhắc lại edge mô hình**: các xác suất mô hình (p_LogReg, p_RandomForest, p_GradBoost, p_XGBoost, p_LSTM) trong signals_latest.csv đều dao động quanh 0.4–0.68, và theo ghi nhận nhất quán của A/B/C, mô hình định lượng nền tảng chỉ có **AUC ~0.53–0.55** — tức khả năng phân biệt tín hiệu tốt/xấu chỉ nhỉnh hơn tung đồng xu một chút. Toàn bộ xếp hạng "kèo bò tự tin nhất" của Agent C nên được đọc với mức độ hoài nghi tương ứng: đây là lựa chọn có bằng chứng tương đối tốt nhất trong 5 mã, không phải một dự báo có độ tin cậy cao.
+
+---
+
+*KHÔNG PHẢI KHUYẾN NGHỊ ĐẦU TƯ. Mọi số liệu trích dẫn ở trên lấy từ ghi chú của Agent A/B/C và signals_latest.csv; các điểm suy đoán được đánh dấu rõ là "giả định". Mục tiêu của ghi chú này là stress-test luận điểm bò, không phải khuyến nghị bán/tránh chắc chắn.*
