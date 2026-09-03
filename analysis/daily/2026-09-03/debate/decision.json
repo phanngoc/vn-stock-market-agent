@@ -1,0 +1,77 @@
+{
+  "as_of": "2026-09-03",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Cả 5 mã ứng viên đều có vol_ratio dưới 1 và 4/5 mã tập trung vào bất động sản/hệ sinh thái Vingroup; mô hình định lượng nền có edge yếu (AUC ~0.53-0.55) nên ưu tiên bảo toàn vốn hơn là giải ngân đầy đủ.",
+  "watch_this_week": [
+    "VIC: vol_ratio có vượt 1.0 để xác nhận breakout thật hay tiếp tục yếu (rủi ro phân phối)",
+    "VIC: phản ứng giá quanh/sau ngày FTSE Russell nâng hạng có hiệu lực 21/9/2026",
+    "VRE: giá có giữ vững trên MA50 (~26.000đ) hay tụt lại (bull-trap)",
+    "VRE: diễn biến khi tiệm cận vùng kháng cự cũ 28.000-29.000đ",
+    "PDR: tiến độ/giá chào bán cổ phiếu 5:1 (~10.000đ/cp, huy động ~2.000 tỷ đồng)",
+    "KDH: dấu hiệu tạo đáy kỹ thuật (chưa xuất hiện) và thời điểm mở bán dự án Gladia by the Waters (Q3/2026, chưa kiểm chứng ngày cụ thể)",
+    "PNJ: KQKD Q3/2026 sơ bộ, biến động giá vàng/tồn kho có ảnh hưởng biên lợi nhuận",
+    "Toàn thị trường: ngày GDKHQ/họp ĐHĐCĐ bất thường tháng 9/2026 cho VIC/PNJ/PDR - chưa kiểm chứng"
+  ],
+  "picks": [
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "224500-230000",
+      "tp_vnd": 255204,
+      "sl_vnd": 224485,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Breakout trên MA50 với KQKD H1/2026 rất mạnh và catalyst FTSE 21/9 có mốc ngày cụ thể, nhưng khối lượng breakout yếu (vol_ratio 0.41) sau đà tăng 60%/tháng là rủi ro climax/phân phối thật - chưa đủ cơ sở giải ngân đầy đủ.",
+      "invalidation": "Vol_ratio tiếp tục dưới 0.5 khi giá đi ngang/giảm sau breakout; giá thủng 224.485đ; qua ngày FTSE 21/9 mà không có phản ứng giá tích cực (sell-the-news hiện thực)."
+    },
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 43362,
+      "sl_vnd": 38142,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Hồi trong downtrend dài (80k→30k) chưa xác nhận đảo chiều bằng MA, trong khi Q2/2026 lỗ kỷ lục ~283 tỷ đồng do biến động giá vàng/tồn kho - kỹ thuật và cơ bản đều không ủng hộ.",
+      "invalidation": "Giá xác nhận vượt MA50 kèm khối lượng, và KQKD quý tới cho thấy biên lợi nhuận phục hồi rõ rệt."
+    },
+    {
+      "symbol": "PDR",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 13176,
+      "sl_vnd": 11590,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Kỹ thuật yếu nhất nhóm sau KDH (3/10), hồi không khối lượng trong downtrend, cộng rủi ro pha loãng đã xác nhận bằng kế hoạch chào bán 5:1 (~2.000 tỷ đồng) trong khi dòng tiền kinh doanh 2025 âm gần 3.000 tỷ.",
+      "invalidation": "Huỷ/giảm quy mô kế hoạch chào bán cổ phiếu, hoặc giá xác nhận tạo đáy kỹ thuật kèm khối lượng."
+    },
+    {
+      "symbol": "KDH",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 19224,
+      "sl_vnd": 16910,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Setup kỹ thuật yếu nhất trong toàn bộ nhóm ứng viên (2.5/10), downtrend còn dốc, chưa có dấu hiệu tạo đáy - tin cơ bản tốt (sạch nợ trái phiếu, catalyst FTSE) chưa đủ để đảo ngược xu hướng giảm.",
+      "invalidation": "Xuất hiện tín hiệu tạo đáy kỹ thuật rõ ràng (nến đảo chiều, khối lượng tăng khi giá giữ vững) và/hoặc xác nhận thời điểm mở bán dự án Gladia."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "Thấp",
+      "entry_zone_vnd": "25800-26250",
+      "tp_vnd": 28350,
+      "sl_vnd": 24938,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Vừa vượt lại MA50 sau tạo đáy với KQKD đúng tiến độ và catalyst FTSE, nhưng vol_ratio 0.37 yếu nhất nhóm 5 mã ngay tại điểm vượt là tín hiệu bull-trap cổ điển, và TP nằm sát vùng kháng cự cũ có lực bán lịch sử.",
+      "invalidation": "Giá tụt lại xuống dưới MA50; vol_ratio không cải thiện trong 5-7 phiên tới; tin xấu từ hệ sinh thái Vingroup/Vinhomes gây bán chéo tâm lý."
+    }
+  ]
+}

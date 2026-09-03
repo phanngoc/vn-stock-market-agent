@@ -1,0 +1,134 @@
+{
+  "best_model": "LogReg",
+  "base_win_rate": 0.354,
+  "buy_hold_avg": 0.2954,
+  "metrics": [
+    {
+      "model": "LogReg",
+      "auc": 0.5507,
+      "test_acc": 0.6085,
+      "signal_precision": 0.4065,
+      "n_trades": 646,
+      "win_rate": 0.4149,
+      "avg_net_ret": 0.0029,
+      "median_net_ret": -0.053,
+      "total_pnl_fixed": 1.8689,
+      "sharpe_per_trade": 0.046,
+      "max_dd_fixed": -2.6499,
+      "expectancy_R": 0.058,
+      "avg_hold_days": 6.5
+    },
+    {
+      "model": "XGBoost",
+      "auc": 0.5346,
+      "test_acc": 0.6014,
+      "signal_precision": 0.3889,
+      "n_trades": 655,
+      "win_rate": 0.4061,
+      "avg_net_ret": 0.0021,
+      "median_net_ret": -0.053,
+      "total_pnl_fixed": 1.3444,
+      "sharpe_per_trade": 0.032,
+      "max_dd_fixed": -2.1346,
+      "expectancy_R": 0.041,
+      "avg_hold_days": 6.7
+    },
+    {
+      "model": "LSTM",
+      "auc": 0.5196,
+      "test_acc": 0.5901,
+      "signal_precision": 0.3606,
+      "n_trades": 523,
+      "win_rate": 0.3958,
+      "avg_net_ret": 0.002,
+      "median_net_ret": -0.053,
+      "total_pnl_fixed": 1.0463,
+      "sharpe_per_trade": 0.032,
+      "max_dd_fixed": -3.2471,
+      "expectancy_R": 0.04,
+      "avg_hold_days": 8.3
+    },
+    {
+      "model": "RandomForest",
+      "auc": 0.5389,
+      "test_acc": 0.6022,
+      "signal_precision": 0.3909,
+      "n_trades": 619,
+      "win_rate": 0.3926,
+      "avg_net_ret": -0.001,
+      "median_net_ret": -0.053,
+      "total_pnl_fixed": -0.6471,
+      "sharpe_per_trade": -0.017,
+      "max_dd_fixed": -4.0817,
+      "expectancy_R": -0.021,
+      "avg_hold_days": 5.9
+    },
+    {
+      "model": "GradBoost",
+      "auc": 0.5364,
+      "test_acc": 0.5912,
+      "signal_precision": 0.3634,
+      "n_trades": 652,
+      "win_rate": 0.3819,
+      "avg_net_ret": -0.0017,
+      "median_net_ret": -0.053,
+      "total_pnl_fixed": -1.1073,
+      "sharpe_per_trade": -0.027,
+      "max_dd_fixed": -4.5445,
+      "expectancy_R": -0.034,
+      "avg_hold_days": 6.4
+    }
+  ],
+  "top_signals": [
+    {
+      "symbol": "VIC",
+      "score": 0.6267,
+      "price_vnd": 236300
+    },
+    {
+      "symbol": "PNJ",
+      "score": 0.6172,
+      "price_vnd": 40150
+    },
+    {
+      "symbol": "PDR",
+      "score": 0.61,
+      "price_vnd": 12200
+    },
+    {
+      "symbol": "KDH",
+      "score": 0.5983,
+      "price_vnd": 17800
+    },
+    {
+      "symbol": "VRE",
+      "score": 0.5384,
+      "price_vnd": 26250
+    },
+    {
+      "symbol": "GVR",
+      "score": 0.5317,
+      "price_vnd": 32350
+    },
+    {
+      "symbol": "DGC",
+      "score": 0.5271,
+      "price_vnd": 42500
+    },
+    {
+      "symbol": "PLX",
+      "score": 0.5222,
+      "price_vnd": 36650
+    },
+    {
+      "symbol": "GAS",
+      "score": 0.5063,
+      "price_vnd": 85300
+    },
+    {
+      "symbol": "BID",
+      "score": 0.4908,
+      "price_vnd": 36550
+    }
+  ]
+}
