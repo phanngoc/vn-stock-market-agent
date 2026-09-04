@@ -1,0 +1,73 @@
+{
+  "as_of": "2026-09-04",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Không mã nào đạt đồng thuận đủ mạnh giữa kỹ thuật, tin tức và rủi ro để MUA; nhóm ứng viên tập trung cao vào BĐS và mô hình nền có AUC chỉ ~0.53-0.55 nên ưu tiên bảo toàn vốn.",
+  "watch_this_week": [
+    "21/9/2026: FTSE Russell chính thức nâng hạng, VIC hưởng lợi trực tiếp - theo dõi rủi ro sell-the-news quanh mốc này",
+    "Ngày GDKHQ cổ tức tiền mặt 10% của VRE (chưa công bố cụ thể) - xác nhận qua VSD/HOSE",
+    "Thời điểm chốt quyền chào bán cổ phiếu 5:1 của PDR (pha loãng ~23%+) - theo dõi công bố HOSE",
+    "Diễn biến VN-Index quanh vùng 1.800-1.830 điểm và dòng vốn khối ngoại"
+  ],
+  "picks": [
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "241300-248000",
+      "tp_vnd": 274320,
+      "sl_vnd": 241300,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Catalyst FTSE GEIS (21/9) và KQKD đột biến là thật, nhưng RSI 77 quá mua và volume không xác nhận cú tăng vọt khiến entry hiện tại rủi ro cao.",
+      "invalidation": "RSI tiếp tục trên 75 kèm volume không cải thiện; giá giảm mạnh (>3%/1-2 phiên) quanh 21/9 (dấu hiệu sell-the-news); tin xấu đảo ngược catalyst FTSE."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "25800-26700",
+      "tp_vnd": 28836,
+      "sl_vnd": 25365,
+      "time_stop_days": 25,
+      "size_pct": "3-4%",
+      "thesis": "Kỹ thuật tốt nhất nhóm (RSI chưa quá mua, volume xác nhận) và catalyst cổ tức 10% lần đầu sau 7 năm, nhưng ngày GDKHQ chưa kiểm chứng và model-disagreement (GradBoost/XGBoost dưới 0.5) cần theo dõi thêm.",
+      "invalidation": "Giá thủng lại MA50 kèm volume yếu; không có công bố ngày GDKHQ trong vài tuần tới; model score tổng hợp giảm sâu hơn."
+    },
+    {
+      "symbol": "GVR",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 34074,
+      "sl_vnd": 29972,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Hội tụ 3 tín hiệu tiêu cực đồng thời: volume rất yếu (0.36) không xác nhận breakout MA50, guidance nội bộ hạ LNST 2026 -7%, và model split (GradBoost/XGBoost dưới 0.5) không có catalyst ngắn hạn bù lại.",
+      "invalidation": "Volume cải thiện rõ rệt (>0.8) kèm giá giữ vững trên MA50 nhiều phiên, hoặc ban lãnh đạo điều chỉnh guidance tích cực hơn."
+    },
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 42120,
+      "sl_vnd": 37050,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Dưới MA50 trong downtrend dài (85k→39k, mất ~54% từ đỉnh tháng 2) chưa xác nhận đảo chiều; KQKD Q1 mạnh là tin cũ, không đủ đảo ngược trend giá.",
+      "invalidation": "Giá đóng cửa vượt lại MA50 kèm volume xác nhận tăng rõ rệt, cho thấy đảo chiều kỹ thuật thật sự."
+    },
+    {
+      "symbol": "PDR",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 13068,
+      "sl_vnd": 11495,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Kỹ thuật tệ nhất nhóm (volume 0.34 thấp nhất, dưới MA50) cộng rủi ro pha loãng định lượng lớn (~233,7 triệu cp mới, ước tính hơn 23% cổ phiếu lưu hành) chưa rõ thời điểm chốt quyền.",
+      "invalidation": "Công bố rõ thời điểm và điều khoản chốt quyền cho thấy tác động pha loãng thấp hơn ước tính, kèm cải thiện kỹ thuật rõ rệt (vượt MA50, volume tăng)."
+    }
+  ]
+}
