@@ -1,0 +1,75 @@
+{
+  "as_of": "2026-09-07",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Bò/gấu ở VRE và VIC ngang nhau, mô hình có edge yếu (AUC ~0.53-0.55), 3/5 mã cùng ngành BĐS (rủi ro tương quan cao), margin bị siết và thanh khoản chung thận trọng nên ưu tiên bảo toàn vốn, chỉ theo dõi thay vì giải ngân đầy đủ.",
+  "watch_this_week": [
+    "FTSE Russell: danh mục 27 mã đã chốt 7/9/2026, cơ cấu ETF hoàn tất sau phiên 18/9/2026, hiệu lực chính thức 21/9/2026 - theo dõi phản ứng giá VIC/VRE quanh các mốc này (rủi ro buy-the-rumor-sell-the-news)",
+    "VRE: vol_ratio có duy trì >1 thêm các phiên tới không, và phản ứng giá tại vùng kháng cự 28.000-29.000 VND",
+    "VIC: RSI có hạ nhiệt dưới 70 kèm giữ vững trên MA20/50 (~218-220k) hay bị thủng trước ngày 21/9",
+    "Nội dung chi tiết bài viết ba lớp game tài chính họ Vin (VIC-VHM-VRE-VPL) khi fetch được - hiện chưa kiểm chứng (lỗi 403)",
+    "Diễn biến margin/thanh khoản chung HoSE (đã cắt margin một số mã do lỗ bán niên)",
+    "Tiến độ chính sách NHNN về room tín dụng BĐS 2026 - ảnh hưởng nhóm VIC/VRE/PDR"
+  ],
+  "picks": [
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "26800-27400",
+      "tp_vnd": 29268,
+      "sl_vnd": 25745,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Setup kỹ thuật tốt nhất nhóm (vol_ratio 1.24 duy nhất xác nhận) cộng catalyst FTSE Small Cap + cổ tức 10%, nhưng ensemble mô hình con chia rẽ (p_GradBoost/p_XGBoost <0.5) và kháng cự 28-29k từng thất bại nhiều lần.",
+      "invalidation": "Vol_ratio quay về dưới 1 kèm giá thủng MA20/50 hội tụ (~25.300-25.500), GDKHQ cổ tức rơi đúng lúc giá test kháng cự, hoặc xác nhận tiêu cực cụ thể từ tin ba lớp game tài chính họ Vin."
+    },
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "218000-225000",
+      "tp_vnd": 269352,
+      "sl_vnd": 236930,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Catalyst FTSE Large Cap rõ ràng nhất nhóm (hiệu lực 21/9/2026) và KQKD kỷ lục, nhưng RSI 70.2 quá mua cộng volume thấp nhất nhóm (0.21) và rủi ro sell-the-news quanh ngày cơ cấu ETF khiến nên chờ pullback thay vì mua đuổi.",
+      "invalidation": "Giá thủng MA20/50 (~218-220k) trước khi hồi phục, diễn biến sell-the-news rõ rệt quanh 18-21/9, xác nhận tiêu cực cụ thể về cấu trúc tài chính họ Vin, hoặc tín hiệu NHNN siết room tín dụng BĐS ảnh hưởng cụ thể tới VIC."
+    },
+    {
+      "symbol": "PDR",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 12960,
+      "sl_vnd": 11400,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Dưới MA50 trong downtrend dài hạn, cộng rủi ro pha loãng cụ thể đã xác nhận (~2.000 tỷ đồng chào bán cổ đông hiện hữu) và rủi ro nợ chuyển đổi thành cổ phần từ nhiều đối tác.",
+      "invalidation": ""
+    },
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 41634,
+      "sl_vnd": 36622,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Giá dưới cả MA20 và MA50 trong downtrend dài hạn, khối lượng èo uột không xác nhận đảo chiều - rủi ro bắt dao rơi bất chấp KQKD cơ bản rất mạnh (+116% svck).",
+      "invalidation": ""
+    },
+    {
+      "symbol": "GVR",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 34398,
+      "sl_vnd": 30258,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Kỹ thuật trung tính không xác nhận khối lượng (vol_ratio 0.24); ban lãnh đạo tự hạ dự phóng LNST 2026 (-7%) dù giá cao su thuận lợi, câu chuyện KCN là dài hạn ngoài khung time-stop 25 phiên.",
+      "invalidation": ""
+    }
+  ]
+}
