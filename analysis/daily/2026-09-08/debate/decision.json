@@ -1,0 +1,75 @@
+{
+  "as_of": "2026-09-08",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Toàn bộ 5 mã ứng viên đều có vol_ratio dưới 1 (chưa xác nhận dòng tiền mạnh) và mô hình nền có edge yếu (AUC ~0.53-0.55); catalyst nâng hạng FTSE 21/9/2026 đáng theo dõi cho VIC/VRE nhưng chưa đủ để giải ngân ngay.",
+  "watch_this_week": [
+    "21/9/2026: FTSE Russell chính thức nâng hạng có hiệu lực - theo dõi phản ứng giá/khối lượng VIC, VRE quanh mốc này",
+    "Vol_ratio cả nhóm cần vượt rõ trên 1.0 mới coi là xác nhận dòng tiền thật, hiện tất cả đều dưới 0.5",
+    "Ngày GDKHQ cổ tức tiền mặt 10% của VRE (dự kiến quý 3/2026, ngày cụ thể chưa kiểm chứng)",
+    "KQKD quý 3/2026 của VIC, VRE, PNJ - đặc biệt quan trọng với PNJ",
+    "Diễn biến trái phiếu BĐS đáo hạn (~141.908 tỷ đồng nửa cuối 2026) - rủi ro hệ thống cho VIC, VRE, PDR, GVR",
+    "Xác nhận việc Vingroup/VinFast có triển khai lại kế hoạch phát hành 5.000 tỷ trái phiếu chuyển đổi hay không"
+  ],
+  "picks": [
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "235000-242000",
+      "tp_vnd": 261036,
+      "sl_vnd": 229615,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Catalyst FTSE Large Cap 21/9/2026 định lượng, có ngày cụ thể, nhưng giá đã tăng ~60%/tháng và vol_ratio thấp nhất nhóm (0.21) chưa xác nhận dòng tiền.",
+      "invalidation": "Giá thủng MA20 kèm khối lượng lớn trước 21/9 (dấu hiệu sell-the-rumor sớm); hoặc xác nhận Vingroup/VinFast triển khai lại phát hành trái phiếu chuyển đổi pha loãng."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "25800-26500",
+      "tp_vnd": 28458,
+      "sl_vnd": 25032,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Setup kỹ thuật tốt nhất nhóm (vol_ratio cao nhất, RSI còn dư địa) cộng catalyst kép FTSE Small Cap + cổ tức 10%, nhưng ngày GDKHQ cổ tức chưa xác định và TP nằm tại vùng kháng cự thực.",
+      "invalidation": "Giá thủng MA50 hoặc xuất hiện bán tháo diện rộng nhóm BĐS (tin xấu cụ thể về trái phiếu đáo hạn ngành) trước khi FTSE/cổ tức kịp phát huy tác dụng."
+    },
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 42120,
+      "sl_vnd": 37050,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Vẫn dưới MA50 trong downtrend dài (80k->30k từ tháng 3-7) - dạng bắt dao rơi; luận điểm mua phụ thuộc hoàn toàn vào KQKD quý 3/2026 chưa công bố, không có catalyst FTSE bù đắp.",
+      "invalidation": "Sẽ xem xét lại nếu giá xác nhận lấy lại MA50 kèm khối lượng, hoặc KQKD Q3/2026 công bố tiếp tục vượt kỳ vọng như quý trước."
+    },
+    {
+      "symbol": "GVR",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 34236,
+      "sl_vnd": 30115,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Không có xu hướng kỹ thuật rõ ràng (đi ngang nhiều tháng, chưa xác nhận breakout), kế hoạch lợi nhuận đi lùi năm tới, giá đã chạy trước mạnh trong quá khứ, không có catalyst FTSE.",
+      "invalidation": "Sẽ xem xét lại nếu có xác nhận breakout kỹ thuật thật sự (giá vượt vùng cản kèm vol_ratio trên 1.0) hoặc tin tức cụ thể hoá thêm về tiến độ chuyển đổi đất KCN."
+    },
+    {
+      "symbol": "PDR",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 12852,
+      "sl_vnd": 11305,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Downtrend rõ nhất nhóm (điểm kỹ thuật 3.5/10, thấp nhất), rủi ro pha loãng cụ thể và định lượng được (~2.000 tỷ phát hành + 34,1 triệu cp hoán đổi nợ), không có catalyst FTSE bù đắp.",
+      "invalidation": "Sẽ xem xét lại nếu xu hướng kỹ thuật đảo chiều được xác nhận rõ (vượt MA50 kèm khối lượng) và rủi ro pha loãng/trái phiếu được làm rõ theo hướng tích cực."
+    }
+  ]
+}
