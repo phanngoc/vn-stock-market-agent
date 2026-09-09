@@ -1,0 +1,74 @@
+{
+  "as_of": "2026-09-09",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Không mã nào trong 5 ứng viên top-score hội tụ đủ bằng chứng bò áp đảo gấu; mô hình nền có AUC yếu (~0.53-0.55) nên ưu tiên bảo toàn vốn, đứng ngoài phần lớn.",
+  "watch_this_week": [
+    "11/9/2026: MarketVector/STOXX công bố kết quả cơ cấu ETF quý 3 (ảnh hưởng VIC, khả năng VRE)",
+    "11-14/9/2026: PHR (công ty con GVR) GDKHQ/chốt quyền cổ tức tiền mặt 14%",
+    "21/9/2026: FTSE Russell chính thức nâng hạng Việt Nam + hiệu lực cơ cấu ETF quý 3 cùng ngày",
+    "Dự kiến 21/10/2026: PNJ họp ĐHĐCĐ bất thường thông qua kế hoạch điều chỉnh sau lỗ Q2",
+    "PDR: theo dõi tiến độ phê duyệt UBCKNN cho đợt chào bán 5:1 (chưa có ngày cụ thể)"
+  ],
+  "picks": [
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "245000-250500",
+      "tp_vnd": 270540,
+      "sl_vnd": 237975,
+      "time_stop_days": 25,
+      "size_pct": "0-3%",
+      "thesis": "Trend tăng mạnh nhất nhóm, KQKD H1 tốt, nhưng RSI cận quá mua và vol_ratio thấp nhất nhóm (0.13) khiến động lượng đáng ngờ.",
+      "invalidation": "Giá thủng vùng 238k kèm khối lượng lớn quanh/sau đợt cơ cấu ETF (11-21/9), hoặc xác nhận bán ròng ETF gây áp lực kéo dài sau 21/9 -> chuyển sang TRÁNH."
+    },
+    {
+      "symbol": "GVR",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "31500-32500",
+      "tp_vnd": 34506,
+      "sl_vnd": 30352,
+      "time_stop_days": 25,
+      "size_pct": "0-3%",
+      "thesis": "Setup breakout kỹ thuật sạch khỏi vùng tích lũy 28-40k, nhưng khối lượng yếu (0.30) khiến rủi ro breakout giả cao.",
+      "invalidation": "Tin chính thức cổ tức GVR thấp hơn nhiều so với đồn đoán 25% gây phản ứng giá tiêu cực, hoặc giá quay lại vùng tích lũy 28-30k -> chuyển sang TRÁNH."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "26000-26800",
+      "tp_vnd": 28728,
+      "sl_vnd": 25270,
+      "time_stop_days": 25,
+      "size_pct": "0-3%",
+      "thesis": "Tin tức cơ bản tốt nhất nhóm (KQKD cốt lõi +~20%), nhưng score mô hình tổng hợp thực ra thấp nhất nhóm và khối lượng còn yếu quanh MA50.",
+      "invalidation": "Giá thủng vùng 25.3-25.5k kèm khối lượng lớn, hoặc xác nhận cụ thể VRE bị bán ròng ETF quy mô đáng kể -> chuyển sang TRÁNH."
+    },
+    {
+      "symbol": "PDR",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 12798,
+      "sl_vnd": 11257,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Kỹ thuật yếu nhất nhóm (downtrend chưa xác nhận dừng) cộng rủi ro pha loãng cụ thể đã công bố (chào bán 5:1 giá 10.000đ thấp hơn thị trường, tăng vốn điều lệ ~24%).",
+      "invalidation": "Downtrend đảo chiều rõ kèm khối lượng lớn xác nhận, và có thông tin rõ ràng đợt chào bán 5:1 đã hoàn tất/không còn gây áp lực giá -> xem xét lại."
+    },
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 40716,
+      "sl_vnd": 35815,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Lỗ ròng Q2 lần đầu kể từ niêm yết, dự phòng lũy kế tăng gần gấp đôi công bố ban đầu, rủi ro bán cổ phiếu nội bộ từ gia đình Chủ tịch.",
+      "invalidation": "ĐHĐCĐ bất thường (dự kiến 21/10) xác nhận kế hoạch điều chỉnh khả thi và dự phòng ngừng tăng, kèm khối lượng lớn xác nhận đáy bền vững -> xem xét lại."
+    }
+  ]
+}
