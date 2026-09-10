@@ -1,0 +1,74 @@
+{
+  "as_of": "2026-09-10",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Không mã nào hội tụ đủ trend + volume xác nhận + catalyst chắc chắn để đạt ngưỡng MUA; toàn bộ 5 ứng viên có vol_ratio dưới 1 và mô hình có edge yếu (AUC ~0.53-0.55) nên ưu tiên bảo toàn vốn, chỉ thăm dò nhỏ ở mã THEO DÕI.",
+  "watch_this_week": [
+    "21/9/2026: FTSE Russell nâng hạng chính thức, dòng vốn thụ động dự kiến giải ngân - theo dõi phản ứng giá/volume VIC (rủi ro sell-the-news vì danh sách đã công bố từ 21/8)",
+    "Volume xác nhận: cần ít nhất 1 phiên vol_ratio >1 ở VIC hoặc VRE để coi là dòng tiền thực sự quay lại",
+    "Thông tin cổ tức VRE: làm rõ mâu thuẫn giữa hai nguồn tin (đã thông qua cổ tức 10% vs không chia cổ tức) qua nghị quyết ĐHĐCĐ chính thức",
+    "Diễn biến chào bán cổ phiếu 5:1 của PDR (giá bán, tiến độ) - nguồn rủi ro pha loãng cụ thể nhất nhóm",
+    "MA50 của PNJ: theo dõi liệu giá có xác nhận đảo chiều (đóng cửa vượt MA50 kèm volume) hay tiếp tục giảm"
+  ],
+  "picks": [
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "246000-251000",
+      "tp_vnd": 269136,
+      "sl_vnd": 236740,
+      "time_stop_days": 25,
+      "size_pct": "0-2%",
+      "thesis": "Uptrend rõ trên MA20/50 với catalyst FTSE cụ thể (21/9/2026) và KQKD nửa năm +360%, nhưng vol_ratio thấp nhất toàn nhóm (0.099) và RSI cận quá mua (67.2) khiến rủi ro phân phối/sell-the-news chưa thể loại trừ.",
+      "invalidation": "Giá đóng cửa dưới MA50 hoặc dưới vùng SL 236.740đ; xuất hiện thêm phiên khối lượng lớn kèm giảm mạnh cho thấy phân phối tiếp diễn; dòng vốn FTSE không giải ngân như kỳ vọng quanh 21/9/2026."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "25800-26500",
+      "tp_vnd": 28242,
+      "sl_vnd": 24842,
+      "time_stop_days": 25,
+      "size_pct": "0-2%",
+      "thesis": "Vừa lấy lại MA50 với vol_ratio tốt nhất nhóm (dù vẫn dưới 1) và kế hoạch lợi nhuận/doanh thu 2 chữ số, nhưng dữ liệu cổ tức mâu thuẫn giữa các nguồn và rủi ro lây lan tâm lý từ hệ sinh thái Vingroup/ngành BĐS làm giảm độ tin cậy.",
+      "invalidation": "Giá đóng cửa dưới MA50 hoặc dưới vùng SL 24.842đ; thông tin cổ tức xác nhận tiêu cực hơn kỳ vọng; áp lực bán lan rộng trong nhóm BĐS do làn sóng phát hành tăng vốn."
+    },
+    {
+      "symbol": "GVR",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 34128,
+      "sl_vnd": 30020,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Chính phe bò thừa nhận không có catalyst ngắn hạn rõ ràng trong khung 25 phiên, ban lãnh đạo tự nhận thận trọng dù giá cao su tăng, và volume chưa xác nhận breakout (0.230).",
+      "invalidation": "Xem xét lại nếu xuất hiện catalyst ngắn hạn cụ thể (KQKD quý mới vượt kỳ vọng) kèm breakout có volume xác nhận rõ (vol_ratio >1)."
+    },
+    {
+      "symbol": "PDR",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 12852,
+      "sl_vnd": 11305,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Rủi ro pha loãng cụ thể (chào bán 5:1, tăng vốn thêm ~2.393 tỷ đồng), áp lực trả nợ trái phiếu, lùm xùm quản trị chưa giải quyết, kỹ thuật vẫn dưới MA50 đang giảm - bắt dao rơi rõ nhất nhóm.",
+      "invalidation": "Xem xét lại sau khi đợt chào bán 5:1 hoàn tất rõ ràng về giá/tác động pha loãng, đồng thời giá xác nhận đảo chiều trên MA50 kèm volume."
+    },
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 41094,
+      "sl_vnd": 36147,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Điểm mô hình cao nhất nhóm và tin tức cơ bản tích cực (KQKD mạnh, rủi ro pháp lý cũ đang gỡ), nhưng giá vẫn dưới cả MA20/MA50 với MA50 đang dốc xuống - mâu thuẫn model-vs-giá lớn nhất, chưa xác nhận đảo chiều kỹ thuật.",
+      "invalidation": "Xem xét lại nếu giá đóng cửa vượt lại MA50 kèm volume xác nhận (vol_ratio >1), cho thấy kỹ thuật bắt kịp với fundamentals tốt."
+    }
+  ]
+}
