@@ -1,0 +1,75 @@
+{
+  "as_of": "2026-09-11",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Volume yếu trên toàn bộ nhóm top 5 (vol_ratio <1), mô hình có edge yếu (AUC ~0.53-0.55), và nhiều luận điểm bò bị phản biện đứng vững bằng chính bằng chứng kỹ thuật/tin tức nên không mã nào đạt ngưỡng MUA phiên này.",
+  "watch_this_week": [
+    "14/9/2026: GAS họp DHDCD bat thuong ve nguy co mat tu cach cong ty dai chung",
+    "21/9/2026: FTSE Russell chinh thuc ap dung nang hang, VIC vao ro FTSE GEIS Large Cap - theo doi volume/gia quanh moc nay",
+    "23/9/2026: GAS chot quyen co tuc tien mat 25% (GDKHQ, gia se dieu chinh giam co hoc)",
+    "Xac minh chieu dong von FTSE thuc te voi VRE (them vao GEIS Small Cap hay bi loai khoi FTSE Vietnam Index - hai nguon tin mau thuan)",
+    "Vol_ratio ca 5 ma hien deu duoi 1.0 - theo doi ma nao vuot ro nguong nay kem gia giu tren MA50",
+    "Ngay cong bo KQKD Q3/2026 cua PNJ/VIC/GVR/VRE/GAS (chua xac dinh)"
+  ],
+  "picks": [
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 40932,
+      "sl_vnd": 36005,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Duoi MA50 (downtrend, ky thuat yeu nhat nhom theo A: 3/10), volume eo uot, Q2/2026 lo ~283 ty du diem mo hinh cao nhat nhom (0.6248) - rui ro bat dao roi ro rang.",
+      "invalidation": "Gia vuot ro tren MA50 kem volume xac nhan tang manh; KQKD Q3/2026 cho thay phuc hoi loi nhuan ro ret."
+    },
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "245000-250000",
+      "tp_vnd": 267300,
+      "sl_vnd": 235125,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Uptrend + LNST +360.5% + catalyst FTSE GEIS 21/9 ro ngay, nhung RSI 66.2 gan qua mua di cung volume thap nhat nhom (0.13) - phan ky gia/khoi luong that, da tang ~30%/3 tuan nen rui ro sell-the-news; bo/gau can suc nen theo doi cho xac nhan dong tien truoc khi vao.",
+      "invalidation": "RSI vuot 70 ma khong co volume xac nhan; xac nhan cu the dong von ETF noi ban rong >1500 ty; gia thung MA50."
+    },
+    {
+      "symbol": "GVR",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "31000-32000",
+      "tp_vnd": 34074,
+      "sl_vnd": 29972,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Setup ky thuat tot nhat nhom (uptrend, RSI 51 can bang) nhung khong co catalyst ngan han cu the xac nhan (khong thuoc ro FTSE GEIS), rui ro thanh tra/phap ly thang 2/2026 chua xac nhan da khep lai, volume van duoi 1.",
+      "invalidation": "Thanh tra Chinh phu cong bo ket luan bo sung tieu cuc; gia thung MA50; volume khong cai thien sau 10 phien."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "Thấp",
+      "entry_zone_vnd": "25500-26200",
+      "tp_vnd": 27918,
+      "sl_vnd": 24558,
+      "time_stop_days": 25,
+      "size_pct": "2%",
+      "thesis": "Ky hoach kinh doanh 2026 tich cuc + co tuc 10% + ky thuat khong xau, nhung tin hieu FTSE mau thuan giua 2 nguon (them vao GEIS Small Cap vs bi loai khoi FTSE Vietnam Index) - chua kiem chung ro chieu dong von rong.",
+      "invalidation": "Xac nhan bi loai khoi ro chi so co dong von thu dong theo doi (dong ra rong); gia thung MA50."
+    },
+    {
+      "symbol": "GAS",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 91800,
+      "sl_vnd": 80750,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Co tuc 25% + KQKD H1 tot la diem cong that, nhung su kien rui ro phap ly nhi phan cu the (DHDCD bat thuong 14/9 ve nguy co mat tu cach cong ty dai chung) roi ngay dau ky nam giu; GDKHQ 23/9 chi la dieu chinh gia co hoc, khong phai luc do that.",
+      "invalidation": "DHDCD 14/9 xac nhan co che dac thu duy tri niem yet ro rang, khong con rui ro huy tu cach cong ty dai chung."
+    }
+  ]
+}
