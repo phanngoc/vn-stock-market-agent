@@ -1,0 +1,74 @@
+{
+  "as_of": "2026-09-14",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Không mã nào trong 5 ứng viên hội tụ đủ kỹ thuật xác nhận, catalyst rõ ràng và thanh khoản mạnh để MUA ngay; mô hình có edge yếu (AUC ~0.53-0.55) nên ưu tiên bảo toàn vốn và chờ xác nhận thêm.",
+  "watch_this_week": [
+    "14/9/2026: nội dung nghị quyết ĐHĐCĐ bất thường PV Gas (GAS) - quyết định việc có nâng cấp THEO DÕI lên entry hay không",
+    "21/9/2026: FTSE Russell nâng hạng VN có hiệu lực - theo dõi phản ứng giá VIC (large-cap) và VRE (small-cap), và rủi ro bán ròng cơ cấu ETF frontier cũ trước ngày này",
+    "vol_ratio của VIC, GAS, VRE cần phục hồi trên 0.5 để coi thanh khoản đã xác nhận lại",
+    "Ngày GDKHQ cổ tức của GAS (25%), VRE và PNJ (10%) - hiện chưa kiểm chứng cụ thể, cần cập nhật để tránh nhầm điều chỉnh giá do chia cổ tức với gãy xu hướng",
+    "Tiến độ thoái vốn Nhà nước xuống dưới 90% tại GVR/GAS liên quan rủi ro hủy tư cách công ty đại chúng"
+  ],
+  "picks": [
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "Thấp",
+      "entry_zone_vnd": "235000-240000",
+      "tp_vnd": 257148,
+      "sl_vnd": 226195,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Điểm mô hình cao nhất nhóm và KQKD 6T2026 tăng đột biến (+360,5% svck) cùng catalyst FTSE large-cap 21/9, nhưng vol_ratio 0.189 là thấp nhất trong toàn bộ 30 mã và mô hình con bất đồng mạnh (LSTM outlier kéo điểm lên) nên chưa đủ cơ sở giải ngân.",
+      "invalidation": "Đóng cửa dưới SL 226.195đ; vol_ratio tiếp tục dưới 0.25 kèm xác nhận bán ròng lớn từ cơ cấu ETF frontier cũ; tin tiêu cực mới về đợt phát hành trái phiếu quốc tế ~8.050 tỷ đồng."
+    },
+    {
+      "symbol": "GAS",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "82000-86000",
+      "tp_vnd": 92016,
+      "sl_vnd": 80940,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Setup kỹ thuật tốt nhất nhóm (uptrend ổn định, RSI chưa quá mua, vol_ratio cao nhất dù vẫn dưới 1) cộng cổ tức tiền mặt 25% đang chi trả thực, nhưng ĐHĐCĐ bất thường đúng ngày tín hiệu có nội dung chưa biết trong bối cảnh rủi ro pháp lý cơ cấu cổ đông.",
+      "invalidation": "Đóng cửa dưới SL 80.940đ; nội dung ĐHĐCĐ bất thường 14/9 tiêu cực liên quan thoái vốn Nhà nước/tư cách công ty đại chúng."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "Thấp",
+      "entry_zone_vnd": "24800-25500",
+      "tp_vnd": 27378,
+      "sl_vnd": 24082,
+      "time_stop_days": 25,
+      "size_pct": "2%",
+      "thesis": "Hỗ trợ tin tức mạnh nhất nhóm (KQKD tốt, cổ tức, chiến lược mở rộng Vincom Collection) và catalyst FTSE small-cap 21/9, nhưng nhãn mô hình trend_up mâu thuẫn với MA50 quan sát thực tế vẫn đang dốc xuống - độ tin cậy tín hiệu thấp.",
+      "invalidation": "Đóng cửa dưới SL 24.082đ; MA50 tiếp tục dốc xuống rõ ràng qua 21/9 mà không có phản ứng tích cực từ dòng vốn FTSE; tránh cộng dồn với VIC do cùng hệ sinh thái Vingroup."
+    },
+    {
+      "symbol": "GVR",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 32994,
+      "sl_vnd": 29022,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Kỹ thuật đang test lại hỗ trợ MA50 sau 2 phiên giảm mạnh, chưa xác nhận giữ được, cộng rủi ro pháp lý cơ cấu cổ đông thật (Nhà nước nắm 96,8%, nguy cơ hủy tư cách công ty đại chúng nếu không thoái vốn trong 1 năm) và không có catalyst FTSE bù đắp.",
+      "invalidation": "Không áp dụng (TRÁNH) - sẽ xem xét lại nếu giá giữ vững MA50 qua 3-5 phiên và có thông tin rõ ràng hơn về phương án xử lý rủi ro tư cách công ty đại chúng."
+    },
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 39474,
+      "sl_vnd": 34722,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Setup kỹ thuật yếu nhất nhóm - downtrend 6 tháng rõ ràng (77k về 36k), giá dưới MA50 đang dốc xuống, TP đặt đúng tại kháng cự động MA50 - dạng bắt dao rơi; KQKD cơ bản tốt không đủ bù đắp rủi ro kỹ thuật và biên lợi nhuận gộp toàn công ty đang giảm.",
+      "invalidation": "Không áp dụng (TRÁNH) - sẽ xem xét lại nếu giá đóng cửa vượt lại trên MA50 kèm volume xác nhận rõ ràng."
+    }
+  ]
+}
