@@ -1,0 +1,74 @@
+{
+  "as_of": "2026-09-15",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Mô hình nền có edge yếu (AUC ~0.53-0.55) và base win-rate thấp hơn buy-and-hold trên tập kiểm định; bò và gấu cân bằng ở cả 3 mã có luận điểm mua nên ưu tiên bảo toàn vốn, không giải ngân mới.",
+  "watch_this_week": [
+    "21/9/2026: FTSE Russell nâng hạng có hiệu lực - theo dõi phản ứng giá VIC/VRE (buy the rumor sell the news hay không)",
+    "~23/9/2026 (ngày chính xác chưa kiểm chứng): GAS chốt danh sách cổ đông nhận cổ tức 25% tiền mặt - theo dõi điều chỉnh giá và RSI",
+    "26/10/2026: PNJ công bố BCTC quý 3/2026 - đánh giá lại tồn kho kim cương",
+    "Diễn biến vol_ratio của VIC/VRE/GAS trong tuần tới",
+    "Thời hạn khắc phục tình trạng không đủ điều kiện công ty đại chúng của GAS/GVR (chưa kiểm chứng mốc ngày)"
+  ],
+  "picks": [
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 39690,
+      "sl_vnd": 34912,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Downtrend dốc dưới MA50 (bắt dao rơi) kèm lỗ ròng quý 2 kỷ lục và dự phòng 2.267 tỷ chưa dứt điểm.",
+      "invalidation": "Không áp dụng (không nắm giữ); cân nhắc lại chỉ sau BCTC Q3 (26/10/2026) xác nhận dứt điểm dự phòng và có đáy kỹ thuật rõ ràng."
+    },
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "235000-242000",
+      "tp_vnd": 260820,
+      "sl_vnd": 229425,
+      "time_stop_days": 25,
+      "size_pct": "0% (theo dõi, chờ xác nhận)",
+      "thesis": "Catalyst FTSE Large Cap (21/9) và trend dài hạn đẹp, nhưng vol_ratio 0.10 thấp nhất nhóm và đã có phiên đảo chiều giảm >4,3% tại vùng kháng cự gần TP.",
+      "invalidation": "Tái lập giảm mạnh (>4%/phiên) quanh vùng 260k, hoặc dòng vốn ngoại không xác nhận sau 21/9 (dấu hiệu sell the news), hoặc tin xấu mới về đòn bẩy trái phiếu quốc tế."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "25300-25900",
+      "tp_vnd": 27648,
+      "sl_vnd": 24320,
+      "time_stop_days": 25,
+      "size_pct": "0% (theo dõi, chờ xác nhận)",
+      "thesis": "Tin tức/KQKD tốt nhất nhóm và catalyst FTSE Small Cap, nhưng kỹ thuật mới cắt lên MA50 (dễ whipsaw) và vol_ratio 0.23 chưa xác nhận dòng tiền.",
+      "invalidation": "Giá cắt xuống lại dưới MA50 kèm thanh khoản tăng, hoặc không phản ứng tích cực quanh sự kiện FTSE 21/9."
+    },
+    {
+      "symbol": "GVR",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 32778,
+      "sl_vnd": 28832,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Không có catalyst (ngoài rổ FTSE), kỹ thuật đi ngang yếu (RSI dưới 50, vol_ratio 0.15), thêm rủi ro pháp lý cổ đông nhỏ.",
+      "invalidation": "Không áp dụng (không nắm giữ); cân nhắc lại nếu xuất hiện catalyst tin tức tích cực rõ ràng hoặc xác nhận xu hướng tăng thật sự."
+    },
+    {
+      "symbol": "GAS",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "86000-89000",
+      "tp_vnd": 95796,
+      "sl_vnd": 84265,
+      "time_stop_days": 25,
+      "size_pct": "0% (theo dõi, chờ xác nhận)",
+      "thesis": "Kỹ thuật/cơ bản tốt nhất nhóm (breakout, doanh thu +39% YoY) nhưng RSI 67 gần quá mua cộng dồn với giảm giá cơ học quanh ngày GDKHQ cổ tức trong đúng khung nắm giữ.",
+      "invalidation": "RSI vượt 70 rồi đảo chiều giảm mạnh, hoặc thêm công bố bất lợi về rủi ro công ty đại chúng."
+    }
+  ]
+}
