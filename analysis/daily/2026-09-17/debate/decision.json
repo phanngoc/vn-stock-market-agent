@@ -1,0 +1,76 @@
+{
+  "as_of": "2026-09-17",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Volume dưới trung bình ở cả 5 mã ứng viên, mô hình nền AUC ~0.53-0.55 (edge yếu), khối ngoại đang bán ròng ngay trước sự kiện nâng hạng FTSE 21/9 -> ưu tiên bảo toàn vốn, không mở vị thế MUA mới.",
+  "watch_this_week": [
+    "21/9/2026: FTSE Russell chính thức nâng hạng - theo dõi dòng vốn ngoại thực tế (mua/bán ròng) tại VIC, VRE",
+    "22/9/2026: GDKHQ cổ tức tiền mặt GAS (25%) - theo dõi phản ứng giá quanh MA20 (~85k)",
+    "10/9-9/10/2026: khối lượng bán ra thực tế từ gia đình Chủ tịch PNJ (25 triệu cổ phiếu)",
+    "Ngày GDKHQ cổ tức 10% của VRE - chưa kiểm chứng, cần công bố chính thức từ HOSE",
+    "Xu hướng mua/bán ròng khối ngoại toàn thị trường (hiện bán ròng ~2.200 tỷ từ đầu tháng 9)",
+    "Volume ratio của VIC - cần phục hồi rõ rệt (>1) trước khi xem xét lại luận điểm TRÁNH",
+    "Thanh khoản toàn thị trường (hiện ~17.156 tỷ/phiên)"
+  ],
+  "picks": [
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 39528,
+      "sl_vnd": 34770,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Dưới MA50 đang giảm (bắt dao rơi), volume 0.19 cực thấp, lợi nhuận sau kiểm toán giảm ~38-40%.",
+      "invalidation": "Gia đình Chủ tịch đang bán 25 triệu cổ phiếu đúng khung 10/9-9/10/2026, trùng khớp toàn bộ thời gian nắm giữ đề xuất - áp lực cung nội bộ quá lớn để cân nhắc mua."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "24800-25500",
+      "tp_vnd": 27972,
+      "sl_vnd": 24605,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "KQKD vượt tiến độ kế hoạch (80.6% lợi nhuận năm sau 9 tháng), nằm trong nhóm hưởng lợi FTSE, SL có biên an toàn dưới vùng tích lũy tháng 8 - nhưng volume 0.41 chưa xác nhận bứt phá.",
+      "invalidation": "Khối ngoại tiếp tục bán ròng mạnh quanh 21/9 (kịch bản sell-the-news); giá thủng 24.000 kèm volume tăng (phân phối, không phải tích lũy)."
+    },
+    {
+      "symbol": "VIC",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 261792,
+      "sl_vnd": 230280,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Xu hướng giá đẹp nhất nhóm và catalyst FTSE lớn nhất (ước tính ~46.4 triệu USD mua ròng), nhưng đây mới là dự báo chưa xảy ra.",
+      "invalidation": "Volume mỏng nhất nhóm (0.14) + SL đặt xa vùng hỗ trợ MA50 thật (~222k) sau chuỗi tăng nóng +60%/tháng lên đỉnh lịch sử -> rủi ro gap-down cao, khối ngoại hiện đang bán ròng chứ chưa mua vào; cần volume xác nhận (>1) và giá giữ vững trên MA50 thật trước khi xem xét lại."
+    },
+    {
+      "symbol": "GVR",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "31500-32500",
+      "tp_vnd": 34992,
+      "sl_vnd": 30780,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Setup kỹ thuật đồng thuận nhất nhóm (MA20 cắt lên MA50, volume tương đối tốt nhất dù vẫn dưới 1, lợi nhuận 5 tháng +30% YoY đã công bố).",
+      "invalidation": "Ban lãnh đạo tự đặt kế hoạch lợi nhuận 2026 giảm (~-2.9% YoY) và không có catalyst ngắn hạn trong khung 25 phiên; giá thủng đáy 30.300 hoặc volume tụt lại sẽ vô hiệu luận điểm."
+    },
+    {
+      "symbol": "GAS",
+      "decision": "THEO DÕI",
+      "confidence": "Thấp",
+      "entry_zone_vnd": "85500-87500",
+      "tp_vnd": 95688,
+      "sl_vnd": 84170,
+      "time_stop_days": 25,
+      "size_pct": "2%",
+      "thesis": "Catalyst cổ tức GDKHQ 22/9 (25%) là dữ kiện thật, KQKD 8 tháng vượt xa kế hoạch năm.",
+      "invalidation": "RSI 63 quá mua, SL sát MA20 dễ bị quét khi test lại; không có luận điểm bò riêng được xây dựng cho mã này - nếu GDKHQ 22/9 qua đi mà giá không phản ứng tích cực, rút lui."
+    }
+  ]
+}
