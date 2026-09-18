@@ -1,0 +1,74 @@
+{
+  "as_of": "2026-09-18",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Edge mô hình yếu (AUC ~0.53-0.55), 4/5 mã ứng viên có vol_ratio dưới 0.5 (thiếu xác nhận dòng tiền), thị trường sắp qua giai đoạn biến động cao quanh sự kiện nâng hạng FTSE và cơ cấu ETF ngoại (18-21/9/2026) - ưu tiên bảo toàn vốn, đứng ngoài quan sát thay vì giải ngân ngay.",
+  "watch_this_week": [
+    "Diễn biến giá/thanh khoản VIC, VRE quanh ngày hoàn tất cơ cấu ETF (18/9) và hiệu lực nâng hạng FTSE (21/9) - xác nhận dòng tiền mới thực sự vào hay kịch bản bán theo tin thật",
+    "Vol_ratio của VIC/VRE/GAS có vượt rõ rệt lên trên 0.5 hay tiếp tục èo uột",
+    "GAS: giá có giữ vững trên MA20 sau nhịp điều chỉnh hay tiếp tục co hẹp khối lượng",
+    "PNJ: thông tin cụ thể về ĐHĐCĐ bất thường dự kiến tháng 10/2026 (ngày họp, nội dung điều chỉnh kế hoạch)",
+    "Dòng vốn ngoại mua/bán ròng thực tế quanh mốc nâng hạng so với kỳ vọng 6-8 tỷ USD"
+  ],
+  "picks": [
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 40230,
+      "sl_vnd": 35387,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Setup kỹ thuật xấu nhất nhóm (dưới MA50, xu hướng giảm dài hạn) và rủi ro tin tức cao nhất (khủng hoảng tháng 7 chưa qua hẳn, ĐHĐCĐ bất thường tháng 10 là ẩn số); score mô hình cao nhất không bù được bối cảnh định tính xấu.",
+      "invalidation": "Chỉ xem xét lại nếu ĐHĐCĐ bất thường tháng 10/2026 công bố kế hoạch kinh doanh rõ ràng tích cực và giá giữ vững trên MA50 với khối lượng xác nhận thực sự."
+    },
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "235000-242600",
+      "tp_vnd": 262008,
+      "sl_vnd": 230470,
+      "time_stop_days": 25,
+      "size_pct": "0% hiện tại, tối đa 2-3% nếu xác nhận",
+      "thesis": "Xu hướng tăng rõ nhất nhóm và catalyst FTSE Large Cap có ngày hiệu lực cụ thể (21/9), nhưng khả năng đã phản ánh phần lớn vào giá sau khi tăng ~60%/tháng, cộng case đảo chiều thực tế 7/9 và vol_ratio yếu nhất toàn thị trường khiến bò/gấu cân bằng.",
+      "invalidation": "Tái diễn phiên đảo chiều mạnh kiểu 7/9 không kèm cải thiện thanh khoản; giá đóng cửa dưới SL 230470đ; hoặc sau 21/9 giá không giữ được đà tăng dù dòng vốn cơ cấu đã vào."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "25500-26500",
+      "tp_vnd": 28242,
+      "sl_vnd": 24842,
+      "time_stop_days": 25,
+      "size_pct": "0% hiện tại, tối đa 2-3% nếu xác nhận",
+      "thesis": "Catalyst kép (FTSE Small Cap + VNSI/Top50) và tích lũy hội tụ MA hợp lý, nhưng thanh khoản vẫn yếu và rủi ro tương quan ngành BĐS với VIC khiến chưa đủ cơ sở mua ngay.",
+      "invalidation": "Giá thủng vùng hội tụ MA và SL 24842đ; nhóm BĐS bị bán tháo đồng loạt quanh 21/9; hoặc vol_ratio không cải thiện sau ngày cơ cấu ETF."
+    },
+    {
+      "symbol": "GVR",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 34722,
+      "sl_vnd": 30542,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Không có luận điểm mua nào đủ mạnh; công ty tự đặt kế hoạch lợi nhuận 2026 đi lùi là tín hiệu thận trọng nội bộ không bị phản bác, không có catalyst nâng hạng.",
+      "invalidation": "Chỉ xem xét lại nếu công ty điều chỉnh tăng kế hoạch lợi nhuận 2026 hoặc giá cao su duy trì cao đẩy KQKD vượt kế hoạch rõ rệt."
+    },
+    {
+      "symbol": "GAS",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "85000-88000",
+      "tp_vnd": 94824,
+      "sl_vnd": 83410,
+      "time_stop_days": 25,
+      "size_pct": "0% hiện tại, tối đa 2-3% nếu xác nhận",
+      "thesis": "Setup kỹ thuật tốt nhất nhóm và KQKD vượt xa kế hoạch (130% LNST), nhưng tin tốt có thể đã phản ánh vào giá và khối lượng co lại chưa xác nhận dòng tiền mới.",
+      "invalidation": "Giá thủng SL 83410đ; điều chỉnh kéo dài dưới MA20 không có volume xác nhận hồi phục; hoặc dòng tiền thị trường tiếp tục bỏ qua GAS quá 2 tuần."
+    }
+  ]
+}
