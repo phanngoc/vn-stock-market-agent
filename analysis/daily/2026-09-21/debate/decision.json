@@ -1,0 +1,76 @@
+{
+  "as_of": "2026-09-21",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Edge mô hình yếu (AUC ~0.53-0.55) và toàn bộ 5 mã ứng viên đều vol_ratio dưới 1 (0.15-0.33) khiến tín hiệu kỹ thuật kém tin cậy; ưu tiên bảo toàn vốn, chỉ theo dõi thay vì giải ngân mạnh.",
+  "watch_this_week": [
+    "GAS: phiên GDKHQ cổ tức 22/9/2026 (2.500d/CP) - theo doi gia co lap lai khoang dieu chinh co hoc hay khong",
+    "Dong von nang hang FTSE Russell hieu luc tu 21/9/2026, giai ngan theo 4 giai doan - theo doi dong tien khoi ngoai vao nhom von hoa lon, can trong hieu ung sell the news",
+    "VN-Index: vung ho tro 1.760-1.780 diem va rui ro he thong tu margin toan thi truong tiep tuc phinh to",
+    "Vol_ratio cua VRE/GVR/GAS can cai thien ro ret len gan 1.0 truoc khi can nhac giai ngan them",
+    "VIC: cho lam ro noi dung dieu chinh BCTC hop nhat giua nien do cong bo 4/9/2026 (chua kiem chung muc do trong yeu)",
+    "PNJ: cho KQKD quy 3/2026 (chua cong bo) de danh gia lai ky vong bien loi nhuan gop 2026",
+    "Ngay GDKHQ co the co tuc tien mat 10% cua VRE - chua xac dinh duoc, can theo doi cong bo HOSE"
+  ],
+  "picks": [
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 39852,
+      "sl_vnd": 35055,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Score mô hình cao nhất nhóm nhưng đang dưới MA50 với vol_ratio thấp nhất nhóm (0.16) — đúng dạng bắt dao rơi, kỹ thuật tệ nhất nhóm.",
+      "invalidation": "Không áp dụng (đang TRÁNH); xem xét lại nếu giá quay lại trên MA50 kèm vol_ratio cải thiện rõ rệt."
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "24800-25400",
+      "tp_vnd": 27162,
+      "sl_vnd": 23892,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Setup kỹ thuật cân bằng nhất nhóm (trend tăng, RSI trung tính) và catalyst tăng trưởng 2026 + cổ tức 10%, nhưng vol_ratio 0.33 vẫn là thanh khoản yếu và catalyst đã công bố từ trước nên có thể đã phần nào phản ánh vào giá.",
+      "invalidation": "Vol_ratio không cải thiện lên gần 1.0 trong 5-7 phiên; giá thủng vùng 24.000d; VN-Index mất vùng hỗ trợ 1.760-1.780 điểm."
+    },
+    {
+      "symbol": "VIC",
+      "decision": "TRÁNH",
+      "confidence": "TB",
+      "entry_zone_vnd": "",
+      "tp_vnd": 257040,
+      "sl_vnd": 226100,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Không được chọn làm kèo bò; vol_ratio thấp nhất nhóm cùng PNJ (0.15) và có tin điều chỉnh BCTC hợp nhất giữa niên độ chưa kiểm chứng mức độ trọng yếu.",
+      "invalidation": "Không áp dụng (đang TRÁNH); xem xét lại nếu làm rõ nội dung điều chỉnh BCTC và vol_ratio cải thiện."
+    },
+    {
+      "symbol": "GVR",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "31800-32500",
+      "tp_vnd": 34668,
+      "sl_vnd": 30495,
+      "time_stop_days": 25,
+      "size_pct": "2%",
+      "thesis": "Setup kỹ thuật ổn (trend tăng, RSI chưa quá mua) và câu chuyện chuyển đổi đất KCN dài hạn tích cực, nhưng tự thừa nhận thiếu catalyst ngắn hạn trong khung 25 phiên.",
+      "invalidation": "Giá đi ngang không tiến triển 10-15 phiên đầu mà không có tin tiến độ KCN/GPMB mới; RSI giảm dưới 45 kèm mất trend tăng."
+    },
+    {
+      "symbol": "GAS",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "86000-87500",
+      "tp_vnd": 96228,
+      "sl_vnd": 84645,
+      "time_stop_days": 25,
+      "size_pct": "2%",
+      "thesis": "KQKD 8 tháng vượt 129% kế hoạch năm là nền tảng mạnh nhất nhóm, nhưng GDKHQ cổ tức rơi đúng ngày mai (22/9) gây điều chỉnh giá cơ học và RSI 63 là cao nhất nhóm, dư địa tăng hẹp nhất.",
+      "invalidation": "Giá không lấp khoảng điều chỉnh cổ tức trong 3-5 phiên sau 22/9; RSI tiếp tục neo trên 65-70 mà không hạ nhiệt."
+    }
+  ]
+}
