@@ -1,0 +1,75 @@
+{
+  "as_of": "2026-09-23",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Toàn bộ 5 mã ứng viên đều có vol_ratio dưới 1 (thiếu xác nhận dòng tiền) và edge mô hình yếu (AUC ~0.53-0.55); thanh khoản thị trường chung đang suy yếu trong khi margin tăng mạnh nên ưu tiên bảo toàn vốn, hạn chế giải ngân mới.",
+  "watch_this_week": [
+    "GAS: vol_ratio và giá tham chiếu ngay sau ngày GDKHQ cổ tức 23/9/2026",
+    "VIC: nội dung cụ thể đính chính BCTC hợp nhất soát xét (công bố 4/9); phản ứng giá/thanh khoản 1-2 tuần sau ngày FTSE có hiệu lực 21/9 để phân biệt dòng vốn thật hay sell-the-news; tiến độ phát hành 10.000 tỷ trái phiếu cho VinFast vay",
+    "VRE: xác nhận MA20/50 cắt lên kèm khối lượng tăng; kiểm chứng lại KQKD 9 tháng qua BCTC chính thức",
+    "GVR: KQKD quý gần nhất và catalyst cụ thể mới",
+    "PNJ: BCTC quý 3 dự kiến 26/10/2026 để kiểm chứng nghi vấn lợi nhuận giảm 38% sau soát xét",
+    "Toàn thị trường: xu hướng thanh khoản khớp lệnh và tốc độ tăng margin"
+  ],
+  "picks": [
+    {
+      "symbol": "GAS",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "85700-87000",
+      "tp_vnd": 92880,
+      "sl_vnd": 81700,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Bò mạnh nhất nhóm (KQKD 8 tháng đạt 129% kế hoạch, cổ tức tiền mặt 25% đã xác nhận, kỹ thuật uptrend rõ nhất) nhưng vol_ratio chỉ 0.29 và giá tham chiếu điều chỉnh kỹ thuật đúng ngày 23/9 (ex-date) nên cần đợi xác nhận thanh khoản trước khi giải ngân thật.",
+      "invalidation": "vol_ratio không cải thiện rõ (>0.5) trong 3-5 phiên sau ex-date, hoặc giá thủng 81.700đ, hoặc xuất hiện tin xấu bất ngờ về hoạt động kinh doanh/giá dầu khí"
+    },
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "238000-243000",
+      "tp_vnd": 260712,
+      "sl_vnd": 229330,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Catalyst FTSE Global All Cap có hiệu lực từ 21/9 là thật, nhưng vol_ratio thấp nhất toàn bảng (0.16) và giá đã tăng +79% từ đáy trước khi tin chính thức có hiệu lực gợi ý rủi ro sell-the-news; đính chính BCTC soát xét (4/9) chưa rõ mức độ trọng yếu.",
+      "invalidation": "đính chính BCTC hé lộ vấn đề trọng yếu, giá giảm mạnh kèm thanh khoản tăng ngay sau 21-23/9 (dấu hiệu sell-the-news), hoặc tin xấu mới về đòn bẩy nhóm Vingroup/VinFast"
+    },
+    {
+      "symbol": "VRE",
+      "decision": "THEO DÕI",
+      "confidence": "Thấp",
+      "entry_zone_vnd": "24800-25500",
+      "tp_vnd": 27162,
+      "sl_vnd": 23892,
+      "time_stop_days": 25,
+      "size_pct": "2%",
+      "thesis": "Định giá rẻ (P/B ~1,3x so với trung bình 8 năm ~1,9x) và không có tin xấu mới là điểm cộng, nhưng MA20/50 mới hội tụ chưa breakout xác nhận và vol_ratio chỉ 0.20 nên mua ở đây gần với đoán đáy.",
+      "invalidation": "giá quay lại dưới đáy gần nhất của vùng tích luỹ, hoặc không có xác nhận breakout (MA20 cắt lên MA50 kèm khối lượng tăng) trong 1-2 tuần tới"
+    },
+    {
+      "symbol": "GVR",
+      "decision": "THEO DÕI",
+      "confidence": "Thấp",
+      "entry_zone_vnd": "31800-32600",
+      "tp_vnd": 34992,
+      "sl_vnd": 30780,
+      "time_stop_days": 25,
+      "size_pct": "2%",
+      "thesis": "Rủi ro pháp lý cũ (nguy cơ huỷ tư cách đại chúng) đã được hoá giải là tin tích cực, nhưng thiếu catalyst mới cụ thể trong tháng 9 và giá đang tích luỹ đi ngang hơn là breakout rõ ràng.",
+      "invalidation": "không có catalyst/KQKD mới trong 4 tuần tới và giá phá vỡ đáy vùng tích luỹ (dưới khoảng 31.000đ)"
+    },
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 38016,
+      "sl_vnd": 33440,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Gia đình Chủ tịch đã bán ròng 25 triệu cổ phiếu (thu khoảng 259 tỷ đồng từ riêng 7 triệu cp) dùng tiền cho chính công ty vay, cộng nghi vấn lợi nhuận giảm 38% sau soát xét (chưa kiểm chứng đầy đủ qua BCTC chính thức), trong khi giá vẫn ở dưới MA50 trong downtrend dài hạn.",
+      "invalidation": "chỉ xem xét lại nếu BCTC quý 3 chính thức (dự kiến 26/10/2026) phủ nhận rõ ràng nghi vấn lợi nhuận giảm 38% VÀ giá phục hồi rõ ràng lên trên MA50 kèm khối lượng xác nhận"
+    }
+  ]
+}
