@@ -1,0 +1,74 @@
+{
+  "as_of": "2026-09-24",
+  "portfolio_stance": "Thận trọng",
+  "stance_note": "Không mã nào đạt ngưỡng MUA vì 3 mã bò tốt nhất (GAS, GVR, VIC) đều bị phản biện đủ mạnh để hạ xuống THEO DÕI; mô hình quant chỉ có edge yếu (AUC ~0.53-0.55) nên ưu tiên bảo toàn vốn.",
+  "watch_this_week": [
+    "GAS: xác minh nội dung tin 'vướng tiêu chuẩn công ty đại chúng' (chưa kiểm chứng); theo dõi vol_ratio có vượt 1 không",
+    "GVR: theo dõi khối lượng để phân biệt tích lũy vs phân phối; xác nhận nguyên nhân gốc đợt giảm từ đỉnh 46.500đ",
+    "VIC: theo dõi tiến độ giải ngân dòng vốn ngoại theo lộ trình FTSE (giai đoạn 1 chỉ 10%); theo dõi thêm lý do miễn nhiệm Phó Tổng Giám đốc",
+    "KDH: theo dõi phản hồi/hậu quả từ văn bản UBCKNN số 9074, 9075 (14/9/2026)",
+    "Toàn thị trường: dòng vốn ngoại sau ngày FTSE Russell nâng hạng có hiệu lực (21/9/2026)"
+  ],
+  "picks": [
+    {
+      "symbol": "GAS",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "83500-85000",
+      "tp_vnd": 90936,
+      "sl_vnd": 79990,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "KQKD vượt kế hoạch và cổ tức 25% có nguồn thật, nhưng đây là tin đã cũ và đã phản ánh vào giá; volume entry yếu (0.34) chưa xác nhận lực mua.",
+      "invalidation": "Tin 'vướng tiêu chuẩn công ty đại chúng' được xác nhận nghiêm trọng, hoặc giá thủng MA50 kèm khối lượng lớn."
+    },
+    {
+      "symbol": "GVR",
+      "decision": "THEO DÕI",
+      "confidence": "TB",
+      "entry_zone_vnd": "32500-33500",
+      "tp_vnd": 35640,
+      "sl_vnd": 31350,
+      "time_stop_days": 25,
+      "size_pct": "2-3%",
+      "thesis": "Setup kỹ thuật đẹp nhất nhóm (vol_ratio 1.44 duy nhất >1, MA50 ngóc lên) nhưng vol_ratio không phân biệt được mua/bán và giá vẫn trong downtrend dài hạn -30% từ đỉnh.",
+      "invalidation": "Giá phá đáy vừa tạo (dưới 31.000đ) hoặc xuất hiện thêm phiên khối lượng lớn kèm giá giảm."
+    },
+    {
+      "symbol": "VIC",
+      "decision": "THEO DÕI",
+      "confidence": "Thấp",
+      "entry_zone_vnd": "228000-232000",
+      "tp_vnd": 248940,
+      "sl_vnd": 218975,
+      "time_stop_days": 25,
+      "size_pct": "1-2%",
+      "thesis": "Hưởng lợi câu chuyện nâng hạng FTSE có nguồn xác thực nhưng giá đã tăng +11,4%/tháng trước entry, vol_ratio yếu nhất toàn nhóm 5 mã (0.23) — rủi ro 'sell the news'.",
+      "invalidation": "Giá thủng MA50 rõ rệt, hoặc có thêm thông tin xấu về nhân sự cấp cao/pháp lý."
+    },
+    {
+      "symbol": "PNJ",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 36828,
+      "sl_vnd": 32395,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Downtrend dưới cả MA20/MA50 chưa xác nhận đảo chiều, LNST quý 2 âm do trích lập dự phòng, rủi ro thương hiệu chưa kiểm chứng mức độ.",
+      "invalidation": "Xuất hiện phân kỳ RSI kèm khối lượng xác nhận đảo chiều, hoặc rủi ro thương hiệu được làm rõ là không nghiêm trọng."
+    },
+    {
+      "symbol": "KDH",
+      "decision": "TRÁNH",
+      "confidence": "Cao",
+      "entry_zone_vnd": "",
+      "tp_vnd": 16956,
+      "sl_vnd": 14915,
+      "time_stop_days": 25,
+      "size_pct": "0%",
+      "thesis": "Rủi ro rõ rệt nhất nhóm: downtrend sâu chưa xác nhận đáy, nợ vay/vốn chủ 83%, tồn kho ~29.500 tỷ, vướng văn bản UBCKNN chưa rõ hậu quả.",
+      "invalidation": "Công bố chính thức làm rõ văn bản UBCKNN không nghiêm trọng và tỷ lệ nợ vay/tồn kho có dấu hiệu cải thiện."
+    }
+  ]
+}
